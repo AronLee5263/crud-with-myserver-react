@@ -4,9 +4,12 @@ function App() {
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/todo")
-      .then((response) => response.json())
-      .then((data) => setTodoList(data));
+    async function fetchData() {
+      const response = await fetch("http://localhost:5000/api/todo");
+      const json = await response.json();
+      setTodoList(json);
+    }
+    fetchData();
   }, []);
 
   return (
@@ -15,9 +18,9 @@ function App() {
       {todoList.map((todo) => {
         return (
           <div key={todo.id}>
-            <div>{"id : " + todo.id}</div>
-            <div>{"text : " + todo.text}</div>
-            <div>{"done : " + todo.done ? "Yes" : "No"}</div>
+            <li>{"id : " + todo.id}</li>
+            <li>{"text : " + todo.text}</li>
+            <li>{"done : " + todo.done ? "Yes" : "No"}</li>
             <div>
               <br />
             </div>
