@@ -13,10 +13,6 @@ const todoList = [
   },
 ];
 
-app.get("/", function (req, res) {
-  res.send("Hello World 서버 돌아가?");
-});
-
 app.get("/api/todo", (req, res) => {
   res.json(todoList);
 });
