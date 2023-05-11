@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 let id = 2;
 const todoList = [
@@ -18,11 +18,17 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/todo", () => {
-  return todoList;
+  res.json(todoList);
 });
 
 app.post("/api/todo", (req, res) => {
   const { text, done } = req.body;
+  todogList.push({
+    id: id++,
+    text,
+    done,
+  });
+  return res.send("success 성공");
 });
 
 app.listen(3000, () => {
