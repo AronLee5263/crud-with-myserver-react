@@ -1,5 +1,5 @@
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 const app = express();
 
 app.use(cors());
@@ -29,6 +29,6 @@ app.post("/api/todo", (req, res) => {
   return res.send("success 성공");
 });
 
-app.listen(4000, () => {
-  console.log("Server start 4000번이야");
+app.listen(5000, () => {
+  console.log("Server start 5000번이야");
 });
