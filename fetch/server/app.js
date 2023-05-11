@@ -27,6 +27,6 @@ app.post("/api/todo", (req, res) => {
   return res.send("success 성공");
 });
 
-app.listen(3000, () => {
-  console.log("Server start 시작했어");
+app.listen(4000, () => {
+  console.log("Server start 4000번이야");
 });
