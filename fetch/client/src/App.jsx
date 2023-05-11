@@ -12,13 +12,18 @@ function App() {
   return (
     <div>
       <h1>TODO LIST</h1>
-      {todoList.map((todo) => (
-        <div key={todo.id}>
-          <div>{todo.id}</div>
-          <div>{todo.text}</div>
-          <div>{todo.done ? "Yes" : "No"}</div>
-        </div>
-      ))}
+      {todoList.map((todo) => {
+        return (
+          <div key={todo.id}>
+            <div>{"id : " + todo.id}</div>
+            <div>{"text : " + todo.text}</div>
+            <div>{"done : " + todo.done ? "Yes" : "No"}</div>
+            <div>
+              <br />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
