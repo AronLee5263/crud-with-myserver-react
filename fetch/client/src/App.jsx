@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -7,6 +8,12 @@ function App() {
     fetch("http://localhost:5000/api/todo")
       .then((response) => response.json())
       .then((data) => setTodoList(data));
+  };
+
+  const axiosData = () => {
+    axios
+      .get("http://localhost:5000/api/todo")
+      .then((response) => setTodoList(response.data));
   };
 
   useEffect(() => {
