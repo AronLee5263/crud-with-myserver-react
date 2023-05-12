@@ -1,38 +1,48 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const SERVER_URL = "http://localhost:5000/api/todo";
+
 function App() {
   const [todoList, setTodoList] = useState([]);
 
-  const fetchData = () => {
-    fetch("http://localhost:5000/api/todo")
-      .then((response) => response.json())
-      .then((data) => setTodoList(data));
-  };
+  // const fetchData = () => {
+  //   fetch("http://localhost:5000/api/todo")
+  //     .then((response) => response.json())
+  //     .then((data) => setTodoList(data));
+  // };
 
   const axiosData = async () => {
-    const response = await axios.get("http://localhost:5000/api/todo");
+    const response = await axios.get(SERVER_URL);
     setTodoList(response.data);
   };
 
   useEffect(() => {
-    fetchData();
+    axiosData();
   }, []);
 
-  const onSubmitHandler = (e) => {
+  // const onSubmitHandler = (e) => {
+  //   e.preventDefault();
+  //   const text = e.target.text.value;
+  //   const done = e.target.done.checked;
+  //   fetch("http://localhost:5000/api/todo", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       text,
+  //       done,
+  //     }),
+  //   }).then(() => fetchData());
+  // };
+
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
     const text = e.target.text.value;
     const done = e.target.done.checked;
-    fetch("http://localhost:5000/api/todo", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        text,
-        done,
-      }),
-    }).then(() => fetchData());
+    await axios.post(SERVER_URL, { text, done });
+    axiosData();
   };
 
   return (
