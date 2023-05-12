@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/todo")
@@ -15,7 +16,7 @@ function App() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const text = e.target.text.value;
-    const done = e.target.checked;
+    const done = isChecked;
     fetch("http://localhost:5000/api/todo", {
       method: "POST",
       headers: {
@@ -28,12 +29,21 @@ function App() {
     });
   };
 
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
+  };
+
   return (
-    <div>
+    <div className="App">
       <h1>TODO LIST</h1>
       <form onSubmit={onSubmitHandler}>
         <input name="text" />
-        <input name="text" type="checkbox" />
+        <input
+          name="checkbox"
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
         <input type="submit" value="추가" />
       </form>
 
@@ -42,7 +52,8 @@ function App() {
           <div key={todo.id}>
             <li>{"id : " + todo.id}</li>
             <li>{"text : " + todo.text}</li>
-            <li>{"done : " + todo.done ? "Yes" : "No"}</li>
+            <li>{"done : " + (todo.done ? "Yes" : "No")}</li>
+            {/*바로 윗줄 (todo.done ? "Yes" : "No") 괄호문제  */}
             <div>
               <br />
             </div>
