@@ -22,7 +22,11 @@ function App() {
         text,
         done,
       }),
-    });
+    }).then(() =>
+      fetch("http://localhost:5000/api/todo")
+        .then((response) => response.json())
+        .then((data) => setTodoList(data))
+    );
   };
 
   return (
