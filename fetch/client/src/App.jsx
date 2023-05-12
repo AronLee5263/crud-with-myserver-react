@@ -2,22 +2,14 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
-  let cnt = 1;
 
   useEffect(() => {
     fetch("http://localhost:5000/api/todo")
-      .then((response) => {
-        console.log("response", cnt, "번 째 : ", response);
-        return response.json();
-      })
-      .then((data) => {
-        console.log("data ", cnt, "번 째 : " + JSON.stringify(data));
-        setTodoList(data);
-      })
+      .then((response) => response.json())
+      .then((data) => setTodoList(data))
       .catch((error) => {
         console.error("에러 발생:", error);
       });
-    cnt = cnt + 1;
   }, []);
 
   const onSubmitHandler = (e) => {
