@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [todoList, setTodoList] = useState([]);
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch("http://localhost:5000/api/todo")
       .then((response) => response.json())
       .then((data) => setTodoList(data));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   const onSubmitHandler = (e) => {
@@ -22,11 +26,7 @@ function App() {
         text,
         done,
       }),
-    }).then(() =>
-      fetch("http://localhost:5000/api/todo")
-        .then((response) => response.json())
-        .then((data) => setTodoList(data))
-    );
+    }).then(() => fetchData());
   };
 
   return (
