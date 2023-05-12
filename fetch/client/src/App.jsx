@@ -10,10 +10,9 @@ function App() {
       .then((data) => setTodoList(data));
   };
 
-  const axiosData = () => {
-    axios
-      .get("http://localhost:5000/api/todo")
-      .then((response) => setTodoList(response.data));
+  const axiosData = async () => {
+    const response = await axios.get("http://localhost:5000/api/todo");
+    setTodoList(response.data);
   };
 
   useEffect(() => {
