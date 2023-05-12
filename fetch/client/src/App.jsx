@@ -2,21 +2,17 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/todo")
       .then((response) => response.json())
-      .then((data) => setTodoList(data))
-      .catch((error) => {
-        console.error("에러 발생:", error);
-      });
+      .then((data) => setTodoList(data));
   }, []);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const text = e.target.text.value;
-    const done = isChecked;
+    const done = e.target.done.checked;
     fetch("http://localhost:5000/api/todo", {
       method: "POST",
       headers: {
@@ -29,31 +25,21 @@ function App() {
     });
   };
 
-  const handleCheckboxChange = (e) => {
-    setIsChecked(e.target.checked);
-  };
-
   return (
     <div className="App">
       <h1>TODO LIST</h1>
       <form onSubmit={onSubmitHandler}>
         <input name="text" />
-        <input
-          name="checkbox"
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-        />
+        <input name="done" type="checkbox" />
         <input type="submit" value="추가" />
       </form>
 
       {todoList?.map((todo) => {
         return (
-          <div key={todo.id}>
-            <li>{"id : " + todo.id}</li>
-            <li>{"text : " + todo.text}</li>
-            <li>{"done : " + (todo.done ? "Yes" : "No")}</li>
-            {/*바로 윗줄 (todo.done ? "Yes" : "No") 괄호문제  */}
+          <div key={todo.id} style={{ display: "flex" }}>
+            <div>{"id : " + todo.id}</div>
+            <div>{"text : " + todo.text}</div>
+            <div>{"done : " + (todo.done ? "Yes" : "No")}</div>
             <div>
               <br />
             </div>
