@@ -39,20 +39,17 @@ function App() {
       </div>
 
       <div className={classes.main_contents}>
-        <ul className={classes.content_container}>
+        <div className={classes.content_container}>
           {todoList?.map((todo) => {
             return (
               <div className={classes.content} key={todo.id}>
-                <div>{"id : " + todo.id}</div>
-                <div>{"text : " + todo.text}</div>
-                <div>{"done : " + (todo.done ? "Yes" : "No")}</div>
-                <div>
-                  <br />
-                </div>
+                <p>{"number : " + todo.id}</p>
+                <p>{"text : " + todo.text}</p>
+                <p>{"checked ? : " + (todo.done ? "Yes" : "No")}</p>
               </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     </>
   );

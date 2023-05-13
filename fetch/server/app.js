@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 let id = 2;
 const todoList = [
   {
-    id: 0,
+    id: 1,
     text: "There is no post",
     done: false,
   },

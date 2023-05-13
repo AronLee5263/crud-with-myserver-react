@@ -30,8 +30,8 @@
   padding: 1rem 0;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, 30%);
-  justify-content: center;
+  /* grid-template-columns: repeat(3, 30%); */
+  grid-template-columns: auto;
 }
 
 .content {
@@ -39,7 +39,7 @@
   padding: 1rem;
   background-color: rgb(183, 183, 183);
   border-radius: 8px;
-  border: solid 2px rgba(0, 0, 0, 0.2);
+  border: solid 1.5px rgba(0, 0, 0, 0.2);
   /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards; */
 }
