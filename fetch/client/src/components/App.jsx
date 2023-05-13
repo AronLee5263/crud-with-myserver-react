@@ -32,7 +32,7 @@ function App() {
       </div>
       <div className={classes.form_container}>
         <form onSubmit={onSubmitHandler}>
-          <input name="text" />
+          <input name="text" placeholder="내용을 입력하세요..." required />
           <input name="done" type="checkbox" />
           <input type="submit" value="추가" />
         </form>
