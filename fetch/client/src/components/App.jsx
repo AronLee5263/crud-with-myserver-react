@@ -17,11 +17,19 @@ function App() {
     axiosData();
   }, []);
 
-  const onSubmitHandler = async (e) => {
+  const onSubmitPostHandler = async (e) => {
     e.preventDefault();
     const text = e.target.text.value;
     const done = e.target.done.checked;
     await axios.post(SERVER_URL, { text, done });
+    axiosData();
+  };
+
+  const onSubmitUpdateHandler = async (e) => {
+    e.preventDefault();
+    const text = e.target.text.value;
+    const done = e.target.done.checked;
+    await axios.put(SERVER_URL, { text, done });
     axiosData();
   };
 
@@ -31,7 +39,7 @@ function App() {
         <h1>React CRUD with axios</h1>
       </div>
       <div className={classes.form_container}>
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitPostHandler}>
           <input name="text" placeholder="내용을 입력하세요..." required />
           <input name="done" type="checkbox" />
           <input type="submit" value="추가" />
