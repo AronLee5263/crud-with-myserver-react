@@ -27,7 +27,7 @@ app.post("/api/todo", (req, res) => {
     text,
     done,
   });
-  return res.send("success 성공");
+  return res.send("응답 제대로 옴success 성공");
 });
 
 app.listen(5000, () => {
