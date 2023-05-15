@@ -25,14 +25,6 @@ function App() {
     axiosData();
   };
 
-  const onSubmitUpdateHandler = async (e) => {
-    e.preventDefault();
-    const text = e.target.text.value;
-    const done = e.target.done.checked;
-    await axios.put(SERVER_URL, { text, done });
-    axiosData();
-  };
-
   const onSubmitDeleteHandler = async (e) => {
     e.preventDefault();
     const text = e.target.text.value;
