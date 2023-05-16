@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
+import axios from "axios";
 
 const Create = () => {
   const [firstName, setFirstName] = useState("");
@@ -19,9 +20,11 @@ const Create = () => {
   }
 
   const postData = () => {
-    console.log(firstName);
-    console.log(lastName);
-    console.log(checkbox);
+    axios.post(`https://64637a9f7a9eead6fae801e2.mockapi.io/fakedata`, {
+      firstName,
+      lastName,
+      checkbox,
+    });
   };
 
   return (
