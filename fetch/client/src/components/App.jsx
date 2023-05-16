@@ -1,6 +1,5 @@
 import "./App.css";
 import Create from "./Create";
-import axios from "axios";
 
 function App() {
   return (

@@ -20,7 +20,7 @@ const Create = () => {
   }
 
   const postData = () => {
-    axios.post(`https://64637a9f7a9eead6fae801e2.mockapi.io/fakedata`, {
+    axios.post(`https://64637a9f7a9eead6fae801e2.mockapi.io//fakeData`, {
       firstName,
       lastName,
       checkbox,
