@@ -1,9 +1,13 @@
-import classes from "./App.module.css";
+import "./App.css";
+import Create from "./Create";
 
 function App() {
   return (
-    <div className={classes.main}>
-      <h2 className={classes.main_header}>React Crud Operations</h2>
+    <div className="main">
+      <h2 className="main-header">React Crud Operations</h2>
+      <div>
+        <Create />
+      </div>
     </div>
   );
 }
