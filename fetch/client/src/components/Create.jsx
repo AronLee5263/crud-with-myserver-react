@@ -15,10 +15,6 @@ const Create = () => {
     setLastName(event.target.value);
   }
 
-  function changeCheckboxHandler(event) {
-    setCheckbox(!checkbox);
-  }
-
   const postData = () => {
     axios.post(`https://64637a9f7a9eead6fae801e2.mockapi.io//fakeData`, {
       firstName,
