@@ -7,14 +7,6 @@ const Create = () => {
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
 
-  function changeFirstNameHandler(event) {
-    setFirstName(event.target.value);
-  }
-
-  function changeLastNameHandler(event) {
-    setLastName(event.target.value);
-  }
-
   const postData = () => {
     axios.post(`https://64637a9f7a9eead6fae801e2.mockapi.io//fakeData`, {
       firstName,
