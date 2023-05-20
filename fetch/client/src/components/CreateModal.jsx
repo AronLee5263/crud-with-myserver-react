@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import axios from "axios";
 
-const Create = () => {
+const CreateModal = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
@@ -50,4 +50,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateModal;

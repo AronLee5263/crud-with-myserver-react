@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import ErrorPage from "./components/ErrorPage";
-import Create from "./components/Create";
+import CreateModal from "./components/CreateModal";
 
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/create",
-    element: <Create />,
+    // path: "/create",
+    // element: <CreateModal />,
   },
 ]);
 

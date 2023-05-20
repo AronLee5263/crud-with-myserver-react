@@ -1,7 +1,7 @@
 import "./App.css";
 
 import Post from "./components/Post";
-import Create from "./components/Create";
+import CreateModal from "./components/CreateModal";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         <h2 className="main-header">React Crud Operations</h2>
         <div>
-          <Create />
+          <CreateModal />
         </div>
       </div>
     </main>
