@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/App";
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
-import ErrorPage from "./error-page";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
