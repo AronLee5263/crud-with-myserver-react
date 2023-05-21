@@ -1,21 +1,11 @@
-import { useState } from "react";
+import Post from "./components/Post";
+import CreateModal from "./components/CreateModal";
 
-export default function MyApp() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
+export default function App() {
   return (
-    <div>
-      <h1>Counters that update together</h1>
-      <MyButton count={count} onClick={handleClick} />
-      <MyButton count={count} onClick={handleClick} />
-    </div>
+    <main>
+      <Post author="마리오 111" body="마리오가 출력됐을까?" />
+      <Post author="루이지 111" body="루이지가 출력됐을까?" />
+    </main>
   );
-}
-
-function MyButton({ count, onClick }) {
-  return <button onClick={onClick}>Clicked {count} times</button>;
 }
