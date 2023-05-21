@@ -1,10 +1,21 @@
-import Post from "./components/Post";
+import { useState } from "react";
 
-export default function App() {
+export default function MyApp() {
   return (
-    <main>
-      <Post author="마리오 111" body="마리오가 출력됐을까?" />
-      <Post author="루이지 111" body="루이지가 출력됐을까?" />
-    </main>
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
   );
+}
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return <button onClick={handleClick}>Clicked {count} times</button>;
 }
