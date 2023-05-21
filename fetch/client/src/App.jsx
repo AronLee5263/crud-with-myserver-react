@@ -1,5 +1,4 @@
 import Post from "./components/Post";
-import CreateModal from "./components/CreateModal";
 
 export default function App() {
   return (
