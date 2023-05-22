@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 import classes from "./App.module.css";
 
 import Create from "./Create";
+import MainHeader from "./Mainheader";
 
 const SERVER_URL = "http://localhost:5000/api/todo";
 // 브랜치 테스트
@@ -31,30 +31,7 @@ function App() {
 
   return (
     <>
-      <div className={classes.header_container}>
-        <h1>React CRUD with axios</h1>
-      </div>
-      <div className={classes.button_list}>
-        <Link to="/create" className={classes.button}>
-          <button className={classes.CRUD_button}>create</button>
-        </Link>
-        <Link to="/read" className={classes.button}>
-          <button className={classes.CRUD_button}>read</button>
-        </Link>
-        <Link to="/update" className={classes.button}>
-          <button className={classes.CRUD_button}>update</button>
-        </Link>
-        <Link to="/delete" className={classes.button}>
-          <button className={classes.CRUD_button}>delete</button>
-        </Link>
-      </div>
-      <div className={classes.form_container}>
-        <form onSubmit={onSubmitPostHandler}>
-          <input name="text" placeholder="내용을 입력하세요..." required />
-          <input name="done" type="checkbox" />
-          <input type="submit" value="추가" />
-        </form>
-      </div>
+      <MainHeader />
 
       <div className={classes.main_contents}>
         <div className={classes.content_container}>

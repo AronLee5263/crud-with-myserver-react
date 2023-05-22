@@ -1,7 +1,21 @@
-import classes from "./Read.module.css";
+import { useEffect, useState } from "react";
+
 import TableSemantic from "./TableSemantic";
 
+import classes from "./Read.module.css";
+import axios from "axios";
+
+const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/:fakeData";
+
 export default function Read() {
+  const [APIData, setAPIData] = useState([]);
+
+  useEffect(() => {
+    axios.get(SERVER_URL).then((response) => {
+      setAPIData(response.data);
+    });
+  }, []);
+
   return (
     <>
       <div className={classes.header_container}>
@@ -18,7 +32,7 @@ export default function Read() {
       </div>
 
       <div className={classes.Posts}>
-        <div className={classes.Post}>
+        <div>
           <TableSemantic />
         </div>
       </div>
