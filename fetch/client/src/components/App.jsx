@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import classes from "./App.module.css";
 
@@ -32,6 +33,20 @@ function App() {
     <>
       <div className={classes.header_container}>
         <h1>React CRUD with axios</h1>
+      </div>
+      <div className={classes.button_list}>
+        <Link to="/create" className={classes.button}>
+          <button className={classes.CRUD_button}>create</button>
+        </Link>
+        <Link to="/read" className={classes.button}>
+          <button className={classes.CRUD_button}>read</button>
+        </Link>
+        <Link to="/update" className={classes.button}>
+          <button className={classes.CRUD_button}>update</button>
+        </Link>
+        <Link to="/delete" className={classes.button}>
+          <button className={classes.CRUD_button}>delete</button>
+        </Link>
       </div>
       <div className={classes.form_container}>
         <form onSubmit={onSubmitPostHandler}>
