@@ -10,7 +10,7 @@ let id = 2;
 const todoList = [
   {
     id: 1,
-    text: "There is no post",
+    text: "아직 아무것도 안올렸어요",
     done: false,
   },
 ];
