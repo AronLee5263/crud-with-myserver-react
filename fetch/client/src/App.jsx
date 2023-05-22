@@ -1,7 +1,7 @@
 import Post from "./components/Post";
 import CreateModal from "./components/CreateModal";
 
-function App() {
+export default function App() {
   return (
     <main>
       <Post author="마리오 111" body="마리오가 출력됐을까?" />
@@ -9,5 +9,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
