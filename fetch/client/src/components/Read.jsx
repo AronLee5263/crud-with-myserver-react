@@ -18,7 +18,9 @@ export default function Read() {
       </div>
 
       <div className={classes.Posts}>
-        <TableSemantic />
+        <div className={classes.Post}>
+          <TableSemantic />
+        </div>
       </div>
     </>
   );
