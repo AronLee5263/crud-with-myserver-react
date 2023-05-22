@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./components/App";
 import Create from "./components/Create";
+import Read from "./components/Read";
+import Update from "./components/Update";
 
 import "./index.css";
 
@@ -15,6 +17,16 @@ const router = createBrowserRouter([
   {
     path: "/create",
     element: <Create />,
+  },
+  ,
+  {
+    path: "/read",
+    element: <Read />,
+  },
+  ,
+  {
+    path: "/update",
+    element: <Update />,
   },
 ]);
 
