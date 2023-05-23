@@ -3,8 +3,9 @@ import axios from "axios";
 
 import classes from "./App.module.css";
 
-import Create from "./Create";
 import MainHeader from "./Mainheader";
+import CrudButtons from "./CrudButtons";
+import UnderMainHeader from "./UnderMainHeader";
 
 const SERVER_URL = "";
 // 브랜치 테스트
@@ -12,7 +13,9 @@ const SERVER_URL = "";
 function App() {
   return (
     <>
+      <CrudButtons />
       <MainHeader />
+      <UnderMainHeader />
     </>
   );
 }
