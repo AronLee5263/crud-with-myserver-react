@@ -24,8 +24,8 @@ export default function Create() {
         <MainHeader />
         <div className={classes.component_name}> Create Component</div>
 
-        <div className="main">
-          <h2 className="main_header">React Crud Operations</h2>
+        <div className={classes.main}>
+          <h2 className={classes.main_header}>React Crud Operations</h2>
           <div>
             <Form className="create_form">
               <Form.Field>
