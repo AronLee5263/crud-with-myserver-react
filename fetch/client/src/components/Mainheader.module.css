@@ -6,6 +6,34 @@
   margin-top: 10%;
 }
 
+/* .box_test {
+  display: flex;
+  justify-content: center;
+}
+.form_containers {
+  display: flex;
+  justify-content: center;
+  background-color: tomato;
+  align-items: center;
+  margin-top: 5px;
+  padding: 20px;
+  width: 400px;
+  height: 15px;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+} */
+
+.component_name {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_containers {
+  display: flex;
+  justify-content: center;
+}
+
 .form_container {
   display: flex;
   justify-content: center;
@@ -13,13 +41,11 @@
   align-items: center;
   margin-top: 5px;
   padding: 20px;
-  width: 40px auto;
+  width: 400px;
+  height: 15px;
   border-bottom: solid 2px rgba(0, 0, 0, 0.2);
 }
 
-.component_name {
-  display: flex;
-  margin-bottom: 20px;
-  justify-content: center;
-  align-items: center;
+.form_p {
+  margin-top: 5px;
 }
