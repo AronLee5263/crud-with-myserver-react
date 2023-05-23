@@ -15,3 +15,10 @@
   color: whitesmoke;
   flex-direction: column;
 }
+
+.component_name {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}

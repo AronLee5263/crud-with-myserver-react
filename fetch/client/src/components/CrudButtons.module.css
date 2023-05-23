@@ -1,7 +1,3 @@
-.button_container {
-  /* position: relative; */
-}
-
 .button_list {
   display: flex;
   justify-content: flex-end;

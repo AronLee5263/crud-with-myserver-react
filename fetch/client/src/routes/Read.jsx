@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import TableSemantic from "../components/TableSemantic";
+import BackButton from "../components/BackButton";
 
 import classes from "./Read.module.css";
 import axios from "axios";
@@ -22,6 +23,8 @@ export default function Read() {
         <h1>React CRUD with axios</h1>
       </div>
       <div className={classes.component_name}> Read Component</div>
+
+      <BackButton />
 
       <div className={classes.form_container}>
         <form>

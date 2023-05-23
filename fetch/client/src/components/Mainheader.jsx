@@ -6,7 +6,7 @@ export default function MainHeader() {
       <div className={classes.header_container}>
         <h1>React CRUD with axios</h1>
       </div>
-      <div className={classes.component_name}> main page Component</div>
+      {/* <div className={classes.component_name}> main page Component</div> */}
 
       <div className={classes.form_containers}>
         <div className={classes.form_container}>
