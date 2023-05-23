@@ -25,9 +25,9 @@
   align-items: center;
   margin-top: 5px;
   padding: 20px;
-  width: 400px;
+  width: 270px;
   height: 15px;
-  border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .form_p {
