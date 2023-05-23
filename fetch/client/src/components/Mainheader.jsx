@@ -17,8 +17,9 @@ export default function MainHeader() {
           </form>
         </div>
       </div>
-
-      <div className={classes.boundary}> 여기 아래가 두번쨰 파트</div>
+      <div className={classes.boundary_container}>
+        <div className={classes.boundary}> 여기 아래가 두번쨰 파트</div>
+      </div>
     </>
   );
 }
