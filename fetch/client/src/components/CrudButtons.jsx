@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function CrudButtons() {
   return (
-    <>
+    <div className={classes.button_container}>
       <div className={classes.button_list}>
         <Link to="/create" className={classes.button}>
           <button className={classes.CRUD_button}>create</button>
@@ -18,6 +18,6 @@ export default function CrudButtons() {
           <button className={classes.CRUD_button}>delete</button>
         </Link>
       </div>
-    </>
+    </div>
   );
 }

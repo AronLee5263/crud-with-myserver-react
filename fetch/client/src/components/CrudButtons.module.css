@@ -1,12 +1,18 @@
+.button_container {
+  /* position: relative; */
+}
+
 .button_list {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
   margin-right: 10px;
+  position: absolute;
+  right: 10px;
 }
 
 .CRUD_button {
-  padding: 5px;
-  margin-top: 4px;
+  padding: 6px 4px;
+  margin-top: 8px;
 }
