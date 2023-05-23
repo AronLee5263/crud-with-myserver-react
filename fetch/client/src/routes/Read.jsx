@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import TableSemantic from "./TableSemantic";
+import TableSemantic from "../components/TableSemantic";
 
 import classes from "./Read.module.css";
 import axios from "axios";

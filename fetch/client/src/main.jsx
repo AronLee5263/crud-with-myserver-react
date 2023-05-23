@@ -6,9 +6,9 @@ import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
 import App from "./components/App";
-import Create from "./components/Create";
-import Read from "./components/Read";
-import Update from "./components/Update";
+import Create from "./routes/Create.jsx";
+import Read from "./routes/Read.jsx";
+import Update from "./routes/Update.jsx";
 
 const router = createBrowserRouter([
   {
