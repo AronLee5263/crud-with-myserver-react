@@ -9,6 +9,7 @@ import App from "./components/App";
 import Create from "./routes/Create.jsx";
 import Read from "./routes/Read.jsx";
 import Update from "./routes/Update.jsx";
+import BackButton from "./components/BackButton.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/update",
     element: <Update />,
+  },
+  {
+    path: "../",
+    element: <BackButton />,
   },
 ]);
 
