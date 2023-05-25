@@ -1,0 +1,11 @@
+.back_button_container {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+}
+
+.back_button {
+  display: flex;
+  padding: 8px;
+}

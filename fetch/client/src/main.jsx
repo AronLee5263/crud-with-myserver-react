@@ -1,24 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
-import ErrorPage from "./components/ErrorPage";
-import CreateModal from "./components/CreateModal";
-
-import "./index.css";
 import "semantic-ui-css/semantic.min.css";
+import "./index.css";
+
+import App from "./components/App";
+import Create from "./routes/Create.jsx";
+import Read from "./routes/Read.jsx";
+import Update from "./routes/Update.jsx";
+import BackButton from "./components/BackButton.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
   },
   {
-    // path: "/create",
-    // element: <CreateModal />,
+    path: "/create",
+    element: <Create />,
+  },
+  ,
+  {
+    path: "/read",
+    element: <Read />,
+  },
+  ,
+  {
+    path: "/update",
+    element: <Update />,
+  },
+  {
+    path: "../",
+    element: <BackButton />,
   },
 ]);
 
