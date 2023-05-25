@@ -35,12 +35,14 @@ const router = createBrowserRouter(
       path: "../",
       element: <BackButton />,
     },
-  ],
-  {
-    basename: "https://aronlee5263.github.io/crud-with-myserver-react/",
-  }
+  ]
+  // {
+  //   basename: "https://aronlee5263.github.io",
+  // }
 );
-<Link to="/" />; // results in <a href="/app" />
+{
+  /* <Link to="/crud-with-myserver-react/" />; // results in <a href="/app" /> */
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
