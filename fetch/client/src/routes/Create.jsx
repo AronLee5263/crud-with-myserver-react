@@ -36,27 +36,27 @@ export default function Create() {
           <div>
             <Form className="create_form">
               <Form.Field>
-                <label>First Name</label>
+                <label>성</label>
                 <input
-                  placeholder="First Name"
+                  placeholder="홍"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </Form.Field>
               <Form.Field>
-                <label>Last Name</label>
+                <label>이름</label>
                 <input
-                  placeholder="Last Name"
+                  placeholder="길동"
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </Form.Field>
               <Form.Field>
                 <Checkbox
-                  label="I agree to the Terms and Conditions"
+                  label="이용 약관에 동의합니다"
                   onChange={(e) => setCheckbox(!checkbox)}
                 />
               </Form.Field>
               <Button onClick={postData} type="submit">
-                Submit
+                제출
               </Button>
             </Form>
           </div>
