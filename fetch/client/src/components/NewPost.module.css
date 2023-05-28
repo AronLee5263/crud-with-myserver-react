@@ -1,0 +1,30 @@
+.form {
+  background-color: #5e566c;
+  padding: 1rem;
+  width: 20rem;
+}
+
+p > label {
+  display: block;
+  margin-bottom: 0.05rem;
+  color: #eadbfb;
+  font-weight: bold;
+}
+
+.checkboxBody {
+  opacity: 0.8;
+  color: white;
+  margin-left: 8px;
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #9d8eb0;
+  color: #28262c;
+}
