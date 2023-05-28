@@ -8,7 +8,11 @@ function NewPost() {
   return (
     <form className={classes.form}>
       <p>
-        <label htmlFor="postContent">Text</label>
+        <label htmlFor="postAuthor">이름</label>
+        <input id="postAuthor" required type="text" />
+      </p>
+      <p>
+        <label htmlFor="postContent">내용</label>
         <textarea
           id="postContent"
           required
@@ -16,10 +20,14 @@ function NewPost() {
           onChange={changeBodyHandler}
         />
       </p>
-      <p>
-        <label htmlFor="postAuthor">Your name</label>
-        <input id="postAuthor" required type="text" />
-      </p>
+
+      <label>
+        <input type="checkbox" name="myCheckbox" />
+        <span className={classes.checkboxBody}>(필수) 서비스 이용약관</span>
+      </label>
+      <hr />
+      <button type="reset">초기화</button>
+      <button type="submit">저장</button>
     </form>
   );
 }
