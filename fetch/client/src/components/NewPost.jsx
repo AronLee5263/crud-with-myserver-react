@@ -1,8 +1,11 @@
+import { useState } from "react";
 import classes from "./NewPost.module.css";
 
 function NewPost() {
+  const [enteredContent, setEnteredContent] = useState("");
+
   function changeBodyHandler(event) {
-    console.log(event.target.value);
+    setEnteredContent(event.target.value);
   }
 
   return (
@@ -21,6 +24,7 @@ function NewPost() {
             onChange={changeBodyHandler}
           />
         </p>
+        <p>{enteredContent}</p>
 
         <label>
           <input type="checkbox" name="myCheckbox" />
