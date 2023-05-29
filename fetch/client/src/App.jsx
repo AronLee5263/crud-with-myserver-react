@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import classes from "./App.module.css";
 
-import CrudButtons from "./CrudButtons";
-import Create from "../routes/Create";
+import CrudButtons from "./components/CrudButtons";
+import Create from "./routes/Create";
 
-import NewPost from "./NewPost";
+import NewPost from "./components/NewPost";
 
 const SERVER_URL = "";
 // 브랜치 테스트

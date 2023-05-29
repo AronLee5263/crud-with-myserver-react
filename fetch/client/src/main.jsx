@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
-import App from "./components/App";
+import App from "./App";
 import Create from "./routes/Create.jsx";
 import Read from "./routes/Read.jsx";
 import Update from "./routes/Update.jsx";
