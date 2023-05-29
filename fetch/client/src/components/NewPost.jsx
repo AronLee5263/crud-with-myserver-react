@@ -1,19 +1,17 @@
-import { useState } from "react";
 import classes from "./NewPost.module.css";
 
-function NewPost() {
-  const [enteredContent, setEnteredContent] = useState("");
-
-  function changeBodyHandler(event) {
-    setEnteredContent(event.target.value);
-  }
-
+function NewPost(props) {
   return (
     <div className={classes.container}>
       <form className={classes.form}>
         <p>
           <label htmlFor="postAuthor">이름</label>
-          <input id="postAuthor" required type="text" />
+          <input
+            id="postAuthor"
+            required
+            type="text"
+            onChange={props.onAuthorChange}
+          />
         </p>
         <p>
           <label htmlFor="postContent">내용</label>
@@ -21,10 +19,9 @@ function NewPost() {
             id="postContent"
             required
             rows={3}
-            onChange={changeBodyHandler}
+            onChange={props.onContentChange}
           />
         </p>
-        <p>{enteredContent}</p>
 
         <label>
           <input type="checkbox" name="myCheckbox" />
