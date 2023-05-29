@@ -5,7 +5,6 @@ import classes from "./Update.module.css";
 
 import BackButton from "../components/BackButton";
 import MainHeader from "../components/Mainheader";
-import UnderMainHeader from "../components/UnderMainHeader";
 
 export default function Update() {
   const [firstName, setFirstName] = useState("");

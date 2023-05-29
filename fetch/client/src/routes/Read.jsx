@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import TableSemantic from "../components/TableSemantic";
 import BackButton from "../components/BackButton";
 
 import classes from "./Read.module.css";
