@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 
 import classes from "./App.module.css";
 
-import CrudButtons from "./components/CrudButtons";
-import Create from "./routes/Create";
+// import CrudButtons from "./components/CrudButtons";
+// import Create from "./routes/Create";
 
-import NewPost from "./components/NewPost";
 import PostsList from "./components/PostsList";
 
 const SERVER_URL = "";
@@ -16,7 +15,6 @@ function App() {
     <>
       {/* <CrudButtons /> */}
       {/* <Create /> */}
-      <NewPost />
       <PostsList />
     </>
   );
