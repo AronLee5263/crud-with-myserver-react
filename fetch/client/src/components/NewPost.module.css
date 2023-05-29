@@ -1,3 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  /* align-items: center; */
+  /* height: auto; */
+}
+
 .form {
   background-color: #5e566c;
   padding: 1rem;
