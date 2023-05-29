@@ -6,6 +6,7 @@ import CrudButtons from "./components/CrudButtons";
 import Create from "./routes/Create";
 
 import NewPost from "./components/NewPost";
+import PostsList from "./components/PostsList";
 
 const SERVER_URL = "";
 // 브랜치 테스트
@@ -16,8 +17,7 @@ function App() {
       {/* <CrudButtons /> */}
       {/* <Create /> */}
       <NewPost />
-      <Post author="정운" body="여기 출력" />
-      <Post author="미민" body="미미미민" />
+      <PostsList />
     </>
   );
 }
