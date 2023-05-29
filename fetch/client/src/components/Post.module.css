@@ -5,9 +5,10 @@
 }
 
 .post {
-  margin: 3rem;
-  padding: 3rem;
-  background-color: #9c7eee;
+  margin: 3rem 0.5rem;
+  padding: 4rem;
+  /* background-color: #9c7eee; */
+  border: 2px solid #7d7d7f;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
