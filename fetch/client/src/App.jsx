@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import classes from "./App.module.css";
 
 // import CrudButtons from "./components/CrudButtons";
@@ -12,11 +10,11 @@ const SERVER_URL = "";
 
 function App() {
   return (
-    <>
-      {/* <CrudButtons /> */}
-      {/* <Create /> */}
+    <main>
+      {/* <CrudButtons />
+      <Create /> */}
       <PostsList />
-    </>
+    </main>
   );
 }
 
