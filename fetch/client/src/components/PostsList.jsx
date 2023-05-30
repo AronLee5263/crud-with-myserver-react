@@ -25,12 +25,14 @@ export default function PostsList() {
 
   return (
     <>
-      <Modal onClose={hideModalHandler}>
-        <NewPost
-          onContentChange={bodyChangeHandler}
-          onAuthorChange={authorChangeHandler}
-        />
-      </Modal>
+      {modalIsVisible ? (
+        <Modal onClose={hideModalHandler}>
+          <NewPost
+            onContentChange={bodyChangeHandler}
+            onAuthorChange={authorChangeHandler}
+          />
+        </Modal>
+      ) : null}
 
       <ul className={classes.posts}>
         <Post author={enteredAuthor} body={enteredContent} />
