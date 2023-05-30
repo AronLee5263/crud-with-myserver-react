@@ -1,17 +1,20 @@
 import { MdPostAdd, MdMessage } from "react-icons/md";
+import { AiOutlinePlus } from "react-icons/ai";
 
 import classes from "./MainHeader.module.css";
 
 function MainHeader({ onOpenModal }) {
   return (
     <header className={classes.header}>
-      <h1 className={classes.logo}>
-        <MdMessage />
-        disk doctor
-      </h1>
+      <p className={classes.category}>
+        <h1 className={classes.community}>커뮤니티</h1>
+        <h1 className={classes.goal}>달성기록</h1>
+        <h1 className={classes.info}>내 정보</h1>
+      </p>
+
       <p>
         <button className={classes.button} onClick={onOpenModal}>
-          <MdPostAdd size={24} />
+          <AiOutlinePlus size={24} />
         </button>
       </p>
     </header>
