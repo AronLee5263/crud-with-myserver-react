@@ -1,3 +1,4 @@
+import { useState } from "react";
 import classes from "./App.module.css";
 
 // import CrudButtons from "./components/CrudButtons";
@@ -10,13 +11,23 @@ const SERVER_URL = "";
 // 브랜치 테스트
 
 function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(true);
+
+  function closeModalHandler() {
+    setModalIsVisible(false);
+  }
+
+  function openModalHandler() {
+    setModalIsVisible(true);
+  }
+
   return (
     <main>
       {/* <CrudButtons />
       <Create /> */}
 
-      <MainHeader />
-      <PostsList />
+      <MainHeader onOpenModal={openModalHandler} />
+      <PostsList isEditing={modalIsVisible} onCloseModal={closeModalHandler} />
     </main>
   );
 }
