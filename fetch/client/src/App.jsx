@@ -3,6 +3,7 @@ import classes from "./App.module.css";
 // import CrudButtons from "./components/CrudButtons";
 // import Create from "./routes/Create";
 
+import MainHeader from "./components/Mainheader";
 import PostsList from "./components/PostsList";
 
 const SERVER_URL = "";
@@ -13,6 +14,8 @@ function App() {
     <main>
       {/* <CrudButtons />
       <Create /> */}
+
+      <MainHeader />
       <PostsList />
     </main>
   );
