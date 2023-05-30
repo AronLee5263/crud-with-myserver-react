@@ -4,7 +4,7 @@ function NewPost(props) {
   return (
     <form className={classes.form}>
       <p className={classes.actions}>
-        <button type="reset">취소</button>
+        <button type="button">취소</button>
         <button type="submit">업로드</button>
       </p>
       <p>
