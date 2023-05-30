@@ -11,7 +11,7 @@ const SERVER_URL = "";
 // 브랜치 테스트
 
 function App() {
-  const [modalIsVisible, setModalIsVisible] = useState(true);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
   function closeModalHandler() {
     setModalIsVisible(false);
