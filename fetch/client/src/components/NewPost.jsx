@@ -23,16 +23,18 @@ function NewPost(props) {
           className={classes.postContent}
           id="postContent"
           required
-          rows={9}
+          rows={12}
           placeholder="무슨 일이 일어나고 있나요?"
           onChange={props.onContentChange}
         />
       </p>
 
-      <label>
-        <input type="checkbox" name="myCheckbox" />
-        <span className={classes.checkboxBody}>(필수) 서비스 이용약관</span>
-      </label>
+      <p className={classes.checkBox}>
+        <label>
+          <input type="checkbox" name="myCheckbox" />
+          <span>(필수) 서비스 이용약관</span>
+        </label>
+      </p>
     </form>
   );
 }
