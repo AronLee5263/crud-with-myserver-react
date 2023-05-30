@@ -1,10 +1,12 @@
 import classes from "./NewPost.module.css";
 
-function NewPost(props) {
+function NewPost({ onAuthorChange, onContentChange, onCancelButton }) {
   return (
     <form className={classes.form}>
       <p className={classes.actions}>
-        <button type="button">취소</button>
+        <button type="button" onClick={onCancelButton}>
+          취소
+        </button>
         <button type="submit">업로드</button>
       </p>
       <p>
@@ -14,7 +16,7 @@ function NewPost(props) {
           id="postAuthor"
           required
           type="text"
-          onChange={props.onAuthorChange}
+          onChange={onAuthorChange}
         />
       </p>
       <p>
@@ -25,7 +27,7 @@ function NewPost(props) {
           required
           rows={12}
           placeholder="무슨 일이 일어나고 있나요?"
-          onChange={props.onContentChange}
+          onChange={onContentChange}
         />
       </p>
 

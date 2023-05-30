@@ -25,6 +25,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
           <NewPost
             onContentChange={bodyChangeHandler}
             onAuthorChange={authorChangeHandler}
+            onCancelButton={onCloseModal}
           />
         </Modal>
       ) : null}
