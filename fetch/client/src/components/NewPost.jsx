@@ -1,8 +1,30 @@
+import { useState } from "react";
+
 import classes from "./NewPost.module.css";
 
-function NewPost({ onAuthorChange, onContentChange, onCancelButton }) {
+function NewPost({ onCancelButton }) {
+  const [enteredContent, setEnteredContent] = useState("");
+  const [enteredAuthor, setEnteredAuthor] = useState("");
+
+  function bodyChangeHandler(event) {
+    setEnteredContent(event.target.value);
+  }
+
+  function authorChangeHandler(e) {
+    setEnteredAuthor(e.target.value);
+  }
+
+  function submitHandler(e) {
+    e.preventDefault();
+    const postData = {
+      author: enteredAuthor,
+      body: enteredContent,
+    };
+    onCancelButton();
+  }
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <p className={classes.actions}>
         <button type="button" onClick={onCancelButton}>
           취소
@@ -16,7 +38,7 @@ function NewPost({ onAuthorChange, onContentChange, onCancelButton }) {
           id="postAuthor"
           required
           type="text"
-          onChange={onAuthorChange}
+          onChange={authorChangeHandler}
         />
       </p>
       <p>
@@ -27,7 +49,7 @@ function NewPost({ onAuthorChange, onContentChange, onCancelButton }) {
           required
           rows={12}
           placeholder="무슨 일이 일어나고 있나요?"
-          onChange={onContentChange}
+          onChange={bodyChangeHandler}
         />
       </p>
 
