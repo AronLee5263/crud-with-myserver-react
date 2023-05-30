@@ -22,13 +22,15 @@ function App() {
   }
 
   return (
-    <main>
-      {/* <CrudButtons />
-      <Create /> */}
-
+    <>
       <MainHeader onOpenModal={openModalHandler} />
-      <PostsList isEditing={modalIsVisible} onCloseModal={closeModalHandler} />
-    </main>
+      <main>
+        <PostsList
+          isEditing={modalIsVisible}
+          onCloseModal={closeModalHandler}
+        />
+      </main>
+    </>
   );
 }
 
