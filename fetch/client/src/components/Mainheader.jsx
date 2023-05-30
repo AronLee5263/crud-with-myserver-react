@@ -7,11 +7,11 @@ function MainHeader({ onOpenModal }) {
     <header className={classes.header}>
       <h1 className={classes.logo}>
         <MdMessage />
-        disk doctor 후기
+        disk doctor
       </h1>
       <p>
         <button className={classes.button} onClick={onOpenModal}>
-          <MdPostAdd size={24} />새 게시물
+          <MdPostAdd size={24} />
         </button>
       </p>
     </header>
