@@ -7,32 +7,76 @@
 }
 
 .form {
-  background-color: #5e566c;
+  background-color: #151414;
   padding: 1rem;
   width: 20rem;
+  height: 30rem;
 }
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background-color: #151414;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.actions button:nth-child(2) {
+  background-color: var(--main-color);
+}
+/* 
+.actions button:hover {
+  background-color: #23014a;
+}
+
+.actions a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #e5d5f7;
+}
+
+.actions a:hover {
+  color: #d1bee6;
+} */
 
 p > label {
   display: block;
   margin-bottom: 0.05rem;
-  color: #eadbfb;
-  font-weight: bold;
-}
-
-.checkboxBody {
-  opacity: 0.8;
   color: white;
-  margin-left: 8px;
+  font-weight: 300;
+  font: inherit;
 }
 
-input[type="text"],
-textarea {
+.postAuthor,
+.postContent {
   display: block;
   width: 100%;
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
   border: none;
-  background-color: #9d8eb0;
-  color: #28262c;
+  background-color: #1a1919;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.postContent {
+  margin-bottom: 1.5rem;
+}
+
+.checkboxBody {
+  opacity: 0.8;
+  color: white;
+  margin-left: 8px;
+  font: inherit;
 }
