@@ -21,6 +21,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
       .then(() => {
         console.log(postData);
       });
+    // 보내는건 성공했고 이제 백엔드에서 가져와야함.
 
     setPosts((existingPosts) => [postData, ...existingPosts]);
   }
