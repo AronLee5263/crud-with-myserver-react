@@ -21,8 +21,9 @@ export default function PostsList({ isEditing, onCloseModal }) {
       ) : null}
 
       <ul className={classes.posts}>
-        {/* <Post author={enteredAuthor} body={enteredContent} /> */}
-        <Post author="enteredAuthor" body="enteredContent" />
+        {posts.map((post) => (
+          <Post author={post.author} body={post.body} />
+        ))}
       </ul>
     </>
   );
