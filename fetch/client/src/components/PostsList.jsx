@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import NewPost from "./NewPost";
 import Post from "./Post";
@@ -6,17 +6,26 @@ import Post from "./Post";
 import axios from "axios";
 
 import classes from "./PostsList.module.css";
+const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 export default function PostsList({ isEditing, onCloseModal }) {
   const [posts, setPosts] = useState([]);
 
-  const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
+  useEffect(() => {
+    async function axiosPosts() {
+      await axios.get(SERVER_URL).then((response) => {
+        setPosts(response.data);
+      });
+    }
+
+    axiosPosts();
+  }, []);
 
   function addPostHandler(postData) {
     axios
       .post(SERVER_URL, {
-        name: postData.author,
-        content: postData.body,
+        author: postData.author,
+        body: postData.body,
       })
       .then(() => {
         console.log(postData);
@@ -36,7 +45,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
 
       {posts.length > 0 && (
         <ul className={classes.posts}>
-          {posts.map((post) => (
+          {posts.reverse().map((post) => (
             <Post key={post.body} author={post.author} body={post.body} />
           ))}
         </ul>
