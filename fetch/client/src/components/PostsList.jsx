@@ -14,7 +14,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
   useEffect(() => {
     async function axiosPosts() {
       await axios.get(SERVER_URL).then((response) => {
-        setPosts(response.data);
+        setPosts(response.data.reverse());
       });
     }
 
@@ -22,14 +22,11 @@ export default function PostsList({ isEditing, onCloseModal }) {
   }, []);
 
   function addPostHandler(postData) {
-    axios
-      .post(SERVER_URL, {
-        author: postData.author,
-        body: postData.body,
-      })
-      .then(() => {
-        console.log(postData);
-      });
+    axios.post(SERVER_URL, {
+      author: postData.author,
+      body: postData.body,
+    });
+
     // 보내는건 성공했고 이제 백엔드에서 가져와야함.
 
     setPosts((existingPosts) => [postData, ...existingPosts]);
