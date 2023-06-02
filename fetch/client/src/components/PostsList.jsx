@@ -60,6 +60,9 @@ export default function PostsList({ isEditing, onCloseModal }) {
         </MoreModal>
       )}
 
+      {/* MoreModal 컴포넌트 코드위치가 중요함.
+      Post 컴포넌트가 map 함수로 렌더링 되기전에 렌더링 되어야함 */}
+
       {posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.reverse().map((post, i) => (
