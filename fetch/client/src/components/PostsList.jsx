@@ -13,9 +13,14 @@ export default function PostsList({ isEditing, onCloseModal }) {
 
   useEffect(() => {
     async function axiosPosts() {
-      await axios.get(SERVER_URL).then((response) => {
-        setPosts(response.data.reverse());
-      });
+      try {
+        await axios.get(SERVER_URL).then((response) => {
+          console.log("response : ", response);
+          setPosts(response.data.reverse());
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     axiosPosts();
