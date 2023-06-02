@@ -1,0 +1,42 @@
+.container {
+  background-color: white;
+  width: 15rem;
+  height: 20rem;
+
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.update,
+.delete {
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--post-border-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.update:hover,
+.delete:hover {
+  background-color: var(--hover-color);
+}
+
+.icon {
+  margin-left: 1rem;
+}
+
+.cancel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+}

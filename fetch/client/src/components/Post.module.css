@@ -42,11 +42,6 @@
   border: none;
 }
 
-/* .button:hover {
-  cursor: pointer;
-  background-color: red;
-} */
-
 @keyframes animate-in {
   from {
     opacity: 0;

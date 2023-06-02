@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import NewPost from "./NewPost";
 import Post from "./Post";
+import MoreModal from "./MoreModal";
+import MoreList from "./MoreList";
 
 import axios from "axios";
 
@@ -10,6 +12,15 @@ const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 export default function PostsList({ isEditing, onCloseModal }) {
   const [posts, setPosts] = useState([]);
+  const [moreModalIsVisible, setmoreModalIsVisible] = useState(false);
+
+  function moreCloseModalHandler() {
+    setmoreModalIsVisible(false);
+  }
+
+  function moreOpenModalHandler() {
+    setmoreModalIsVisible(true);
+  }
 
   useEffect(() => {
     async function axiosPosts() {
@@ -43,10 +54,21 @@ export default function PostsList({ isEditing, onCloseModal }) {
         </Modal>
       ) : null}
 
+      {moreModalIsVisible && (
+        <MoreModal onCloseMoreModal={moreCloseModalHandler}>
+          <MoreList onCancelButton={moreCloseModalHandler} />
+        </MoreModal>
+      )}
+
       {posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.reverse().map((post, i) => (
-            <Post key={i} author={post.author} body={post.body} />
+            <Post
+              key={i}
+              author={post.author}
+              body={post.body}
+              onOpenMoreModal={moreOpenModalHandler}
+            />
           ))}
         </ul>
       )}
