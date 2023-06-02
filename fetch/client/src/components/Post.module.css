@@ -6,6 +6,8 @@
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
+
+  position: relative;
 }
 
 /* .post a {
@@ -28,6 +30,22 @@
   color: #593884;
   font-style: italic;
 }
+
+.button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 3px;
+  margin-right: 3px;
+  background-color: transparent;
+
+  border: none;
+}
+
+/* .button:hover {
+  cursor: pointer;
+  background-color: red;
+} */
 
 @keyframes animate-in {
   from {
