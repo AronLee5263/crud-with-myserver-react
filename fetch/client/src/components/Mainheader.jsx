@@ -13,7 +13,7 @@ function MainHeader({ onOpenModal }) {
       </div>
 
       <p>
-        <button className={classes.button} onClick={onOpenModal}>
+        <button type="button" className={classes.button} onClick={onOpenModal}>
           <AiOutlinePlus size={24} />
         </button>
       </p>

@@ -9,7 +9,11 @@ export default function Post({ author, body, onOpenMoreModal }) {
       <li className={classes.post}>
         <p className={classes.author}>{author}</p>
         <p className={classes.body}>{body}</p>
-        <button className={classes.button} onClick={onOpenMoreModal}>
+        <button
+          type="button"
+          className={classes.button}
+          onClick={onOpenMoreModal}
+        >
           <MdMoreHoriz size={34} />
         </button>
       </li>
