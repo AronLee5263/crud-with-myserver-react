@@ -6,9 +6,9 @@
 
 .post {
   margin: 3rem 0.5rem;
-  padding: 4rem;
+  padding: 2rem;
   /* background-color: #9c7eee; */
-  border: 2px solid #7d7d7f;
+  border: 1px solid #939393fc;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
