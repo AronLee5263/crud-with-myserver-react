@@ -15,7 +15,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
     async function axiosPosts() {
       try {
         await axios.get(SERVER_URL).then((response) => {
-          console.log("response : ", response);
+          console.log("response.data : ", response.data);
           setPosts(response.data.reverse());
         });
       } catch (error) {
@@ -32,8 +32,6 @@ export default function PostsList({ isEditing, onCloseModal }) {
       body: postData.body,
     });
 
-    // 보내는건 성공했고 이제 백엔드에서 가져와야함.
-
     setPosts((existingPosts) => [postData, ...existingPosts]);
   }
 
@@ -47,8 +45,8 @@ export default function PostsList({ isEditing, onCloseModal }) {
 
       {posts.length > 0 && (
         <ul className={classes.posts}>
-          {posts.reverse().map((post) => (
-            <Post key={post.id} author={post.author} body={post.body} />
+          {posts.reverse().map((post, i) => (
+            <Post key={i} author={post.author} body={post.body} />
           ))}
         </ul>
       )}
