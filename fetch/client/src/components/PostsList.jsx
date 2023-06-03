@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import NewPost from "./NewPost";
 import Post from "./Post";
-import MoreModal from "./MoreModal";
+import MorePopup from "./MorePopup";
 import MoreList from "./MoreList";
 
 import axios from "axios";
@@ -12,14 +12,14 @@ const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 export default function PostsList({ isEditing, onCloseModal }) {
   const [posts, setPosts] = useState([]);
-  const [moreModalIsVisible, setmoreModalIsVisible] = useState(false);
+  const [popupIsVisible, setPopupIsVisible] = useState(false);
 
-  function moreCloseModalHandler() {
-    setmoreModalIsVisible(false);
+  function closePopupHandler() {
+    setPopupIsVisible(false);
   }
 
-  function moreOpenModalHandler() {
-    setmoreModalIsVisible(true);
+  function openPopupHandler() {
+    setPopupIsVisible(true);
   }
 
   useEffect(() => {
@@ -54,10 +54,10 @@ export default function PostsList({ isEditing, onCloseModal }) {
         </Modal>
       ) : null}
 
-      {moreModalIsVisible && (
-        <MoreModal onCloseMoreModal={moreCloseModalHandler}>
-          <MoreList onCancelButton={moreCloseModalHandler} />
-        </MoreModal>
+      {popupIsVisible && (
+        <MorePopup onClosePopup={closePopupHandler}>
+          <MoreList onCancelButton={closePopupHandler} />
+        </MorePopup>
       )}
 
       {/* MoreModal 컴포넌트 코드위치가 중요함.
@@ -70,7 +70,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
               key={i}
               author={post.author}
               body={post.body}
-              onOpenMoreModal={moreOpenModalHandler}
+              onOpenPopup={openPopupHandler}
             />
           ))}
         </ul>
