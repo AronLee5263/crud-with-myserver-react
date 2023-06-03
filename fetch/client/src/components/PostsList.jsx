@@ -46,15 +46,36 @@ export default function PostsList({ isEditing, onCloseModal }) {
     setPosts((existingPosts) => [postData, ...existingPosts]);
   }
 
-  let morePopup;
+  let postContent;
 
-  if (popupIsVisible) {
-    morePopup = (
-      <MorePopup onClosePopup={closePopupHandler}>
-        <MoreList onCancelButton={closePopupHandler} />
-      </MorePopup>
+  if (posts.length > 0) {
+    postContent = (
+      <ul className={classes.posts}>
+        {posts.reverse().map((post, i) => (
+          <Post
+            key={i}
+            author={post.author}
+            body={post.body}
+            onOpenPopup={openPopupHandler}
+          />
+        ))}
+      </ul>
+    );
+  } else if (posts.length === 0) {
+    postContent = (
+      <div
+        style={{
+          marginTop: "50px",
+          textAlign: "center",
+          color: "black",
+        }}
+      >
+        <h2>게시글이 없어요</h2>
+        <p> 내용을 추가해보세요 🙂</p>
+      </div>
     );
   }
+
   return (
     <>
       {isEditing ? (
@@ -63,36 +84,16 @@ export default function PostsList({ isEditing, onCloseModal }) {
         </Modal>
       ) : null}
 
-      {morePopup}
+      {popupIsVisible && (
+        <MorePopup onClosePopup={closePopupHandler}>
+          <MoreList onCancelButton={closePopupHandler} />
+        </MorePopup>
+      )}
 
       {/* MoreModal 컴포넌트 코드위치가 중요함.
       Post 컴포넌트가 map 함수로 렌더링 되기전에 렌더링 되어야함 */}
 
-      {posts.length > 0 && (
-        <ul className={classes.posts}>
-          {posts.reverse().map((post, i) => (
-            <Post
-              key={i}
-              author={post.author}
-              body={post.body}
-              onOpenPopup={openPopupHandler}
-            />
-          ))}
-        </ul>
-      )}
-
-      {posts.length === 0 && (
-        <div
-          style={{
-            marginTop: "50px",
-            textAlign: "center",
-            color: "black",
-          }}
-        >
-          <h2>게시글이 없어요</h2>
-          <p> 내용을 추가해보세요 🙂</p>
-        </div>
-      )}
+      {postContent}
     </>
   );
 }
