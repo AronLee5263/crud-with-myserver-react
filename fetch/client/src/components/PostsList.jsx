@@ -46,6 +46,15 @@ export default function PostsList({ isEditing, onCloseModal }) {
     setPosts((existingPosts) => [postData, ...existingPosts]);
   }
 
+  let morePopup;
+
+  if (popupIsVisible) {
+    morePopup = (
+      <MorePopup onClosePopup={closePopupHandler}>
+        <MoreList onCancelButton={closePopupHandler} />
+      </MorePopup>
+    );
+  }
   return (
     <>
       {isEditing ? (
@@ -54,11 +63,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
         </Modal>
       ) : null}
 
-      {popupIsVisible && (
-        <MorePopup onClosePopup={closePopupHandler}>
-          <MoreList onCancelButton={closePopupHandler} />
-        </MorePopup>
-      )}
+      {morePopup}
 
       {/* MoreModal 컴포넌트 코드위치가 중요함.
       Post 컴포넌트가 map 함수로 렌더링 되기전에 렌더링 되어야함 */}
