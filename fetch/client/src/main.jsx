@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./index.css";
 
 import App from "./App";
+import NewPost from "./components/NewPost";
 import Create from "./routes/Create.jsx";
 import Read from "./routes/Read.jsx";
 import Update from "./routes/Update.jsx";
@@ -16,22 +17,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/create",
-    element: <Create />,
-  },
-  ,
-  {
-    path: "/read",
-    element: <Read />,
-  },
-  ,
-  {
-    path: "/update",
-    element: <Update />,
-  },
-  {
-    path: "../",
-    element: <BackButton />,
+    path: "/create-post",
+    element: <NewPost />,
   },
 ]);
 
