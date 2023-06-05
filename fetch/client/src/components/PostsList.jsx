@@ -25,10 +25,9 @@ export default function PostsList({ isEditing, onCloseModal }) {
   useEffect(() => {
     async function axiosPosts() {
       try {
-        await axios.get(SERVER_URL).then((response) => {
-          console.log("response.data : ", response.data);
-          setPosts(response.data.reverse());
-        });
+        const response = await axios.get(SERVER_URL);
+        console.log("response.data : ", response.data);
+        setPosts(response.data.reverse());
       } catch (error) {
         console.log(error);
       }
