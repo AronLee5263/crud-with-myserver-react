@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import Modal from "./Modal";
-import NewPost from "../routes/NewPost";
+import classes from "./PostsList.module.css";
+
 import Post from "./Post";
 import MorePopup from "./MorePopup";
 import MoreList from "./MoreList";
 
 import axios from "axios";
 
-import classes from "./PostsList.module.css";
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
-export default function PostsList({ isEditing, onCloseModal }) {
+export default function PostsList() {
   const [posts, setPosts] = useState([]);
   const [popupIsVisible, setPopupIsVisible] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
@@ -86,12 +85,6 @@ export default function PostsList({ isEditing, onCloseModal }) {
 
   return (
     <>
-      {isEditing ? (
-        <Modal onClose={onCloseModal}>
-          <NewPost onCancelButton={onCloseModal} onAddPost={addPostHandler} />
-        </Modal>
-      ) : null}
-
       {popupIsVisible && (
         <MorePopup onClosePopup={closePopupHandler}>
           <MoreList onCancelButton={closePopupHandler} />
