@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 // import CrudButtons from "./components/CrudButtons";
 // import Create from "./routes/Create";
 
+import { Outlet } from "react-router-dom";
 import PostsList from "../components/PostsList";
 
 const SERVER_URL = "";
@@ -12,6 +13,7 @@ const SERVER_URL = "";
 function App() {
   return (
     <>
+      <Outlet />
       <main>
         <PostsList />
       </main>
