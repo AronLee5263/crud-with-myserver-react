@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
-import NewPost from "./NewPost";
+import NewPost from "../routes/NewPost";
 import Post from "./Post";
 import MorePopup from "./MorePopup";
 import MoreList from "./MoreList";
