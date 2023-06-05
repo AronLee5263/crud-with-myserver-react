@@ -13,6 +13,7 @@ const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 export default function PostsList({ isEditing, onCloseModal }) {
   const [posts, setPosts] = useState([]);
   const [popupIsVisible, setPopupIsVisible] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
   function closePopupHandler() {
     setPopupIsVisible(false);
@@ -25,9 +26,11 @@ export default function PostsList({ isEditing, onCloseModal }) {
   useEffect(() => {
     async function axiosPosts() {
       try {
+        setIsFetching(true);
         const response = await axios.get(SERVER_URL);
         console.log("response.data : ", response.data);
         setPosts(response.data.reverse());
+        setIsFetching(false);
       } catch (error) {
         console.log(error);
       }
@@ -47,7 +50,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
 
   let postContent;
 
-  if (posts.length > 0) {
+  if (!isFetching && posts.length > 0) {
     postContent = (
       <ul className={classes.posts}>
         {posts.reverse().map((post, i) => (
@@ -60,7 +63,7 @@ export default function PostsList({ isEditing, onCloseModal }) {
         ))}
       </ul>
     );
-  } else if (posts.length === 0) {
+  } else if (!isFetching && posts.length === 0) {
     postContent = (
       <div
         style={{
@@ -71,6 +74,12 @@ export default function PostsList({ isEditing, onCloseModal }) {
       >
         <h2>게시글이 없어요</h2>
         <p> 내용을 추가해보세요 🙂</p>
+      </div>
+    );
+  } else if (isFetching) {
+    postContent = (
+      <div style={{ textAlign: "center", color: "black" }}>
+        <p>로딩중이에요</p>
       </div>
     );
   }
