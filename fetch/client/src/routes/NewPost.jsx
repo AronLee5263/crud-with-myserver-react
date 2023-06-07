@@ -54,8 +54,8 @@ export async function action({ request }) {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData);
   await axios.post(SERVER_URL, {
-    author: postData.postAuthor,
-    body: postData.postContent,
+    author: postData.author,
+    body: postData.body,
   });
 
   return redirect("/");
