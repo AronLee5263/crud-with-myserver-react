@@ -22,15 +22,6 @@ export default function PostsList() {
     setPopupIsVisible(true);
   }
 
-  function addPostHandler(postData) {
-    axios.post(SERVER_URL, {
-      author: postData.author,
-      body: postData.body,
-    });
-
-    setPosts((existingPosts) => [postData, ...existingPosts]);
-  }
-
   let postContent;
 
   if (posts.length > 0) {

@@ -1,36 +1,16 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import axios from "axios";
+import { Link, Form, redirect } from "react-router-dom";
 
 import Modal from "../components/Modal";
 
 import classes from "./NewPost.module.css";
 
-function NewPost({ onAddPost }) {
-  const [enteredContent, setEnteredContent] = useState("");
-  const [enteredAuthor, setEnteredAuthor] = useState("");
+const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
-  function bodyChangeHandler(event) {
-    setEnteredContent(event.target.value);
-  }
-
-  function authorChangeHandler(e) {
-    setEnteredAuthor(e.target.value);
-  }
-
-  function submitHandler(e) {
-    e.preventDefault();
-
-    const postData = {
-      author: enteredAuthor,
-      body: enteredContent,
-    };
-    onAddPost(postData);
-    onCancelButton();
-  }
-
+export default function NewPost() {
   return (
     <Modal>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <Form method="post" className={classes.form}>
         <p className={classes.actions}>
           <Link to=".." className={classes.cancelButton}>
             취소
@@ -42,9 +22,9 @@ function NewPost({ onAddPost }) {
           <input
             className={classes.postAuthor}
             id="postAuthor"
+            name="postAuthor"
             required
             type="text"
-            onChange={authorChangeHandler}
           />
         </p>
         <p>
@@ -52,10 +32,10 @@ function NewPost({ onAddPost }) {
           <textarea
             className={classes.postContent}
             id="postContent"
+            name="postContent"
             required
             rows={12}
             placeholder="무슨 일이 일어나고 있나요?"
-            onChange={bodyChangeHandler}
           />
         </p>
 
@@ -65,9 +45,18 @@ function NewPost({ onAddPost }) {
             <span>(필수) 서비스 이용약관</span>
           </label>
         </p>
-      </form>
+      </Form>
     </Modal>
   );
 }
 
-export default NewPost;
+export async function action({ request }) {
+  const formData = await request.formData();
+  const postData = Object.fromEntries(formData);
+  await axios.post(SERVER_URL, {
+    author: postData.postAuthor,
+    body: postData.postContent,
+  });
+
+  return redirect("/");
+}
