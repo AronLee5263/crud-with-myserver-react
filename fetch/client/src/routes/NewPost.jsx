@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import Modal from "../components/Modal";
 
 import classes from "./NewPost.module.css";
 
-function NewPost({ onCancelButton, onAddPost }) {
+function NewPost({ onAddPost }) {
   const [enteredContent, setEnteredContent] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
 
@@ -31,9 +32,9 @@ function NewPost({ onCancelButton, onAddPost }) {
     <Modal>
       <form className={classes.form} onSubmit={submitHandler}>
         <p className={classes.actions}>
-          <button type="button" onClick={onCancelButton}>
+          <Link to=".." className={classes.cancelButton}>
             취소
-          </button>
+          </Link>
           <button type="submit">업로드</button>
         </p>
         <p>

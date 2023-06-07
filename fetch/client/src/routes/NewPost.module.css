@@ -20,7 +20,8 @@
   margin-bottom: 1.5rem;
 }
 
-.actions button {
+.actions button,
+.cancelButton {
   cursor: pointer;
   font: inherit;
   padding: 0.4rem 0.8rem;
@@ -34,6 +35,10 @@
 .actions button:nth-child(2) {
   background-color: var(--main-color);
   color: #ffffff;
+}
+
+.cancelButton {
+  text-decoration: none;
 }
 /* 
 .actions button:hover {
