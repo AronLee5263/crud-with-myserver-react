@@ -1,5 +1,5 @@
-import { useState } from "react";
 import classes from "./App.module.css";
+import axios from "axios";
 
 // import CrudButtons from "./components/CrudButtons";
 // import Create from "./routes/Create";
@@ -7,9 +7,9 @@ import classes from "./App.module.css";
 import { Outlet } from "react-router-dom";
 import PostsList from "../components/PostsList";
 
-const SERVER_URL = "";
+const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
-function App() {
+export default function App() {
   return (
     <>
       <Outlet />
@@ -20,9 +20,8 @@ function App() {
   );
 }
 
-export default App;
-
-/* 리액트 공식문서에 따라서 구조변경
-12번 react로 생각하기 과정대로 하기 
-https://ko.legacy.reactjs.org/docs/thinking-in-react.html
-*/
+export async function loader() {
+  const response = await axios.get(SERVER_URL);
+  console.log("response.data : ", response.data);
+  return response.data.reverse();
+}
