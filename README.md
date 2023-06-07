@@ -1,7 +1,9 @@
-# crud-with-myserver-react
-간단한 서버도 만들어서 crud 구현
+# disk-doctor
 
-1. node 설치
+
+1. node.js
 2. npm create vite 
-3. npm install
-4. npm install react-icons
+3. npm i react-router-dom 
+4. npm install
+5. npm install react-icons
+
