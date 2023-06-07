@@ -30,6 +30,7 @@ export default function PostsList() {
         {posts.reverse().map((post, i) => (
           <Post
             key={i}
+            id={post.id}
             author={post.author}
             body={post.body}
             onOpenPopup={openPopupHandler}
