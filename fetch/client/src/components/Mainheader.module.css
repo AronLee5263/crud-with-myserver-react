@@ -29,7 +29,8 @@
 }
 
 .button {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   background-color: var(--main-color);
