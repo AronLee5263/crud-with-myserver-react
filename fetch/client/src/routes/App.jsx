@@ -2,7 +2,6 @@ import classes from "./App.module.css";
 import axios from "axios";
 
 // import CrudButtons from "./components/CrudButtons";
-// import Create from "./routes/Create";
 
 import { Outlet } from "react-router-dom";
 import PostsList from "../components/PostsList";
