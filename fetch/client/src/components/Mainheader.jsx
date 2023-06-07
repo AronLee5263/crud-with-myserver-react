@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { MdPostAdd, MdMessage } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 
 import classes from "./MainHeader.module.css";
 
-function MainHeader({ onOpenModal }) {
+function MainHeader() {
   return (
     <header className={classes.header}>
       <div className={classes.category}>
@@ -13,9 +14,9 @@ function MainHeader({ onOpenModal }) {
       </div>
 
       <p>
-        <button type="button" className={classes.button} onClick={onOpenModal}>
-          <AiOutlinePlus size={24} />
-        </button>
+        <Link to="/create-post" className={classes.button}>
+          <AiOutlinePlus size={24} className={classes.icon} />
+        </Link>
       </p>
     </header>
   );

@@ -8,7 +8,6 @@ import { Outlet } from "react-router-dom";
 import PostsList from "../components/PostsList";
 
 const SERVER_URL = "";
-// 브랜치 테스트
 
 function App() {
   return (
