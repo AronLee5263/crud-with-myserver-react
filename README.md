@@ -4,7 +4,7 @@
 
  npm install
 
-
+빌드 배포 하기 전까진 모듈 설치 후 npm run dev 입력해서 실행
 
 
 <br>
