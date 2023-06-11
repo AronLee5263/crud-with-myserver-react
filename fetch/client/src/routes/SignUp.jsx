@@ -25,29 +25,29 @@ export default function SignUp() {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
-
-  function emailSubmitHandler(e) {
+  function emailTypingHandler(e) {
     setEmail(e.target.value);
   }
-  function passwordSubmitHandler(e) {
+  function passwordTypingHandler(e) {
     setPassword(e.target.value);
   }
 
   function singUpHandler(event) {
     event.preventDefault();
+    const auth = getAuth();
     console.log(email, password);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
   }
 
   function showLogHandler(event) {
@@ -67,10 +67,10 @@ export default function SignUp() {
 
       <form className={classes.middleSection}>
         <div>
-          email : <input type="email" onChange={emailSubmitHandler} />
+          email : <input type="email" onChange={emailTypingHandler} />
         </div>
         <div>
-          password : <input type="password" onChange={passwordSubmitHandler} />
+          password : <input type="password" onChange={passwordTypingHandler} />
         </div>
         <button type="submit" onClick={singUpHandler}>
           회원가입 하기
