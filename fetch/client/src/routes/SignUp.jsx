@@ -19,17 +19,23 @@ export default function SignUp() {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
+  function showLogHandler() {
+    console.log(app);
+  }
+
   return (
     <div className={classes.main}>
       <div className={classes.topSection}>
         <BackButton />
         <h1 className={classes.title}>회원가입 페이지</h1>
+        <button type="button" onClick={showLogHandler}>
+          콘솔찎는 버튼
+        </button>
       </div>
 
       <form className={classes.middleSection}>
         <div>
-          {" "}
-          email : <input type="email" />{" "}
+          email : <input type="email" />
         </div>
         <div>
           password : <input type="password" />

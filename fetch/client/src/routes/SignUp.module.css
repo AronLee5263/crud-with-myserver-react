@@ -11,9 +11,10 @@
   align-items: center;
   flex-direction: column;
 }
+
 .middleSection,
 .bottomSection {
-  margin-top: 20%;
+  margin-top: 25%;
 }
 
 .title {
