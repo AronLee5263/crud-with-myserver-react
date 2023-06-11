@@ -1,4 +1,5 @@
 import classes from "./SignUp.module.css";
+import { useState } from "react";
 
 import BackButton from "../components/BackButton";
 
@@ -8,6 +9,9 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const firebaseConfig = {
     apiKey: "AIzaSyDi6OwgJMjlIeqCbOsUvNxvUtJRVo9kZtk",
     authDomain: "ddoclogin.firebaseapp.com",
@@ -34,13 +38,21 @@ export default function SignUp() {
       // ..
     });
 
-  function showLogHandler() {
-    console.log(app);
+  function emailSubmitHandler(e) {
+    setEmail(e.target.value);
+  }
+  function passwordSubmitHandler(e) {
+    setPassword(e.target.value);
   }
 
   function singUpHandler(event) {
     event.preventDefault();
-    console.log(1111);
+    console.log(email, password);
+  }
+
+  function showLogHandler(event) {
+    event.preventDefault();
+    console.log(app);
   }
 
   return (
@@ -49,16 +61,16 @@ export default function SignUp() {
         <BackButton />
         <h1 className={classes.title}>회원가입 페이지</h1>
         <button type="button" onClick={showLogHandler}>
-          콘솔찎는 버튼
+          initializeApp app 콘솔찎는 버튼
         </button>
       </div>
 
       <form className={classes.middleSection}>
         <div>
-          email : <input type="email" />
+          email : <input type="email" onChange={emailSubmitHandler} />
         </div>
         <div>
-          password : <input type="password" />
+          password : <input type="password" onChange={passwordSubmitHandler} />
         </div>
         <button type="submit" onClick={singUpHandler}>
           회원가입 하기
