@@ -1,13 +1,19 @@
-.topSection {
-  margin-top: 50%;
-}
-.middleSection {
+.main {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.topSection,
+.middleSection {
+  margin-top: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.middleSection,
+.bottomSection {
+  margin-top: 20%;
 }
 
 .title {
