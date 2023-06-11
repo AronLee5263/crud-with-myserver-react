@@ -38,6 +38,11 @@ export default function SignUp() {
     console.log(app);
   }
 
+  function singUpHandler(event) {
+    event.preventDefault();
+    console.log(1111);
+  }
+
   return (
     <div className={classes.main}>
       <div className={classes.topSection}>
@@ -55,7 +60,9 @@ export default function SignUp() {
         <div>
           password : <input type="password" />
         </div>
-        <button type="submit">회원가입 하기</button>
+        <button type="submit" onClick={singUpHandler}>
+          회원가입 하기
+        </button>
       </form>
 
       <div className={classes.bottomSection}>
