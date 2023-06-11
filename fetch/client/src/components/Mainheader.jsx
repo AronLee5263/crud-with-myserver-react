@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Form } from "react-router-dom";
 import { MdPostAdd, MdMessage } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 
@@ -13,11 +13,13 @@ function MainHeader() {
         <h1 className={classes.info}>내 정보</h1>
       </div>
 
-      <p>
-        <Link to="/create-post" className={classes.button}>
-          <AiOutlinePlus size={24} className={classes.icon} />
-        </Link>
-      </p>
+      <Form method="post" className={classes.form}>
+        <p>
+          <Link to="/create_post" className={classes.button}>
+            <AiOutlinePlus size={24} className={classes.icon} />
+          </Link>
+        </p>
+      </Form>
     </header>
   );
 }

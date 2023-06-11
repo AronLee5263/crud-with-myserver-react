@@ -10,7 +10,8 @@ import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
 import RootLayOut from "./routes/RootLayout";
 
-import BackButton from "./components/BackButton.jsx";
+import Login from "./routes/Login";
+import SignUp from "./routes/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
         element: <App />,
         loader: postsLoader,
         children: [
-          { path: "/create-post", element: <NewPost />, action: newPostAction },
+          { path: "/create_post", element: <NewPost />, action: newPostAction },
           {
             path: "/:postId",
             element: <PostDetails />,
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/sign_up",
+    element: <SignUp />,
   },
 ]);
 

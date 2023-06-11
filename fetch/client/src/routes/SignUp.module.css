@@ -1,0 +1,23 @@
+.topSection {
+  margin-top: 50%;
+}
+.middleSection {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  color: black;
+}
+
+.text {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+
+  line-height: 36px;
+}
