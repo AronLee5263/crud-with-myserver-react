@@ -40,10 +40,15 @@ export default function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        console.log("회원가입이 성공했어요");
+        console.log("userCredential : ", userCredential);
+
         const user = userCredential.user;
         // ...
       })
       .catch((error) => {
+        console.log("회원가입이 실패했어요 ");
+        console.log("error : ", error);
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
