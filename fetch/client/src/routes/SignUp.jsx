@@ -5,6 +5,8 @@ import BackButton from "../components/BackButton";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 export default function SignUp() {
   const firebaseConfig = {
     apiKey: "AIzaSyDi6OwgJMjlIeqCbOsUvNxvUtJRVo9kZtk",
@@ -18,6 +20,19 @@ export default function SignUp() {
 
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 
   function showLogHandler() {
     console.log(app);
