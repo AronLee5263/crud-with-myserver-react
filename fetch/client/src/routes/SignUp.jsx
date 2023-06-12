@@ -1,6 +1,7 @@
 import classes from "./SignUp.module.css";
 import { useState } from "react";
 
+import Login from "./Login";
 import BackButton from "../components/BackButton";
 
 import { initializeApp } from "firebase/app";
@@ -87,6 +88,12 @@ export default function SignUp() {
           지금 사람들이 어떻게 디스크를 관리하는지 알아보세요!
         </p>
       </div>
+
+      <Login
+        onEmailTyping={emailTypingHandler}
+        onPasswordTyping={passwordTypingHandler}
+        onSignUp={singUpHandler}
+      />
     </div>
   );
 }
