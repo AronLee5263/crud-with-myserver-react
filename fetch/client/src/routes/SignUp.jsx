@@ -7,7 +7,7 @@ import BackButton from "../components/BackButton";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -73,27 +73,21 @@ export default function SignUp() {
 
       <form className={classes.middleSection}>
         <div>
-          email : <input type="email" onChange={emailTypingHandler} />
+          email : <input type="email" onChange={emailTypingHandler} id="signUpEmail" />
         </div>
         <div>
-          password : <input type="password" onChange={passwordTypingHandler} />
+          password : <input type="password" onChange={passwordTypingHandler} id="signUpPassword" />
         </div>
-        <button type="submit" onClick={singUpHandler}>
+        <button type="submit" onClick={singUpHandler} id="signUpButton">
           회원가입 하기
         </button>
       </form>
 
       <div className={classes.bottomSection}>
-        <p className={classes.text}>
-          지금 사람들이 어떻게 디스크를 관리하는지 알아보세요!
-        </p>
+        <p className={classes.text}>지금 사람들이 어떻게 디스크를 관리하는지 알아보세요!</p>
       </div>
 
-      <Login
-        onEmailTyping={emailTypingHandler}
-        onPasswordTyping={passwordTypingHandler}
-        onSignUp={singUpHandler}
-      />
+      <Login onEmailTyping={emailTypingHandler} onPasswordTyping={passwordTypingHandler} onSignUp={singUpHandler} />
     </div>
   );
 }

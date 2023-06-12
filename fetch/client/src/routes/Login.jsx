@@ -4,11 +4,7 @@ import BackButton from "../components/BackButton";
 
 // import CrudButtons from "./components/CrudButtons";
 
-export default function Login({
-  emailTypingHandler,
-  passwordTypingHandler,
-  singUpHandler,
-}) {
+export default function Login({ emailTypingHandler, passwordTypingHandler, singUpHandler }) {
   return (
     <>
       <div className={classes.topSection}>
@@ -21,12 +17,12 @@ export default function Login({
 
       <form className={classes.middleSection}>
         <div>
-          email : <input type="email" onChange={emailTypingHandler} />
+          email : <input type="email" onChange={emailTypingHandler} id="loginEmail" />
         </div>
         <div>
-          password : <input type="password" onChange={passwordTypingHandler} />
+          password : <input type="password" onChange={passwordTypingHandler} id="loginPassword" />
         </div>
-        <button type="submit" onClick={singUpHandler}>
+        <button type="submit" onClick={singUpHandler} id="loginButton">
           로그인 하기
         </button>
       </form>
