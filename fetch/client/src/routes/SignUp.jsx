@@ -21,7 +21,7 @@ export default function SignUp() {
     appId: "1:778162457671:web:2dbf7f3068026bf3073562",
     measurementId: "G-8QFY6D5ML2",
   };
-
+  // 이메일 @ 붙야사 제대로 입력하면 성공함
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
