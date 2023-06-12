@@ -1,28 +1,26 @@
 import classes from "./SignUp.module.css";
 import { useState } from "react";
 
-import Login from "./Login";
-import BackButton from "../components/BackButton";
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import BackButton from "../components/BackButton";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDi6OwgJMjlIeqCbOsUvNxvUtJRVo9kZtk",
+  authDomain: "ddoclogin.firebaseapp.com",
+  projectId: "ddoclogin",
+  storageBucket: "ddoclogin.appspot.com",
+  messagingSenderId: "778162457671",
+  appId: "1:778162457671:web:2dbf7f3068026bf3073562",
+  measurementId: "G-8QFY6D5ML2",
+};
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDi6OwgJMjlIeqCbOsUvNxvUtJRVo9kZtk",
-    authDomain: "ddoclogin.firebaseapp.com",
-    projectId: "ddoclogin",
-    storageBucket: "ddoclogin.appspot.com",
-    messagingSenderId: "778162457671",
-    appId: "1:778162457671:web:2dbf7f3068026bf3073562",
-    measurementId: "G-8QFY6D5ML2",
-  };
-  // 이메일 @ 붙야사 제대로 입력하면 성공함
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
@@ -86,8 +84,6 @@ export default function SignUp() {
       <div className={classes.bottomSection}>
         <p className={classes.text}>지금 사람들이 어떻게 디스크를 관리하는지 알아보세요!</p>
       </div>
-
-      <Login onEmailTyping={emailTypingHandler} onPasswordTyping={passwordTypingHandler} onSignUp={singUpHandler} />
     </div>
   );
 }
