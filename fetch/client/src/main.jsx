@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { RecoilRoot } from "recoil";
+
 import "./index.css";
 
 import App, { loader as postsLoader } from "./routes/App";
@@ -44,7 +46,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RecoilRoot>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </RecoilRoot>
 );
