@@ -1,4 +1,4 @@
-import { React, lazy, Suspense, StrictMode } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
@@ -66,9 +66,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RecoilRoot>
-    <React.StrictMode>
+  <React.StrictMode>
+    <RecoilRoot>
       <RouterProvider router={router} />
-    </React.StrictMode>
-  </RecoilRoot>
+    </RecoilRoot>
+  </React.StrictMode>
 );
