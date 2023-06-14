@@ -1,0 +1,1 @@
+import{d,a as e,F as t,j as a}from"./index-d952bc46.js";const l="_backdrop_1vx12_1",r="_modal_1vx12_21",o={backdrop:l,modal:r};function m({children:s}){const c=d();function n(){c("..")}return e(t,{children:[a("div",{to:"../",className:o.backdrop,onClick:n}),a("dialog",{open:!0,className:o.modal,children:s})]})}export{m as M};
