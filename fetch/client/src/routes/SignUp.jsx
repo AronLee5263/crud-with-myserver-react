@@ -8,13 +8,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import BackButton from "../components/BackButton";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDi6OwgJMjlIeqCbOsUvNxvUtJRVo9kZtk",
-  authDomain: "ddoclogin.firebaseapp.com",
-  projectId: "ddoclogin",
-  storageBucket: "ddoclogin.appspot.com",
-  messagingSenderId: "778162457671",
-  appId: "1:778162457671:web:2dbf7f3068026bf3073562",
-  measurementId: "G-8QFY6D5ML2",
+  apiKey: "AIzaSyB9k3CKV2ZFdwzQSEYgD_xmixxnDMUhHH0",
+  authDomain: "disk-doctor-907ae.firebaseapp.com",
+  projectId: "disk-doctor-907ae",
+  storageBucket: "disk-doctor-907ae.appspot.com",
+  messagingSenderId: "443173694206",
+  appId: "1:443173694206:web:60c051ab38c3400ee6d3af",
+  measurementId: "G-DK5B12QFY6",
 };
 
 export default function SignUp() {
