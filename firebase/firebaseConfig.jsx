@@ -1,8 +1,12 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { initializeApp as initializeApp_Alias } from "firebase/app";
+import { getAnalytics as getAnalytics_Alias } from "firebase/analytics";
+import {
+  getAuth as getAuth_Alias,
+  createUserWithEmailAndPassword as createUserWithEmailAndPassword_Alias,
+  signInWithEmailAndPassword as signInWithEmailAndPassword_Alias,
+} from "firebase/auth";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyB9k3CKV2ZFdwzQSEYgD_xmixxnDMUhHH0",
   authDomain: "disk-doctor-907ae.firebaseapp.com",
   projectId: "disk-doctor-907ae",
@@ -12,5 +16,10 @@ const firebaseConfig = {
   measurementId: "G-DK5B12QFY6",
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export {
+  initializeApp_Alias,
+  getAnalytics_Alias,
+  getAuth_Alias,
+  createUserWithEmailAndPassword_Alias,
+  signInWithEmailAndPassword_Alias,
+};

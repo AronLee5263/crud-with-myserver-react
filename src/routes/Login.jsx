@@ -1,30 +1,22 @@
 import classes from "./Login.module.css";
 import { useState } from "react";
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB9k3CKV2ZFdwzQSEYgD_xmixxnDMUhHH0",
-  authDomain: "disk-doctor-907ae.firebaseapp.com",
-  projectId: "disk-doctor-907ae",
-  storageBucket: "disk-doctor-907ae.appspot.com",
-  messagingSenderId: "443173694206",
-  appId: "1:443173694206:web:60c051ab38c3400ee6d3af",
-  measurementId: "G-DK5B12QFY6",
-};
+import {
+  firebaseConfig,
+  initializeApp_Alias,
+  getAnalytics_Alias,
+  getAuth_Alias,
+  signInWithEmailAndPassword_Alias,
+} from "../../firebase/firebaseConfig";
 
 import BackButton from "../components/BackButton";
-
-// import CrudButtons from "./components/CrudButtons";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const app = initializeApp_Alias(firebaseConfig);
+  const analytics = getAnalytics_Alias(app);
 
   function emailTypingHandler(e) {
     setEmail(e.target.value);
@@ -35,10 +27,10 @@ export default function Login() {
 
   function loginHandler(event) {
     event.preventDefault();
-    const auth = getAuth();
+    const auth = getAuth_Alias();
     console.log(email, password);
 
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword_Alias(auth, email, password)
       .then((userCredential) => {
         // Signed in
 

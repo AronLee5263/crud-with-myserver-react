@@ -1,28 +1,22 @@
 import classes from "./SignUp.module.css";
 import { useState } from "react";
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  firebaseConfig,
+  initializeApp_Alias,
+  getAnalytics_Alias,
+  getAuth_Alias,
+  createUserWithEmailAndPassword_Alias,
+} from "../../firebase/firebaseConfig";
 
 import BackButton from "../components/BackButton";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB9k3CKV2ZFdwzQSEYgD_xmixxnDMUhHH0",
-  authDomain: "disk-doctor-907ae.firebaseapp.com",
-  projectId: "disk-doctor-907ae",
-  storageBucket: "disk-doctor-907ae.appspot.com",
-  messagingSenderId: "443173694206",
-  appId: "1:443173694206:web:60c051ab38c3400ee6d3af",
-  measurementId: "G-DK5B12QFY6",
-};
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const app = initializeApp_Alias(firebaseConfig);
+  const analytics = getAnalytics_Alias(app);
 
   function emailTypingHandler(e) {
     setEmail(e.target.value);
@@ -33,10 +27,10 @@ export default function SignUp() {
 
   function singUpHandler(event) {
     event.preventDefault();
-    const auth = getAuth();
+    const auth = getAuth_Alias();
     console.log(email, password);
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword_Alias(auth, email, password)
       .then((userCredential) => {
         // Signed in
         console.log("회원가입이 성공했어요");
