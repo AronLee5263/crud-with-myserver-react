@@ -1,0 +1,106 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  background-color: var(--backdrop-color);
+
+  z-index: 1;
+}
+
+.profilePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100vh;
+  background-color: white;
+}
+
+.sections {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.headerSection {
+  margin-top: 20%;
+}
+
+.mainTitle,
+.subTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainTitle {
+  line-height: 40px;
+}
+
+.subTitle {
+  color: var(--backdrop-color);
+  margin-top: -15px;
+}
+
+.authSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: transparent;
+  margin: 0 10px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.sign_up {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+  padding: 10px 40px;
+
+  border: white 1px solid;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px 40px;
+
+  border: 0.1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 30px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.categorySection {
+  background-color: white;
+}
+
+.icon {
+  margin-right: 20px;
+}
+
+.settingSection {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.screenTheme {
+  margin-top: 40px;
+}
+.screenTheme_button {
+  border: 0;
+  background-color: transparent;
+}
