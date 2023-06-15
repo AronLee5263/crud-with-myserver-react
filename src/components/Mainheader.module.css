@@ -8,7 +8,8 @@
   height: 4rem;
 }
 
-.category {
+.category,
+.profile_icon {
   display: flex;
   align-items: center;
   color: #000000;
