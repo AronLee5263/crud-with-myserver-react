@@ -18,7 +18,10 @@ export default function ProfilePopup({}) {
         <div className={classes.profilePopup}>
           <div className={classes.sections}>
             <div className={classes.headerSection}>
-              <h1 className={classes.mainTitle}>지금 disk doctor에 가입하세요 </h1>
+              <h1 className={classes.mainTitle}>
+                지금 <span className={classes.diskDoctor}>disk doctor</span>에 가입하세요
+              </h1>
+
               <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
             </div>
             <div className={classes.authSection}>

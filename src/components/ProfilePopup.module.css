@@ -25,10 +25,10 @@
 }
 
 .headerSection {
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
-.mainTitle,
+/* .mainTitle, */
 .subTitle {
   display: flex;
   justify-content: center;
@@ -37,12 +37,18 @@
 }
 
 .mainTitle {
-  line-height: 40px;
+  /* line-height: 40px; */
+  font-weight: 600;
+}
+.diskDoctor {
+  font-weight: 700;
+  line-height: 55px;
 }
 
 .subTitle {
   color: var(--backdrop-color);
-  margin-top: -15px;
+  margin-top: -10px;
+  font-size: 14px;
 }
 
 .authSection {
@@ -65,7 +71,8 @@
   border: white 1px solid;
   border-radius: 30px;
   color: white;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
 }
 
