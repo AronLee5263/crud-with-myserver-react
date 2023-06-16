@@ -51,7 +51,7 @@ export default function ProfilePopup({}) {
 
             <div className={classes.settingSection}>
               <span>설정 및 지원</span>
-              <span className={classes.cancelIcon}>
+              <span className={classes.settingIcon}>
                 <RiArrowDownSLine size={30} />
               </span>
             </div>
