@@ -23,7 +23,7 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
               <MdOutlineArrowBackIosNew size={20} />
             </span>
             <p className={classes.mainTitle}>
-              지금 <span className={classes.diskDoctor}>disk doctor</span>에 가입하세요
+              지금 <span className={classes.diskDoctor}>disc doctor</span>에 가입하세요
             </p>
 
             <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
