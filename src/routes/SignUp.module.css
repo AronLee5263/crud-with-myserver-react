@@ -3,28 +3,58 @@
   margin-right: 20px;
 }
 
-.topSection,
-.middleSection {
-  margin-top: 50%;
+.topSection {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.middleSection,
-.bottomSection {
-  margin-top: 25%;
+.header {
+  margin-top: 0.4rem;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
 }
 
 .title {
   color: black;
 }
 
+.authSection {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.emailPasswordAuth {
+  margin-top: 2rem;
+}
+
+.bottomSection {
+  margin-top: 25%;
+}
+
 .text {
   color: black;
-  font-size: 25px;
+  font-size: 22px;
+  line-height: 30px;
   font-weight: bold;
+}
 
-  line-height: 36px;
+.temp {
+  position: relative;
+}
+
+.initializeAppBtn {
+  position: fixed;
+  bottom: 14rem;
+  left: 1rem;
 }
