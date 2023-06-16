@@ -2,19 +2,24 @@
   /* padding: 2rem 10%; */
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid var(--header-border-color);
   height: 4rem;
 }
 
-.category,
-.profile_icon {
+.category {
   display: flex;
   align-items: center;
   color: #000000;
   margin-left: 1rem;
   font-weight: 600;
+}
+.profile_icon {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
 }
 
 .category * {

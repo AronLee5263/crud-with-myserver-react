@@ -25,7 +25,7 @@ function MainHeader() {
       {profilePopupIsVisible && <ProfilePopup />}
       <header className={classes.header}>
         <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>
-          <CgProfile size={24} className={classes.icon} />
+          <CgProfile size={30} className={classes.icon} />
         </button>
 
         <div className={classes.category}>
