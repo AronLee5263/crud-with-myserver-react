@@ -18,9 +18,9 @@ export default function ProfilePopup({}) {
         <div className={classes.profilePopup}>
           <div className={classes.sections}>
             <div className={classes.headerSection}>
-              <h1 className={classes.mainTitle}>
+              <p className={classes.mainTitle}>
                 지금 <span className={classes.diskDoctor}>disk doctor</span>에 가입하세요
-              </h1>
+              </p>
 
               <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
             </div>
@@ -33,24 +33,24 @@ export default function ProfilePopup({}) {
               </Link>
             </div>
 
-            <div className={classes.categorySection}>
-              <div>
+            <ul className={classes.categorySection}>
+              <li>
                 <CgProfile size={24} className={classes.icon} />
                 <span>프로필</span>
-              </div>
-              <div>
+              </li>
+              <li>
                 <HiOutlineChatAlt2 size={24} className={classes.icon} />
                 <span>커뮤니티</span>
-              </div>
-              <div>
+              </li>
+              <li>
                 <BsBookmark size={24} className={classes.icon} />
                 <span>북마크</span>
-              </div>
-              <div>
+              </li>
+              <li>
                 <RiFileListLine size={24} className={classes.icon} />
                 <span>리스트</span>
-              </div>
-            </div>
+              </li>
+            </ul>
 
             <div className={classes.settingSection}>
               <span>설정 및 지원</span>
@@ -69,3 +69,20 @@ export default function ProfilePopup({}) {
     </>
   );
 }
+
+// <div>
+//                 <CgProfile size={24} className={classes.icon} />
+//                 <span>프로필</span>
+//               </div>
+//               <div>
+//                 <HiOutlineChatAlt2 size={24} className={classes.icon} />
+//                 <span>커뮤니티</span>
+//               </div>
+//               <div>
+//                 <BsBookmark size={24} className={classes.icon} />
+//                 <span>북마크</span>
+//               </div>
+//               <div>
+//                 <RiFileListLine size={24} className={classes.icon} />
+//                 <span>리스트</span>
+//               </div>
