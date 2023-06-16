@@ -3,9 +3,12 @@
   top: 0.5rem;
   left: 0.5rem;
   z-index: 100;
+  text-decoration: none;
+  color: black;
 }
 
-.back_button {
+.text {
   display: flex;
   padding: 8px;
+  background-color: transparent;
 }
