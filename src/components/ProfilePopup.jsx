@@ -11,10 +11,10 @@ import { RiFileListLine } from "react-icons/ri";
 // import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi";
 // import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 
-export default function ProfilePopup({}) {
+export default function ProfilePopup({ onCloseProfilePopup }) {
   return (
     <>
-      <div className={classes.backdrop}>
+      <div className={classes.backdrop} onClick={onCloseProfilePopup}>
         <div className={classes.profilePopup}>
           <div className={classes.sections}>
             <div className={classes.headerSection}>

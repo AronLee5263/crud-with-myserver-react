@@ -12,9 +12,9 @@ import ProfilePopup from "./ProfilePopup";
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
 
-  // function closeProfilePopupHandler() {
-  //   setProfilePopupIsVisible(false);
-  // }
+  function closeProfilePopupHandler() {
+    setProfilePopupIsVisible(false);
+  }
 
   function openProfilePopupHandler() {
     setProfilePopupIsVisible(true);
@@ -22,7 +22,7 @@ function MainHeader() {
 
   return (
     <>
-      {profilePopupIsVisible && <ProfilePopup />}
+      {profilePopupIsVisible && <ProfilePopup onCloseProfilePopup={closeProfilePopupHandler} />}
       <header className={classes.header}>
         <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>
           <CgProfile size={30} className={classes.icon} />
