@@ -9,6 +9,7 @@ export default function RootLayOut() {
   return (
     <>
       <MainHeader />
+
       <Outlet />
       <NoMobile />
     </>

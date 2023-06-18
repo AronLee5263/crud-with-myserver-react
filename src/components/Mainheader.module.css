@@ -8,18 +8,32 @@
   height: 4rem;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1.3rem;
+}
+
+.userEmail {
+  font-size: 8px;
+  font-weight: 600;
+  margin-top: -0.3rem;
+}
+
+.profile_icon {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
 .category {
   display: flex;
   align-items: center;
   color: #000000;
   margin-left: 1rem;
   font-weight: 600;
-}
-.profile_icon {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: none;
 }
 
 .category * {

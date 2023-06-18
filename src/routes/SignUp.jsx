@@ -18,14 +18,19 @@ import {
 } from "../../firebase/firebaseConfig";
 
 import BackButton from "../components/BackButton";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const app = initializeApp_Alias(firebaseConfig);
   const analytics = getAnalytics_Alias(app);
   const auth = getAuth_Alias();
+
+  // let isLinkAuthSuccese = false;
 
   function emailTypingHandler(e) {
     setUserEmail(e.target.value);
@@ -53,22 +58,21 @@ export default function SignUp() {
       });
   }
 
-  function singUpWithEmailLinkdHandler(event) {
+  const singUpWithEmailLinkdHandler = (event) => {
     event.preventDefault();
     console.log(userEmail);
 
     sendSignInLinkToEmail_Alias(auth, userEmail, actionCodeSettings)
-      .then((userCredential) => {
+      .then(() => {
         // 링크가 성공적으로 전송되었습니다. 사용자에게 알립니다.
         // 사용자에게 다시 묻지 않도록 전자 메일을 로컬로 저장
         // 동일한 장치에서 링크를 여는 경우.
         window.localStorage.setItem("emailForSignIn", userEmail);
 
-        console.log("1-1번 사용자의 이메일에 인증 링크 전송 성공 + 이메일 저장");
-        console.log("userCredential : ", userCredential);
+        console.log("사용자의 이메일에 인증 링크 전송 성공 + 이메일 저장");
       })
       .catch((error) => {
-        console.log("1-2번 사용자의 이메일에 인증 링크 전송 실패 ");
+        console.log("사용자의 이메일에 인증 링크 전송 실패 ");
         console.log("error 내용 : ", error);
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -76,29 +80,36 @@ export default function SignUp() {
 
     if (isSignInWithEmailLink_Alias(auth, window.location.href)) {
       let email = window.localStorage.getItem();
+
       if (!email) {
         email = window.prompt("Please provide your email for confirmation");
       }
+
       signInWithEmailLink_Alias(auth, email, window.location.href)
         .then((result) => {
-          console.log("2-1차 링크방식 회원가입 성공 ");
+          console.log("링크방식 회원가입 성공 ");
+          // isLinkAuthSuccese = true;
+
           console.log("result : ", result);
+          console.log("result.additionalUserInfo.isNewUser, 기존의 사용자임? : ", result.additionalUserInfo.isNewUser);
 
           window.localStorage.removeItem("emailForSignIn");
+          console.log("localStorage에 저장한 user email 삭제 ");
+
+          navigate("..", { state: { userEmail: email } });
         })
         .catch((error) => {
-          console.log("2-2차 링크방식 회원가입 실패 ");
+          console.log("링크방식 회원가입 실패 ");
           console.log("error : ", error);
         });
-    } else {
-      console.log("isSignInWithEmailLink_Alias 를 안하고 지나침");
     }
-  }
+  };
 
   function showLogHandler(event) {
     event.preventDefault();
     console.log(app);
   }
+
   return (
     <div className={classes.main}>
       <div className={classes.topSection}>
@@ -116,9 +127,9 @@ export default function SignUp() {
         <div className={classes.emailLinkAuth}>
           사용중인 이메일 링크로 가입
           <form>
-            email : <input type="email" onChange={emailTypingHandler} id="signUpEmailLink" />
+            email : <input type="email" onChange={emailTypingHandler} />
           </form>
-          <button type="submit" onClick={singUpWithEmailLinkdHandler} id="signUpButton">
+          <button type="submit" onClick={singUpWithEmailLinkdHandler}>
             회원가입
           </button>
         </div>
