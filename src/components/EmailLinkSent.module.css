@@ -1,0 +1,10 @@
+.succesPopup,
+.failPopup {
+  padding: 3rem 0;
+  background-color: transparent;
+  color: var(--main-color);
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 60px;
+}
