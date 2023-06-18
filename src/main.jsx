@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             <App />
           </Suspense>
         ),
-        loader: () => import("./routes/App").then((module) => module.loader()),
+        // loader: () => import("./routes/App").then((module) => module.loader()),
         children: [
           {
             path: "/create_post",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                 <NewPost />
               </Suspense>
             ),
-            action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
+            // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
           },
           {
             path: "/:postId",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
                 <PostDetails />
               </Suspense>
             ),
-            loader: () => import("./routes/PostDetails").then((module) => module.loader()),
+            // loader: () => import("./routes/PostDetails").then((module) => module.loader()),
           },
         ],
       },

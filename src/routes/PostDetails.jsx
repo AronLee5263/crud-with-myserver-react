@@ -36,9 +36,9 @@ function PostDetails() {
 
 export default PostDetails;
 
-export async function loader({ params }) {
-  const response = await axios.get(SERVER_URL + "/" + params.postId);
-  //   console.log("response.data : ", response.data);
+// export async function loader({ params }) {
+//   const response = await axios.get(SERVER_URL + "/" + params.postId);
+//   //   console.log("response.data : ", response.data);
 
-  return response.data.post;
-}
+//   return response.data.post;
+// }

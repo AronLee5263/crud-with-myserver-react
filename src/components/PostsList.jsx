@@ -11,7 +11,7 @@ import axios from "axios";
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 export default function PostsList() {
-  const posts = useLoaderData();
+  // const posts = useLoaderData();
   const [popupIsVisible, setPopupIsVisible] = useState(false);
 
   function closePopupHandler() {
@@ -28,13 +28,7 @@ export default function PostsList() {
     postContent = (
       <ul className={classes.posts}>
         {posts.reverse().map((post, i) => (
-          <Post
-            key={i}
-            id={post.id}
-            author={post.author}
-            body={post.body}
-            onOpenPopup={openPopupHandler}
-          />
+          <Post key={i} id={post.id} author={post.author} body={post.body} onOpenPopup={openPopupHandler} />
         ))}
       </ul>
     );

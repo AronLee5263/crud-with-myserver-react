@@ -19,13 +19,7 @@ export default function NewPost() {
         </p>
         <p>
           <label htmlFor="postAuthor">이름</label>
-          <input
-            className={classes.postAuthor}
-            id="postAuthor"
-            name="postAuthor"
-            required
-            type="text"
-          />
+          <input className={classes.postAuthor} id="postAuthor" name="postAuthor" required type="text" />
         </p>
         <p>
           <label htmlFor="postContent">내용</label>
@@ -50,13 +44,13 @@ export default function NewPost() {
   );
 }
 
-export async function action({ request }) {
-  const formData = await request.formData();
-  const postData = Object.fromEntries(formData);
-  await axios.post(SERVER_URL, {
-    author: postData.postAuthor,
-    body: postData.postContent,
-  });
+// export async function action({ request }) {
+//   const formData = await request.formData();
+//   const postData = Object.fromEntries(formData);
+//   await axios.post(SERVER_URL, {
+//     author: postData.postAuthor,
+//     body: postData.postContent,
+//   });
 
-  return redirect("/");
-}
+//   return redirect("/");
+// }
