@@ -59,17 +59,17 @@ export default function SignUp() {
 
     sendSignInLinkToEmail_Alias(auth, userEmail, actionCodeSettings)
       .then((userCredential) => {
-        console.log("1-1번 이메일 링크방식 회원가입이 성공했어요");
-        console.log("userCredential : ", userCredential);
-
         // 링크가 성공적으로 전송되었습니다. 사용자에게 알립니다.
         // 사용자에게 다시 묻지 않도록 전자 메일을 로컬로 저장
         // 동일한 장치에서 링크를 여는 경우.
         window.localStorage.setItem("emailForSignIn", userEmail);
+
+        console.log("1-1번 사용자의 이메일에 인증 링크 전송 성공 + 이메일 저장");
+        console.log("userCredential : ", userCredential);
       })
       .catch((error) => {
-        console.log("1-2번 이메일 링크방식 회원가입이 실패했어요 ");
-        console.log("error : ", error);
+        console.log("1-2번 사용자의 이메일에 인증 링크 전송 실패 ");
+        console.log("error 내용 : ", error);
         const errorCode = error.code;
         const errorMessage = error.message;
       });
