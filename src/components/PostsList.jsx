@@ -12,6 +12,7 @@ const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 export default function PostsList() {
   // const posts = useLoaderData();
+  const posts = {};
   const [popupIsVisible, setPopupIsVisible] = useState(false);
 
   function closePopupHandler() {
