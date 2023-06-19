@@ -1,5 +1,3 @@
-import classes from "./SignUpPassword.module.css";
-
 import { auth } from "../../../firebase/firebaseConfig";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

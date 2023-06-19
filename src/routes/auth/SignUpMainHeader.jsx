@@ -3,8 +3,6 @@ import classes from "./SignUpMainHeader.module.css";
 import { Link } from "react-router-dom";
 
 import BackButton from "../../components/BackButton";
-import SignUpEmailLink from "./SignUpEmailLink";
-import SignUpPassword from "./SignUpPassword";
 
 export default function SignUpMainHeader() {
   return (
