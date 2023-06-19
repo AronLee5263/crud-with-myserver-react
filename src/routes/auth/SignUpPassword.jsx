@@ -9,50 +9,50 @@ import BackButton from "../../components/BackButton";
 import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
-  // const [userEmail, setUserEmail] = useState("");
-  // const [userPassword, setUserPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
-  // function emailTypingHandler(e) {
-  //   setUserEmail(e.target.value);
-  // }
-  // function passwordTypingHandler(e) {
-  //   setUserPassword(e.target.value);
-  // }
+  function emailTypingHandler(e) {
+    setUserEmail(e.target.value);
+  }
+  function passwordTypingHandler(e) {
+    setUserPassword(e.target.value);
+  }
 
-  // function singUpWithEmailAndPasswordHandler(event) {
-  //   event.preventDefault();
-  //   console.log(userEmail, userPassword);
+  function singUpWithEmailAndPasswordHandler(event) {
+    event.preventDefault();
+    console.log(userEmail, userPassword);
 
-  //   createUserWithEmailAndPassword(auth, userEmail, userPassword)
-  //     .then((userCredential) => {
-  //       console.log("회원가입이 성공했어요");
-  //       console.log("userCredential : ", userCredential);
+    createUserWithEmailAndPassword(auth, userEmail, userPassword)
+      .then((userCredential) => {
+        console.log("회원가입이 성공했어요");
+        console.log("userCredential : ", userCredential);
 
-  //       const user = userCredential.user;
-  //     })
-  //     .catch((error) => {
-  //       console.log("회원가입이 실패했어요 ");
-  //       console.log("error : ", error);
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //     });
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        console.log("회원가입이 실패했어요 ");
+        console.log("error : ", error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
 
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       // ...
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //     });
-  // }
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  }
 
-  // function showLogHandler(event) {
-  //   event.preventDefault();
-  //   console.log(app);
-  // }
+  function showLogHandler(event) {
+    event.preventDefault();
+    console.log(app);
+  }
 
   return (
     <div className={classes.sections}>

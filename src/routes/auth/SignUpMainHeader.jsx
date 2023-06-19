@@ -29,11 +29,11 @@ export default function SignUpMainHeader() {
             <div className={classes.alsoLine}></div>
           </div>
 
-          <Link to="/sign_up_with_email_link" className={classes.SignUpEmailLink}>
+          <Link to="/sign_up/with_email_link" className={classes.SignUpEmailLink}>
             <span className={classes.authText}>계정 만들기 / Email-Link</span>
           </Link>
 
-          <Link to="/sign_up_with_password" className={classes.SignUpPassword}>
+          <Link to="/sign_up/with_password" className={classes.SignUpPassword}>
             <span className={classes.authText}>계정 만들기 / Email-password</span>
           </Link>
         </div>

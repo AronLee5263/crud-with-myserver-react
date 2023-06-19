@@ -66,12 +66,12 @@ const router = createBrowserRouter([
     element: <RootLayOutSignUp />,
     children: [
       {
-        path: "/sign_up_with_password",
+        path: "/sign_up/with_password",
         element: <SignUpPassword />,
         // loader: () => import("./routes/App").then((module) => module.loader()),
       },
       {
-        path: "/sign_up_with_email_link",
+        path: "/sign_up/with_email_link",
         element: <SignUpEmailLink />,
       },
     ],
