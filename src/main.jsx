@@ -51,7 +51,7 @@ const router = createBrowserRouter([
                 <PostDetails />
               </Suspense>
             ),
-            loader: () => import("./routes/PostDetails").then((module) => module.loader()),
+            // loader: () => import("./routes/PostDetails").then((module) => module.loader()),
           },
         ],
       },
