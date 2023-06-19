@@ -1,22 +1,13 @@
 import classes from "./Login.module.css";
 import { useState } from "react";
 
-import {
-  firebaseConfig,
-  initializeApp_Alias,
-  getAnalytics_Alias,
-  getAuth_Alias,
-  signInWithEmailAndPassword_Alias,
-} from "../../firebase/firebaseConfig";
+import { auth, signInWithEmailAndPassword } from "../../../firebase/firebaseConfig";
 
-import BackButton from "../components/BackButton";
+import BackButton from "../../components/BackButton";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const app = initializeApp_Alias(firebaseConfig);
-  const analytics = getAnalytics_Alias(app);
 
   function emailTypingHandler(e) {
     setEmail(e.target.value);
@@ -27,10 +18,9 @@ export default function Login() {
 
   function loginHandler(event) {
     event.preventDefault();
-    const auth = getAuth_Alias();
     console.log(email, password);
 
-    signInWithEmailAndPassword_Alias(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
 

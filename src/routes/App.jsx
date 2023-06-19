@@ -17,8 +17,8 @@ export default function App() {
   );
 }
 
-// export async function loader() {
-//   const response = await axios.get(SERVER_URL);
-//   console.log("response.data : ", response.data);
-//   return response.data.reverse();
-// }
+export async function loader() {
+  const response = await axios.get(SERVER_URL);
+  console.log("response.data : ", response.data);
+  return response.data.reverse();
+}

@@ -10,7 +10,6 @@ export default function NoMobile() {
           휴대폰이나 작은 화면에서 실행해주세요
         </span>
       </div>
-      ;
     </>
   );
 }

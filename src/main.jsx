@@ -11,8 +11,11 @@ import "./index.css";
 
 import RootLayOut from "./routes/RootLayout";
 
-import Login from "./routes/Login";
-import SignUp from "./routes/SignUp";
+import Login from "../src/routes/auth/Login";
+
+import RootLayOutSignUp from "./routes/auth/RootLayOutSignUp";
+import SignUpPassword from "./routes/auth/SignUpPassword";
+import SignUpEmailLink from "./routes/auth/SignUpEmailLink";
 
 const App = lazy(() => import("./routes/App"));
 const NewPost = lazy(() => import("./routes/NewPost"));
@@ -30,7 +33,7 @@ const router = createBrowserRouter([
             <App />
           </Suspense>
         ),
-        // loader: () => import("./routes/App").then((module) => module.loader()),
+        loader: () => import("./routes/App").then((module) => module.loader()),
         children: [
           {
             path: "/create_post",
@@ -39,7 +42,7 @@ const router = createBrowserRouter([
                 <NewPost />
               </Suspense>
             ),
-            // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
+            action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
           },
           {
             path: "/:postId",
@@ -48,7 +51,7 @@ const router = createBrowserRouter([
                 <PostDetails />
               </Suspense>
             ),
-            // loader: () => import("./routes/PostDetails").then((module) => module.loader()),
+            loader: () => import("./routes/PostDetails").then((module) => module.loader()),
           },
         ],
       },
@@ -58,9 +61,21 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+
   {
     path: "/sign_up",
-    element: <SignUp />,
+    element: <RootLayOutSignUp />,
+    children: [
+      {
+        path: "/sign_up_with_password",
+        element: <SignUpPassword />,
+        // loader: () => import("./routes/App").then((module) => module.loader()),
+      },
+      {
+        path: "/sign_up_with_email_link",
+        element: <SignUpEmailLink />,
+      },
+    ],
   },
 ]);
 

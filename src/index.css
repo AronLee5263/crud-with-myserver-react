@@ -23,6 +23,9 @@
   --post-border-color: rgba(0, 0, 0, 0.2);
   --hover-color: rgba(200, 200, 200, 0.314);
   --backdrop-color: rgba(0, 0, 0, 0.6);
+
+  --border-color: rgba(43, 42, 42, 0.363);
+  --border-color-notrgb: rgb(43, 42, 42);
 }
 
 body {

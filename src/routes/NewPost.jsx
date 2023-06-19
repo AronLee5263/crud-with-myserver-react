@@ -44,13 +44,13 @@ export default function NewPost() {
   );
 }
 
-// export async function action({ request }) {
-//   const formData = await request.formData();
-//   const postData = Object.fromEntries(formData);
-//   await axios.post(SERVER_URL, {
-//     author: postData.postAuthor,
-//     body: postData.postContent,
-//   });
+export async function action({ request }) {
+  const formData = await request.formData();
+  const postData = Object.fromEntries(formData);
+  await axios.post(SERVER_URL, {
+    author: postData.postAuthor,
+    body: postData.postContent,
+  });
 
-//   return redirect("/");
-// }
+  return redirect("/");
+}
