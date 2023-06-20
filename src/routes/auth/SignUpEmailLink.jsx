@@ -100,7 +100,6 @@ export default function SignUpEmailLink({ userEmail }) {
 
           <input
             className={classes.textEmail}
-            id="signUpEmailLink"
             required
             placeholder="사용중인 이메일 주소"
             onChange={emailTypingHandler}

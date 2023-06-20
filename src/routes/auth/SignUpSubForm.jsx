@@ -14,14 +14,6 @@ export default function SignUpSubForm({ onClickSignPassword, onClickSignLink }) 
     <div className={classes.sections}>
       <div className={classes.titleSection}>
         <p className={classes.titleText}>사람들이 어떻게 디스크를 관리하는지 알아보세요.</p>
-        <button
-          type="button"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          이전 페이지
-        </button>
       </div>
 
       <div className={classes.authSection}>
