@@ -32,21 +32,16 @@ export default function SignUpEmailLink({ userEmail }) {
 
   const sendSignInLinkToEmailHandler = (event) => {
     event.preventDefault();
-    console.log(userEmail);
 
-    sendSignInLinkToEmail_Alias(auth, userEmail, actionCodeSettings)
+    sendSignInLinkToEmail(auth, userEmail, actionCodeSettings)
       .then(() => {
-        // 링크가 성공적으로 전송되었습니다. 사용자에게 알립니다.
-        // 사용자에게 다시 묻지 않도록 전자 메일을 로컬로 저장
-        // 동일한 장치에서 링크를 여는 경우.
         window.localStorage.setItem("emailForSignIn", userEmail);
-        console.log("사용자의 이메일에 인증 링크 전송 성공 + 이메일 저장");
+        console.log("이메일로 인증 링크를 사용자에게 성공적으로 전송했습니다 + 이메일 저장 완료");
+        console.log(userEmail);
       })
       .catch((error) => {
-        console.log("사용자의 이메일에 인증 링크 전송 실패 ");
+        console.log("사용자의 이메일로 인증 링크를 전송하는 데 실패했습니다");
         console.log("error 내용 : ", error);
-        const errorCode = error.code;
-        const errorMessage = error.message;
       });
   };
 
@@ -54,23 +49,33 @@ export default function SignUpEmailLink({ userEmail }) {
     let email = window.localStorage.getItem();
 
     console.log("email : ", email);
-    // if (!email) {
-    //   email = window.prompt("Please provide your email for confirmation");
-    // }
+    if (!email) {
+      email = window.prompt("확인을 위해 이메일을 제공해주세요");
+    }
     // navigate("..", { state: { userEmail: email } });
 
-    !email
-      ? (email = window.prompt("Please provide your email for confirmation"))
-      : navigate("..", { state: { userEmail: email } });
+    // !email
+    //   ? (email = window.prompt("인증을 위해 이메일을 입력해주세요"))
+    //   : navigate("/", { state: { userEmail: email } });
 
-    signInWithEmailLink_Alias(auth, email, window.location.href)
+    // User verification: Prompt user to confirm their email before proceeding
+    if (!confirmEmail(email)) {
+      console.log("Email confirmation failed");
+      return;
+    }
+
+    signInWithEmailLink(auth, email, window.location.href)
       .then((result) => {
-        console.log("링크 보낸 이메일 인증 성공 + 회원가입 완료 ");
-        console.log("localStorage에 저장한 user email 삭제 ");
+        console.log("이메일로 전송된 링크의 인증에 성공했습니다 + 가입이 완료되었습니다");
+        console.log("localStorage에 저장된 user email 삭제");
         window.localStorage.removeItem("emailForSignIn");
 
         console.log("result : ", result);
-        console.log("result.additionalUserInfo.isNewUser, 기존의 사용자임? : ", result.additionalUserInfo.isNewUser);
+        console.log(
+          "result.additionalUserInfo.isNewUser, 기존의 사용자인가요? : ",
+          result.additionalUserInfo.isNewUser
+        );
+        navigate("/", { state: { userEmail: email } });
       })
       .catch((error) => {
         console.log("링크방식 회원가입 실패 ");
@@ -78,24 +83,38 @@ export default function SignUpEmailLink({ userEmail }) {
       });
   }
 
+  // Helper function to confirm the email before proceeding
+  const confirmEmail = (email) => {
+    // Implement your email confirmation logic here
+    return window.confirm(`Please confirm your email: ${email}`);
+  };
+
   return (
     <>
-      <div className={classes.emailLinkAuth}>
-        사용중인 이메일 링크로 가입
-        <form>
-          email : <input type="email" onChange={emailTypingHandler} id="signUpEmailLink" />
+      <div className={classes.wholePageLink}>
+        <p className={classes.title}>계정을 생성하세요</p>
+
+        <form className={classes.emailLinkAuth}>
+          <input className={classes.textName} required placeholder="이름" type="email" onChange={emailTypingHandler} />
+          <div className={classes.line}></div>
+
+          <input
+            className={classes.textEmail}
+            id="signUpEmailLink"
+            required
+            placeholder="사용중인 이메일 주소"
+            onChange={emailTypingHandler}
+          />
+          <div className={classes.line}></div>
         </form>
-        {/* <button type="button" onClick={sendSignInLinkToEmailHandler}>
-        회원가입
-      </button> */}
+
+        <div className={classes.buttonSection}>
+          <button className={classes.authButton} type="button" onClick={sendSignInLinkToEmailHandler}>
+            가입
+          </button>
+        </div>
+        {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
-      {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />}
-      <div>1</div>
-      <div>2</div>
-      <div>3333333333333</div>
-      <div>44444444</div>
-      <div>55555555</div>
-      <div>666666666</div>
     </>
   );
 }
