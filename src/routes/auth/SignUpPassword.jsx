@@ -55,21 +55,23 @@ export default function SignUpPassword() {
   }
 
   return (
-    <div className={classes.sections}>
-      <div className={classes.topSection}>
-        <p className={classes.title}> 계정을 생성하세요</p>
-      </div>
+    <div className={classes.wholePage}>
+      <div className={classes.sections}>
+        <div className={classes.topSection}>
+          <p className={classes.title}> 계정을 생성하세요</p>
+        </div>
 
-      <div className={classes.middleSection}>
-        <form className={classes.authForm}>
-          <div>
-            email : <input type="email" onChange={emailTypingHandler} id="signUpEmailPassword" />
-          </div>
+        <div className={classes.middleSection}>
+          <form className={classes.authForm}>
+            <div>
+              email : <input type="email" onChange={emailTypingHandler} id="signUpEmailPassword" />
+            </div>
 
-          <button type="button" onClick={singUpWithEmailAndPasswordHandler} id="signUpButton">
-            회원가입 하기
-          </button>
-        </form>
+            <button type="button" onClick={singUpWithEmailAndPasswordHandler} id="signUpButton">
+              회원가입 하기
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

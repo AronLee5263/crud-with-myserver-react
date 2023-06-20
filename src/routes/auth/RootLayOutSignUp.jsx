@@ -6,8 +6,8 @@ import NoMobile from "../../components/NoMobile";
 export default function RootLayOutSignUp() {
   return (
     <>
-      <Outlet />
       <SignUpMainHeader />
+      <Outlet />
 
       <NoMobile />
     </>
