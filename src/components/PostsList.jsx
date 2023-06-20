@@ -27,7 +27,7 @@ export default function PostsList() {
   if (posts.length > 0) {
     postContent = (
       <ul className={classes.posts}>
-        {posts.reverse().map((post, i) => (
+        {posts.map((post, i) => (
           <Post key={i} id={post.id} author={post.author} body={post.body} onOpenPopup={openPopupHandler} />
         ))}
       </ul>
