@@ -1,27 +1,28 @@
 // import classes from "./SignUpMainForm.module.css";
 
+// import { isClickSignUpWithPassword, isClickSignUpWithEmailLink } from "../../recoil/SignUpAtom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import SignUpSubForm from "./SignUpSubForm";
+import LoginSubForm from "../login/LoginSubForm";
 
-export default function SignUpMainForm() {
+export default function LoginMainForm() {
   let navigate = useNavigate();
 
   const [isClickEP, setIsClickEP] = useState(false);
   const [isClickLink, setIsClickLink] = useState(false);
 
-  const clickSignPasswordHandler = (e) => {
+  const clickLoginPasswordHandler = (e) => {
     e.preventDefault();
     setIsClickEP(true);
     setIsClickLink(false);
-    navigate("/sign_up/with_password");
+    navigate("/login/with_password");
   };
 
-  const clickSignLinkHandler = (e) => {
+  const clickLoginLinkHandler = (e) => {
     setIsClickLink(true);
     setIsClickEP(false);
-    navigate("/sign_up/with_email_link");
+    navigate("/login/with_email_link");
   };
 
   //   const content = () => {
@@ -50,7 +51,7 @@ export default function SignUpMainForm() {
       {/* {isClickLink && <SignUpEmailLink />} */}
 
       {!isClickEP && !isClickLink && (
-        <SignUpSubForm onClickSignPassword={clickSignPasswordHandler} onClickSignLink={clickSignLinkHandler} />
+        <LoginSubForm onClickSignPassword={clickLoginPasswordHandler} onClickSignLink={clickLoginLinkHandler} />
       )}
     </>
   );

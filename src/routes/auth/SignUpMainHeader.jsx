@@ -5,8 +5,6 @@ import { useState } from "react";
 import BackButton from "../../components/BackButton";
 
 import SignUpMainForm from "./SignUpMainForm";
-import SignUpPassword from "./SignUpPassword";
-import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpMainHeader() {
   // const [isClickEP, setIsClickEP] = useState(false);

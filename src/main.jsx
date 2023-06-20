@@ -12,6 +12,8 @@ import App, { loader as postsLoader } from "./routes/App";
 import RootLayOut from "./routes/RootLayout";
 
 import RootLayOutLogin from "../src/routes/auth/RootLayOutLogin";
+import LoginPassword from "./routes/auth/login/LoginPassword";
+import LoginEmailLink from "./routes/auth/login/LoginEmailLink";
 
 import RootLayOutSignUp from "./routes/auth/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/SignUpPassword";
@@ -60,6 +62,16 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <RootLayOutLogin />,
+    children: [
+      {
+        path: "/login/with_password",
+        element: <LoginPassword />,
+      },
+      {
+        path: "/login/with_email_link",
+        element: <LoginEmailLink />,
+      },
+    ],
   },
   {
     path: "/sign_up",
