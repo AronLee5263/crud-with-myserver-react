@@ -52,7 +52,7 @@ export default function SignUpMainForm() {
   return (
     <>
       {/* {isClickEP && <SignUpPassword />} */}
-      {isClickLink && <SignUpEmailLink />}
+      {/* {isClickLink && <SignUpEmailLink />} */}
 
       {!isClickEP && !isClickLink && (
         <SignUpSubForm onClickSignPassword={clickSignPasswordHandler} onClickSignLink={clickSignLinkHandler} />
