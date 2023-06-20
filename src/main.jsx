@@ -11,7 +11,7 @@ import App, { loader as postsLoader } from "./routes/App";
 
 import RootLayOut from "./routes/RootLayout";
 
-import Login from "../src/routes/auth/Login";
+import RootLayOutLogin from "../src/routes/auth/RootLayOutLogin";
 
 import RootLayOutSignUp from "./routes/auth/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/SignUpPassword";
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <RootLayOutLogin />,
   },
   {
     path: "/sign_up",
