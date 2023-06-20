@@ -21,7 +21,7 @@ import SignUpEmailLink from "./routes/auth/SignUpEmailLink";
 
 // const App = lazy(() => import("./routes/App"));
 // const NewPost = lazy(() => import("./routes/NewPost"));
-const PostDetails = lazy(() => import("./routes/PostDetails"));
+// const PostDetails = lazy(() => import("./routes/PostDetails"));
 
 const router = createBrowserRouter([
   {
@@ -31,16 +31,21 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<p>로딩중입니다...</p>}>
-            <App />
-          </Suspense>
+          // <Suspense fallback={<p>로딩중입니다...</p>}>
+          <App />
+          // </Suspense>
         ),
         loader: postsLoader,
         children: [
           {
             path: "/create_post",
-            element: <NewPost />,
+            element: (
+              // <Suspense fallback={<p>로딩중입니다...</p>}>
+              <NewPost />
+              // </Suspense>
+            ),
             action: newPostAction,
+            // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
           },
           // {
           //   path: "/:postId",
