@@ -1,10 +1,10 @@
+import classes from "./MainHeader.module.css";
+
 import { useState } from "react";
 import { Link, Form } from "react-router-dom";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
-
-import classes from "./MainHeader.module.css";
 
 import ProfilePopup from "./ProfilePopup";
 
@@ -26,6 +26,7 @@ function MainHeader() {
         <div className={classes.profile}>
           <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>
             <CgProfile size={30} className={classes.icon} />
+            <p className={classes.nickName}>nick name</p>
           </button>
         </div>
 

@@ -8,12 +8,15 @@ import EmailLinkSent from "./EmailLinkSent";
 
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 
-export default function SignUpEmailLink({ userEmail }) {
+export default function SignUpEmailLink() {
   const [isSendEmailLink, setIsSendEmailLink] = useState(false);
+
+  const [userEmailText, setUserEmailText] = useState("");
+
   const navigate = useNavigate();
 
   function emailTypingHandler(e) {
-    setUserEmail(e.target.value);
+    setUserEmailText(e.target.value);
   }
 
   //   sendSignInLinkToEmail(auth, userEmail, actionCodeSettings)
