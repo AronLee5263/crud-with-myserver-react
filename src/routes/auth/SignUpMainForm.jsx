@@ -51,7 +51,7 @@ export default function SignUpMainForm() {
 
   return (
     <>
-      {isClickEP && <SignUpPassword />}
+      {/* {isClickEP && <SignUpPassword />} */}
       {isClickLink && <SignUpEmailLink />}
 
       {!isClickEP && !isClickLink && (
