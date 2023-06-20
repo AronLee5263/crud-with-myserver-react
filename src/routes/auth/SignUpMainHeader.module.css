@@ -1,6 +1,7 @@
 .wholePage {
   margin-left: 20px;
   margin-right: 20px;
+  /* background-color: yellow; */
 }
 
 /* .dd{
@@ -17,6 +18,8 @@
   margin-top: 0.1rem;
   margin-bottom: 3rem;
   justify-content: center;
+  background-color: tomato;
+
   /* z-index: 10; */
 }
 

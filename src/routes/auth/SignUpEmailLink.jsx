@@ -1,10 +1,11 @@
-import { auth } from "../../../firebase/firebaseConfig";
+import classes from "./SignUpEmailLink.module.css";
+
+import { auth, actionCodeSettings } from "../../../firebase/firebaseConfig";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import EmailLinkSent from "./EmailLinkSent";
 
-import { actionCodeSettings } from "../../../firebase/firebaseConfig";
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 
 export default function SignUpEmailLink({ userEmail }) {
@@ -77,23 +78,24 @@ export default function SignUpEmailLink({ userEmail }) {
       });
   }
 
-  return;
-  <>
-    <div className={classes.emailLinkAuth}>
-      사용중인 이메일 링크로 가입
-      <form>
-        email : <input type="email" onChange={emailTypingHandler} id="signUpEmailLink" />
-      </form>
-      {/* <button type="button" onClick={sendSignInLinkToEmailHandler}>
+  return (
+    <>
+      <div className={classes.emailLinkAuth}>
+        사용중인 이메일 링크로 가입
+        <form>
+          email : <input type="email" onChange={emailTypingHandler} id="signUpEmailLink" />
+        </form>
+        {/* <button type="button" onClick={sendSignInLinkToEmailHandler}>
         회원가입
       </button> */}
-    </div>
-    {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />}
-    <div>1</div>
-    <div>2</div>
-    <div>3333333333333</div>
-    <div>44444444</div>
-    <div>55555555</div>
-    <div>666666666</div>
-  </>;
+      </div>
+      {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />}
+      <div>1</div>
+      <div>2</div>
+      <div>3333333333333</div>
+      <div>44444444</div>
+      <div>55555555</div>
+      <div>666666666</div>
+    </>
+  );
 }

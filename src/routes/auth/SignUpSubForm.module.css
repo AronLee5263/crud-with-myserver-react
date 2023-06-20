@@ -1,0 +1,126 @@
+.titleSection {
+  margin-top: 5rem;
+}
+
+.titleText {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  color: black;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: bold;
+
+  word-spacing: 0.2px;
+  letter-spacing: -1.2px;
+}
+
+.authSection {
+  box-sizing: border-box;
+
+  margin-top: 6rem;
+  padding: 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.SignUpGoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  margin-bottom: 20px;
+  padding: 10px 1rem;
+  border: 1.3px solid var(--border-color);
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.googleLogo {
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+}
+.googleText {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  word-spacing: 2px;
+  letter-spacing: -0.7px;
+}
+
+.also {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alsoLine {
+  border-top: 1px solid var(--border-color);
+  width: 8rem;
+  height: 0px;
+}
+.alsoText {
+  font-size: 11px;
+  margin: 0 10px;
+  color: var(--border-color-notrgb);
+}
+
+.SignUpEmailLink,
+.SignUpPassword {
+  display: flex;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  margin-top: 15px;
+  padding: 10px 1rem;
+  border-radius: 50px;
+  background-color: rgb(30, 29, 29);
+  text-decoration: none;
+}
+
+.authText {
+  color: white;
+
+  font-size: 14px;
+  font-weight: 500;
+  word-spacing: 2px;
+  letter-spacing: -1px;
+}
+
+.bottomSection {
+  margin-top: 1rem;
+}
+
+.policyAgree {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 15px;
+  color: var(--border-color-notrgb);
+
+  margin-top: 20px;
+}
+
+.exsitingAccount {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.exsitingAccountText,
+.loginLink {
+  margin-right: 5px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--border-color-notrgb);
+
+  word-spacing: 2px;
+  letter-spacing: -1px;
+}
+
+.policyAgreeText,
+.loginLink {
+  color: var(--main-color);
+  text-decoration: none;
+}

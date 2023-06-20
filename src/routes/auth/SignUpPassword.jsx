@@ -55,10 +55,10 @@ export default function SignUpPassword() {
   }
 
   return (
-    <div className={classes.wholePage}>
+    <div className={classes.wholePageSignUpPassword}>
       <div className={classes.sections}>
         <div className={classes.topSection}>
-          <p className={classes.title}> 계정을 생성하세요</p>
+          <p className={classes.title}> 계정을d 생성하세요</p>
         </div>
 
         <div className={classes.middleSection}>
