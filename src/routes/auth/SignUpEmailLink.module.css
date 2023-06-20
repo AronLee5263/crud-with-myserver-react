@@ -13,6 +13,15 @@
   letter-spacing: -1px;
 }
 
+.subTitle {
+  margin-top: -18px;
+  font-size: 12px;
+  font-weight: 600;
+  word-spacing: 2px;
+  letter-spacing: -0.5px;
+  opacity: 0.3;
+}
+
 .emailLinkAuth {
   display: flex;
   justify-content: space-around;

@@ -55,61 +55,50 @@ export default function SignUpPassword() {
   }
 
   return (
-    <div className={classes.wholePageSignUpPassword}>
-      <div className={classes.sections}>
-        <div className={classes.topSection}>
-          <p className={classes.title}> 계정을d 생성하세요</p>
-        </div>
+    <>
+      <div className={classes.wholePageLink}>
+        <p className={classes.title}>계정을 생성하세요</p>
+        <p className={classes.subTitle}>이메일과 비밀번호 방식 회원가입</p>
 
-        <div className={classes.middleSection}>
-          <form className={classes.authForm}>
-            <div>
-              email : <input type="email" onChange={emailTypingHandler} id="signUpEmailPassword" />
-            </div>
+        <form className={classes.emailLinkAuth}>
+          <input className={classes.textName} required placeholder="이름" type="email" onChange={emailTypingHandler} />
+          <div className={classes.line}></div>
 
-            <button type="button" onClick={singUpWithEmailAndPasswordHandler} id="signUpButton">
-              회원가입 하기
-            </button>
-          </form>
+          <input
+            className={classes.textEmail}
+            required
+            placeholder="사용중인 이메일 주소"
+            onChange={emailTypingHandler}
+          />
+          <div className={classes.line}></div>
+        </form>
+
+        <div className={classes.buttonSection}>
+          <button className={classes.authButton} type="button">
+            가입
+          </button>
         </div>
+        {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
-    </div>
+    </>
+    // <div className={classes.wholePageSignUpPassword}>
+    //   <div className={classes.sections}>
+    //     <div className={classes.topSection}>
+    //       <p className={classes.title}> 계정을d 생성하세요</p>
+    //     </div>
+
+    //     <div className={classes.middleSection}>
+    //       <form className={classes.authForm}>
+    //         <div>
+    //           email : <input type="email" onChange={emailTypingHandler} id="signUpEmailPassword" />
+    //         </div>
+
+    //         <button type="button" onClick={singUpWithEmailAndPasswordHandler} id="signUpButton">
+    //           회원가입 하기
+    //         </button>
+    //       </form>
+    //     </div>
+    //   </div>
+    // </div>
   );
-
-  // return (
-  //   <div className={classes.main}>
-  //     <div className={classes.topSection}>
-  //       <div className={classes.header}>
-  //         <BackButton />
-  //         <img className={classes.logo} src="/assets/images/logo/disc_logo_1.png" alt="app_logo" />
-  //       </div>
-
-  //       {/* <h2 className={classes.title}>회원가입 페이지</h2> */}
-  //       <p className={classes.text}>사람들이 어떻게 디스크를 관리하는지 알아보세요.</p>
-  //     </div>
-  //     <div className={classes.authSection}>
-  //       <hr />
-
-  //       <SignUpEmailLink userEmail={userEmail} />
-  //       <hr />
-  //       <form className={classes.emailPasswordAuth}>
-  //         <div>
-  //           email : <input type="email" onChange={emailTypingHandler} id="signUpEmail" />
-  //         </div>
-
-  //         <button type="button" onClick={singUpWithEmailAndPasswordHandler} id="signUpButton">
-  //           회원가입 하기
-  //         </button>
-  //       </form>
-  //     </div>
-
-  //     <div className={classes.bottomSection}></div>
-
-  //     <div className={classes.temp}>
-  //       <button className={classes.initializeAppBtn} type="button" onClick={showLogHandler}>
-  //         initializeApp app 콘솔버튼
-  //       </button>
-  //     </div>
-  //   </div>
-  // );
 }
