@@ -1,7 +1,7 @@
 export default function LoginEmailLink() {
   return (
     <>
-      <div>ddd</div>
+      <div>구현중..</div>
     </>
   );
 }
