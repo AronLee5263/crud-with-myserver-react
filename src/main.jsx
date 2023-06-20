@@ -6,7 +6,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 import "./index.css";
 
 import App, { loader as postsLoader } from "./routes/App";
-// import NewPost, { action as newPostAction } from "./routes/NewPost";
+import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
 import RootLayOut from "./routes/RootLayout";
@@ -20,7 +20,7 @@ import SignUpPassword from "./routes/auth/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/SignUpEmailLink";
 
 // const App = lazy(() => import("./routes/App"));
-const NewPost = lazy(() => import("./routes/NewPost"));
+// const NewPost = lazy(() => import("./routes/NewPost"));
 const PostDetails = lazy(() => import("./routes/PostDetails"));
 
 const router = createBrowserRouter([
@@ -39,12 +39,8 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/create_post",
-            element: (
-              <Suspense fallback={<p>로딩중입니다...</p>}>
-                <NewPost />
-              </Suspense>
-            ),
-            action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
+            element: <NewPost />,
+            action: newPostAction,
           },
           // {
           //   path: "/:postId",
