@@ -1,5 +1,10 @@
 .header {
   /* padding: 2rem 10%; */
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+
   text-align: center;
   display: flex;
   justify-content: space-around;
