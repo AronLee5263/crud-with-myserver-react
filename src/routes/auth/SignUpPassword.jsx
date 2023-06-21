@@ -2,7 +2,7 @@ import classes from "./SignUpPassword.module.css";
 
 import { useState } from "react";
 
-import { auth } from "../../../firebase/firebaseConfig";
+import { auth } from "../../firebase/config";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 import BackButton from "../../components/BackButton";

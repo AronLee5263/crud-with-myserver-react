@@ -2,7 +2,7 @@ import classes from "./LoginPassword.module.css";
 
 import { useState } from "react";
 
-import { auth } from "../../../../firebase/firebaseConfig";
+import { auth } from "../../../firebase/config";
 
 export default function LoginPassword() {
   const [userEmail, setUserEmail] = useState("");

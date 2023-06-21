@@ -1,6 +1,6 @@
 import classes from "./SignUpEmailLink.module.css";
 
-import { auth, actionCodeSettings } from "../../../firebase/firebaseConfig";
+import { auth, actionCodeSettings } from "../../firebase/config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
