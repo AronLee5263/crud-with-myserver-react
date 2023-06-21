@@ -10,8 +10,8 @@ export default function Post({ id, author, body, onOpenPopup }) {
       <li className={classes.post}>
         <div className={classes.sections}>
           <div className={classes.leftSection}>
-            <div className={classes.postProfileIcon}>icon</div>
-            <span className={classes.tempText}>여백</span>
+            <span className={classes.postProfileIcon}>idddddcon</span>
+            <span className={classes.tempText}>여백mmmmmm</span>
           </div>
           <div className={classes.rightSection}>
             <p className={classes.author}>{author}</p>
