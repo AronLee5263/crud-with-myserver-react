@@ -1,6 +1,6 @@
 .post {
   min-height: 2rem;
-  max-height: 16rem;
+  max-height: 17rem;
 
   overflow: hidden;
 
@@ -33,7 +33,7 @@
 }
 
 .rightSection {
-  max-height: 15rem;
+  max-height: 16rem;
   width: 22rem;
 
   /* border: 2px solid rgb(0, 4, 255); */
@@ -41,19 +41,8 @@
 
 .contents {
   margin-left: 10px;
-  max-height: 12rem;
-}
 
-.content {
-  margin-bottom: 1rem;
-  max-height: 12rem;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* background-color: tomato; */
+  max-height: 15.5rem;
 }
 
 .author {
@@ -68,6 +57,8 @@
 }
 
 .bodyContents {
+  margin-bottom: 0.5rem;
+
   max-height: 10rem;
 }
 
@@ -80,7 +71,7 @@
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   overflow: hidden;
 }
 
