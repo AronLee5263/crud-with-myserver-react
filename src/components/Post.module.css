@@ -4,7 +4,7 @@
 
   overflow: hidden;
 
-  border-bottom: 0.3px solid var(--header-border-color);
+  border-bottom: 0.5px solid var(--post-border-color);
 
   animation: animate-in 1s ease-out forwards;
 }
@@ -113,8 +113,8 @@
   align-items: center;
 
   font-size: 0.8rem;
-  color: black;
-  opacity: 0.4;
+  font-weight: 500;
+  color: var(--gray-icon-opacity07);
   cursor: pointer;
 }
 

@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import { MdMoreHoriz } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { GoComment } from "react-icons/go";
-import { CiHeart } from "react-icons/ci";
+// import { CiHeart } from "react-icons/ci";
+import { AiOutlineHeart } from "react-icons/ai";
+
 export default function Post({ id, author, body, onOpenPopup }) {
   // const [isClickHeart, setIsClickHeart] = useState(false);
   // const isClickHeartHandler = () => {
@@ -52,7 +54,7 @@ export default function Post({ id, author, body, onOpenPopup }) {
                       <CiHeart size={18} className={classes.icon} />
                     )}
                   </button> */}
-                  <CiHeart size={18} className={classes.icon} />
+                  <AiOutlineHeart size={18} className={classes.icon} />
                   <div className={classes.likeCount}>0개</div>
                 </li>
                 <li className={classes.three}>
