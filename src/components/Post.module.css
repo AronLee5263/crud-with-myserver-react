@@ -76,10 +76,7 @@
   font-size: 0.9rem;
   color: black;
 
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
 }
 
 .button {
