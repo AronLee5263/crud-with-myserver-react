@@ -1,13 +1,59 @@
 .post {
-  margin: 3rem 0.5rem;
-  padding: 2rem;
-  /* background-color: #9c7eee; */
-  border: 1px solid #939393fc;
-  border-radius: 8px;
+  /* box-sizing: border-box; */
+  /* height: 12rem;
+  height: auto; */
+
+  min-height: 2rem;
+  max-height: 13rem;
+  overflow: hidden;
+
+  border-bottom: 1px solid #939393fc;
+
+  /* border-bottom: 5px solid red; */
+
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
 
-  position: relative;
+  /* background-color: #c7d194; */
+}
+/* .post:nth-child(1) {
+  margin: 0;
+} */
+
+.sections {
+  display: flex;
+  max-height: 12rem;
+  /* justify-content: space-between; */
+  /* background-color: tomato; */
+}
+
+.leftSection {
+  padding: 1.2rem;
+  box-sizing: border-box;
+  width: 4rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(0, 64, 255, 0.203);
+  background-color: rgba(200, 220, 24, 0.751);
+}
+
+.postProfileIcon {
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 255, 0.597);
+}
+
+.tempText {
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: rgba(255, 0, 0, 0.563);
+}
+
+.rightSection {
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* .post a {
@@ -15,31 +61,34 @@
 } */
 
 .author {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #543280;
-  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: -0.5px;
+
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .body {
   white-space: pre-wrap;
-  font-size: 1.25rem;
-  margin: 0.25rem 0 0 0;
-  color: #593884;
-  font-style: italic;
+  font-size: 16px;
+  color: black;
 }
 
 .button {
+  margin-top: 3px;
+  margin-right: 3px;
+
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 3px;
-  margin-right: 3px;
-  background-color: transparent;
+
   cursor: pointer;
   border: none;
+
+  opacity: 0.4;
+  background-color: transparent;
 }
 
 @keyframes animate-in {

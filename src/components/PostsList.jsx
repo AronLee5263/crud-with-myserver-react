@@ -1,6 +1,7 @@
+import classes from "./PostsList.module.css";
+
 import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-import classes from "./PostsList.module.css";
 
 import Post from "./Post";
 import MorePopup from "./MorePopup";

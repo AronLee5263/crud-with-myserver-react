@@ -1,8 +1,8 @@
 import classes from "./App.module.css";
 import axios from "axios";
 
-import { Outlet } from "react-router-dom";
 import PostsList from "../components/PostsList";
+import { Outlet } from "react-router-dom";
 
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
