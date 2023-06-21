@@ -7,7 +7,7 @@
   background-color: transparent;
   background-color: var(--backdrop-color);
 
-  z-index: 1;
+  z-index: 200;
 }
 
 .morePopup {
@@ -19,5 +19,5 @@
   margin-top: 4rem;
   padding: 0;
   overflow: hidden;
-  z-index: 3;
+  z-index: 300;
 }
