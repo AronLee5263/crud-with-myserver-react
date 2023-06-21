@@ -1,67 +1,64 @@
 .post {
-  /* box-sizing: border-box; */
-  /* height: 12rem;
-  height: auto; */
-
   min-height: 2rem;
-  max-height: 13rem;
+  max-height: 16rem;
+
   overflow: hidden;
 
-  border-bottom: 1px solid #939393fc;
+  border-bottom: 0.3px solid var(--header-border-color);
 
-  /* border-bottom: 5px solid red; */
-
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
-
-  /* background-color: #c7d194; */
 }
-/* .post:nth-child(1) {
-  margin: 0;
-} */
 
 .sections {
   display: flex;
-  max-height: 12rem;
-  /* justify-content: space-between; */
-  /* background-color: tomato; */
+  max-height: 15.2rem;
 }
 
 .leftSection {
-  width: 3rem;
+  width: 2.5rem;
 
-  border: 2px solid rgb(255, 0, 225);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 
-  background-color: rgba(0, 64, 255, 0.203);
+  /* background-color: rgba(0, 64, 255, 0.203); */
 }
 
 .postProfileIcon {
-  background-color: rgba(51, 255, 0, 0.597);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tempText {
-  background-color: rgba(255, 0, 0, 0.686);
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 8px;
+  margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.426);
 }
 
 .rightSection {
-  /* margin-left: 1rem; */
-  border: 2px solid rgb(0, 4, 255);
-  box-sizing: border-box;
+  max-height: 15rem;
+  width: 22rem;
+
+  /* border: 2px solid rgb(0, 4, 255); */
 }
 
-/* .post a {
-  text-decoration: none;
-} */
+.contents {
+  margin-left: 10px;
+  max-height: 12rem;
+}
+
+.content {
+  margin-bottom: 1rem;
+  max-height: 12rem;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* background-color: tomato; */
+}
 
 .author {
-  font-size: 18px;
+  margin-top: 0.6rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: black;
   letter-spacing: -0.5px;
@@ -70,10 +67,19 @@
   margin-bottom: 1rem;
 }
 
-.body {
+.bodyContents {
+  max-height: 10rem;
+}
+
+.bodyText {
   white-space: pre-wrap;
-  font-size: 16px;
+  font-size: 0.9rem;
   color: black;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .button {
@@ -91,6 +97,58 @@
   background-color: transparent;
 }
 
+.bodyContents,
+.bottomContents {
+  margin-right: 1rem;
+  /* background-color: red; */
+}
+
+.bottomContents {
+  width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* background-color: rgba(255, 0, 0, 0.321); */
+}
+
+.bottomContents li {
+  margin-right: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 0.8rem;
+  color: black;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.comment,
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li > .icon {
+  margin-right: 0.2rem;
+  /* background-color: red; */
+}
+
+li > .icon:active {
+  /* will-change: transform; */
+
+  animation: animate-click-heart 0.5s 1;
+}
+
+.heartBtn {
+  border: none;
+  margin-top: 0.2rem;
+  margin-right: -0.2rem;
+}
+
 @keyframes animate-in {
   from {
     opacity: 0;
@@ -99,5 +157,35 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    color: transparent;
+    transform: scale(1);
+  }
+  50% {
+    color: red;
+    transform: scale(2rem);
+  }
+  100% {
+    color: red;
+    transform: none;
+  }
+}
+
+@keyframes animate-click-heart {
+  0% {
+    transform: scale(1);
+    background-color: initial;
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: red;
+  }
+  100% {
+    transform: scale(1);
+    background-color: red;
   }
 }
