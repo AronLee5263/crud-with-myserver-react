@@ -17,7 +17,7 @@ export default function Post({ id, author, body, onOpenPopup }) {
   // };
   return (
     <>
-      <li className={classes.post}>
+      <div className={classes.post}>
         <div className={classes.sections}>
           <div className={classes.leftSection}>
             <span className={classes.postProfileIcon}>
@@ -73,7 +73,7 @@ export default function Post({ id, author, body, onOpenPopup }) {
             </div>
           </div>
         </div>
-      </li>
+      </div>
     </>
   );
 }
