@@ -22,6 +22,7 @@ function MainHeader() {
   return (
     <>
       {profilePopupIsVisible && <ProfilePopup onCloseProfilePopup={closeProfilePopupHandler} />}
+
       <header className={classes.header}>
         <div className={classes.profile}>
           <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>

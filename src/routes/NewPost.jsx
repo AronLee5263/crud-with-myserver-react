@@ -1,9 +1,9 @@
+import classes from "./NewPost.module.css";
+
 import axios from "axios";
 import { Link, Form, redirect } from "react-router-dom";
 
 import Modal from "../components/Modal";
-
-import classes from "./NewPost.module.css";
 
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
@@ -19,7 +19,7 @@ export default function NewPost() {
         </p>
         <p>
           <label htmlFor="postAuthor">이름</label>
-          <input className={classes.postAuthor} id="postAuthor" name="postAuthor" required type="text" />
+          <input required className={classes.postAuthor} id="postAuthor" name="postAuthor" type="text" />
         </p>
         <p>
           <label htmlFor="postContent">내용</label>
