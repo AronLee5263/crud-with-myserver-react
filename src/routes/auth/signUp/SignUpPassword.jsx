@@ -71,6 +71,9 @@ export default function SignUpPassword() {
             onChange={emailTypingHandler}
           />
           <div className={classes.line}></div>
+
+          <input className={classes.textpassword} required placeholder="비밀번호" onChange={passwordTypingHandler} />
+          <div className={classes.line}></div>
         </form>
 
         <div className={classes.buttonSection}>
