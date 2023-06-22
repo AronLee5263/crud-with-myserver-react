@@ -31,7 +31,7 @@ export default function Post({ id, author, body, onOpenPopup }) {
             <div className={classes.contents}>
               <div className={classes.headerContents}>
                 <p className={classes.author}>{author}</p>
-                <button type="button" className={classes.button} onClick={onOpenPopup}>
+                <button className={classes.postButton} type="button" onClick={onOpenPopup}>
                   <MdMoreHoriz size={22} />
                 </button>
               </div>
