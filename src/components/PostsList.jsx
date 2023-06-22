@@ -1,7 +1,7 @@
 import classes from "./PostsList.module.css";
 
 import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 import Post from "./Post";
 import MorePopup from "./MorePopup";
@@ -11,8 +11,8 @@ import axios from "axios";
 
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
-export default function PostsList() {
-  const posts = useLoaderData();
+export default function PostsList({ posts }) {
+  // const posts = useLoaderData();
   const [popupIsVisible, setPopupIsVisible] = useState(false);
 
   // function closePopupHandler() {

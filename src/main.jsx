@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             <App />
           </Suspense>
         ),
-        loader: () => import("./routes/App").then((module) => module.loader()),
+        // loader: () => import("./routes/App").then((module) => module.loader()),
         children: [
           {
             path: "/create_post",
