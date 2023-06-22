@@ -10,3 +10,4 @@ export default function MorePopup({ children, onClosePopup }) {
     </>
   );
 }
+// 자동 줄바꿈 해제  
