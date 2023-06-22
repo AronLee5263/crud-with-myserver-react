@@ -93,10 +93,6 @@
 .deleteButton {
   margin-top: 0.35rem;
   margin-right: 3rem;
-
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 50px;
-  opacity: 0.6;
 }
 
 .bodyContents,

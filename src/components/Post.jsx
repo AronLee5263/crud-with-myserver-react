@@ -9,6 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { GoComment } from "react-icons/go";
 // import { CiHeart } from "react-icons/ci";
 import { AiOutlineHeart } from "react-icons/ai";
+import { BsTrash3 } from "react-icons/bs";
 
 export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
   // const [isClickHeart, setIsClickHeart] = useState(false);
@@ -39,7 +40,7 @@ export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
                   <MdMoreHoriz size={22} />
                 </button>
                 <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
-                  삭제
+                  <BsTrash3 size={18} />
                 </button>
               </div>
 
