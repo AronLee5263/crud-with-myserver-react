@@ -84,7 +84,7 @@ export async function action({ request }) {
   return redirect("/");
 }
 
-// export async function action() {
+// export async function action({ request }) {
 //   const formData = await request.formData();
 //   const postData = Object.fromEntries(formData);
 //   await axios.post(SERVER_URL, {
