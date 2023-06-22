@@ -9,13 +9,28 @@ import BackButton from "../../../components/BackButton";
 import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
+  const [nickName, setNickName] = useState("");
+
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
-  function emailTypingHandler(e) {
+  const nickNameHandler = async (e) => {
+    e.preventDefault();
+    console.log(nickName);
+
+    setNickName(e.target.value);
+  };
+
+  const emailTypingHandler = async (e) => {
+    e.preventDefault();
+    console.log(userEmail);
+
     setUserEmail(e.target.value);
-  }
+  };
+
   function passwordTypingHandler(e) {
+    e.preventDefault();
+
     setUserPassword(e.target.value);
   }
 
@@ -61,18 +76,33 @@ export default function SignUpPassword() {
         <p className={classes.subTitle}>이메일과 비밀번호 방식 회원가입</p>
 
         <form className={classes.emailLinkAuth}>
-          <input className={classes.textName} required placeholder="이름" type="email" onChange={emailTypingHandler} />
-          <div className={classes.line}></div>
-
           <input
-            className={classes.textEmail}
             required
-            placeholder="사용중인 이메일 주소"
-            onChange={emailTypingHandler}
+            type="text"
+            className={classes.textName}
+            placeholder="이름"
+            onChange={nickNameHandler}
+            value={nickName}
           />
           <div className={classes.line}></div>
 
-          <input className={classes.textpassword} required placeholder="비밀번호" onChange={passwordTypingHandler} />
+          <input
+            required
+            className={classes.textEmail}
+            placeholder="사용중인 이메일 주소"
+            onChange={emailTypingHandler}
+            value={userEmail}
+          />
+          <div className={classes.line}></div>
+
+          <input
+            required
+            type="password"
+            className={classes.textpassword}
+            placeholder="비밀번호"
+            onChange={passwordTypingHandler}
+            value={userPassword}
+          />
           <div className={classes.line}></div>
         </form>
 
