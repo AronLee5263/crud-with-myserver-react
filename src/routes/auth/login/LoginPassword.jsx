@@ -15,6 +15,11 @@ export default function LoginPassword() {
     setUserPassword(e.target.value);
   }
 
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log(nickName, userEmail, userEmail);
+  };
+
   function singUpWithEmailAndPasswordHandler(event) {
     event.preventDefault();
     console.log(userEmail, userPassword);
