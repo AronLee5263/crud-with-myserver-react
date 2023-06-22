@@ -10,11 +10,15 @@ import { GoComment } from "react-icons/go";
 // import { CiHeart } from "react-icons/ci";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export default function Post({ id, author, body, onOpenPopup }) {
+export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
   // const [isClickHeart, setIsClickHeart] = useState(false);
   // const isClickHeartHandler = () => {
   //   setIsClickHeart(true);
   // };
+
+  const deleteHandler = () => {
+    onDeletePost(id);
+  };
   return (
     <>
       <div className={classes.post}>
@@ -33,6 +37,9 @@ export default function Post({ id, author, body, onOpenPopup }) {
                 <p className={classes.author}>{author}</p>
                 <button className={classes.postButton} type="button" onClick={onOpenPopup}>
                   <MdMoreHoriz size={22} />
+                </button>
+                <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
+                  삭제
                 </button>
               </div>
 

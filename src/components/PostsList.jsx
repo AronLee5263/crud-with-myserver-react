@@ -1,5 +1,8 @@
 import classes from "./PostsList.module.css";
 
+import { db } from "../firebase/config";
+import { doc, deleteDoc } from "firebase/firestore";
+
 import { useState, useEffect } from "react";
 // import { useLoaderData } from "react-router-dom";
 
@@ -23,18 +26,26 @@ export default function PostsList({ posts }) {
   //   setPopupIsVisible(true);
   // }
 
+  const deleteHandler = async (id) => {
+    console.log(id);
+    const ref = doc(db, "POST", id);
+    await deleteDoc(ref);
+  };
+
   let postContent;
 
   if (posts.length > 0) {
     postContent = (
       <ul className={classes.posts}>
-        {posts.map((post, i) => (
+        {posts.map((post) => (
           <Post
-            key={i}
+            key={post.id}
             id={post.id}
             author={post.author}
             body={post.body}
             onOpenPopup={(e) => setPopupIsVisible(true)}
+            onClickDeletePost={deleteHandler}
+            onDeletePost={deleteHandler}
           />
         ))}
       </ul>
