@@ -11,13 +11,13 @@ import NewPost, { action as newPostAction } from "./routes/NewPost";
 
 import RootLayOut from "./routes/RootLayout";
 
-import RootLayOutLogin from "../src/routes/auth/RootLayOutLogin";
+import RootLayOutLogin from "../src/routes/auth/login/RootLayOutLogin";
 import LoginPassword from "./routes/auth/login/LoginPassword";
 import LoginEmailLink from "./routes/auth/login/LoginEmailLink";
 
-import RootLayOutSignUp from "./routes/auth/RootLayOutSignUp";
-import SignUpPassword from "./routes/auth/SignUpPassword";
-import SignUpEmailLink from "./routes/auth/SignUpEmailLink";
+import RootLayOutSignUp from "./routes/auth/signUp/RootLayOutSignUp";
+import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
+import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
 // const App = lazy(() => import("./routes/App"));
 // const NewPost = lazy(() => import("./routes/NewPost"));

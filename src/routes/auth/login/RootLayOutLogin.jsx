@@ -4,12 +4,12 @@
 // import { auth } from "../../../firebase/firebaseConfig";
 // import { signInWithEmailAndPassword } from "firebase/auth";
 
-// import BackButton from "../../components/BackButton";
+// import BackButton from "../../../components/BackButton";
 
 import { Outlet } from "react-router-dom";
 
-import LoginMainHeader from "../../routes/auth/login/LoginMainHeader";
-import NoMobile from "../../components/NoMobile";
+import LoginMainHeader from "./LoginMainHeader";
+import NoMobile from "../../../components/NoMobile";
 
 export default function Login() {
   // const [email, setEmail] = useState("");

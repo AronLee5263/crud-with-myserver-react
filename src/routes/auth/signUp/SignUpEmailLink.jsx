@@ -1,10 +1,11 @@
 import classes from "./SignUpEmailLink.module.css";
 
-import { auth, actionCodeSettings } from "../../firebase/config";
+import { auth, actionCodeSettings } from "../../../firebase/config";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import EmailLinkSent from "./signUp//EmailLinkSent";
+import EmailLinkSent from "./EmailLinkSent";
 
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 

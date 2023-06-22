@@ -2,7 +2,7 @@ import classes from "./SignUpMainHeader.module.css";
 
 import { useState } from "react";
 
-import BackButton from "../../components/BackButton";
+import BackButton from "../../../components/BackButton";
 
 import SignUpMainForm from "./SignUpMainForm";
 

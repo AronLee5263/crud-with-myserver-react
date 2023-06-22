@@ -1,6 +1,6 @@
 import classes from "./SignUpSubForm.module.css";
 
-import BackButton from "../../components/BackButton";
+import BackButton from "../../../components/BackButton";
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";

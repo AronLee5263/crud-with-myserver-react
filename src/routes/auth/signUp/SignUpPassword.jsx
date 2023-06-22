@@ -2,10 +2,10 @@ import classes from "./SignUpPassword.module.css";
 
 import { useState } from "react";
 
-import { auth } from "../../firebase/config";
+import { auth } from "../../../firebase/config";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-import BackButton from "../../components/BackButton";
+import BackButton from "../../../components/BackButton";
 import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
