@@ -15,13 +15,13 @@ export default function PostsList() {
   const posts = useLoaderData();
   const [popupIsVisible, setPopupIsVisible] = useState(false);
 
-  function closePopupHandler() {
-    setPopupIsVisible(false);
-  }
+  // function closePopupHandler() {
+  //   setPopupIsVisible(false);
+  // }
 
-  function openPopupHandler() {
-    setPopupIsVisible(true);
-  }
+  // function openPopupHandler() {
+  //   setPopupIsVisible(true);
+  // }
 
   let postContent;
 
@@ -29,7 +29,13 @@ export default function PostsList() {
     postContent = (
       <ul className={classes.posts}>
         {posts.map((post, i) => (
-          <Post key={i} id={post.id} author={post.author} body={post.body} onOpenPopup={openPopupHandler} />
+          <Post
+            key={i}
+            id={post.id}
+            author={post.author}
+            body={post.body}
+            onOpenPopup={(e) => setPopupIsVisible(true)}
+          />
         ))}
       </ul>
     );
@@ -51,8 +57,8 @@ export default function PostsList() {
   return (
     <>
       {popupIsVisible && (
-        <MorePopup onClosePopup={closePopupHandler}>
-          <MoreList onCancelButton={closePopupHandler} />
+        <MorePopup onClosePopup={(e) => setPopupIsVisible(false)}>
+          <MoreList onCancelButton={(e) => setPopupIsVisible(false)} />
         </MorePopup>
       )}
 
