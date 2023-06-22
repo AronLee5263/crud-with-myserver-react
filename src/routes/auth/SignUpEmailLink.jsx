@@ -4,7 +4,7 @@ import { auth, actionCodeSettings } from "../../firebase/config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import EmailLinkSent from "./EmailLinkSent";
+import EmailLinkSent from "./signUp//EmailLinkSent";
 
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 
