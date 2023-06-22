@@ -23,7 +23,7 @@ function MainHeader() {
     <>
       {profilePopupIsVisible && <ProfilePopup onCloseProfilePopup={closeProfilePopupHandler} />}
 
-      <header className={classes.header}>
+      <div className={classes.headerContainer}>
         <div className={classes.profile}>
           <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>
             <CgProfile size={30} className={classes.icon} />
@@ -32,9 +32,9 @@ function MainHeader() {
         </div>
 
         <div className={classes.category}>
-          <h1 className={classes.community}>커뮤니티</h1>
-          <h1 className={classes.goal}>달성기록</h1>
-          <h1 className={classes.info}>내 정보</h1>
+          <p className={classes.community}>커뮤니티</p>
+          <p className={classes.goal}>달성기록</p>
+          <p className={classes.info}>내 정보</p>
         </div>
 
         <Form method="post" className={classes.form}>
@@ -44,7 +44,7 @@ function MainHeader() {
             </Link>
           </p>
         </Form>
-      </header>
+      </div>
     </>
   );
 }

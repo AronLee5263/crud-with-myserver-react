@@ -1,16 +1,17 @@
-.header {
-  /* padding: 2rem 10%; */
+.headerContainer {
+  height: 4rem;
+
   position: sticky;
   top: 0;
   background-color: white;
   z-index: 100;
 
-  text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+
   border-bottom: 1px solid var(--header-border-color);
-  height: 4rem;
+  text-align: center;
 }
 
 .profile {
@@ -33,21 +34,22 @@
 }
 
 .category {
+  margin-top: 0.4rem;
+  margin-right: 1rem;
+
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+
   color: #000000;
-  margin-left: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
-.category * {
-  font-size: 1rem;
-  margin-right: 0.8rem;
+.category > p {
+  margin: 0px 0.45rem;
 }
 
-.goal {
-  color: #0000004f;
-}
+.goal,
 .info {
   color: #0000004f;
 }
@@ -60,7 +62,7 @@
   background-color: var(--main-color);
   color: #2a2630;
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px #00000033;
   cursor: pointer;
 
   width: 2rem;
