@@ -2,7 +2,7 @@
 
 .no_mobile {
   position: absolute;
-  z-index: 99;
+  z-index: 500;
   height: 100vh;
   background-color: var(--main-color);
   width: 100vw;
