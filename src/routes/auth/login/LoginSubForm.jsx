@@ -24,7 +24,9 @@ export default function LoginSubForm({ onClickSignPassword, onClickSignLink }) {
 
         <div className={classes.also}>
           <div className={classes.alsoLine}></div>
-          <div className={classes.alsoText}>또는</div>
+          <div className={classes.alsoText}>
+            <span>또는</span>
+          </div>
           <div className={classes.alsoLine}></div>
         </div>
 

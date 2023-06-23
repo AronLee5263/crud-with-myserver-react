@@ -56,12 +56,16 @@
 }
 .alsoLine {
   border-top: 1px solid var(--border-color);
-  width: 8rem;
+  width: 40%;
   height: 0px;
 }
 .alsoText {
-  font-size: 11px;
-  margin: 0 10px;
+  width: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
   color: var(--border-color-notrgb);
 }
 
