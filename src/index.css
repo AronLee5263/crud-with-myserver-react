@@ -1,15 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif !important;
 }
-
+/* 
 body {
   min-height: 100vh;
-  /* background-color: papayawhip;
-  margin: 0 auto; */
-}
+  background-color: #ffefd5;
+  margin: 0 auto;
+} */
 
 :root {
   min-height: 100vh;
@@ -37,8 +35,4 @@ body {
 
   --border-color: rgba(43, 42, 42, 0.363);
   --border-color-notrgb: rgb(43, 42, 42);
-}
-
-body {
-  margin: 0;
 }
