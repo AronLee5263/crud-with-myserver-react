@@ -8,7 +8,7 @@ import { MdMoreHoriz } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { GoComment } from "react-icons/go";
 // import { CiHeart } from "react-icons/ci";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineEdit } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
 
 export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
@@ -36,12 +36,18 @@ export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
             <div className={classes.contents}>
               <div className={classes.headerContents}>
                 <p className={classes.author}>{author}</p>
-                <button className={classes.postButton} type="button" onClick={onOpenPopup}>
-                  <MdMoreHoriz size={22} />
-                </button>
-                <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
-                  <BsTrash3 size={18} />
-                </button>
+
+                <div className={classes.buttons}>
+                  <button className={classes.editButton} type="button">
+                    <AiOutlineEdit size={18} />
+                  </button>
+                  <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
+                    <BsTrash3 size={18} />
+                  </button>
+                  <button className={classes.postButton} type="button" onClick={onOpenPopup}>
+                    <MdMoreHoriz size={22} />
+                  </button>
+                </div>
               </div>
 
               <div className={classes.bodyContents}>
