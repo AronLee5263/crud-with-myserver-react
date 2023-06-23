@@ -56,6 +56,7 @@ export default function NewPost() {
             required
             rows={12}
             placeholder="무슨 일이 일어나고 있나요?"
+            maxlength="200"
           />
         </p>
 
