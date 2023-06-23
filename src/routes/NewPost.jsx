@@ -55,9 +55,10 @@ export default function NewPost() {
             name="postContent"
             required
             rows={12}
-            placeholder="무슨 일이 일어나고 있나요?"
+            placeholder="무슨 일이 일어나고 있나요? "
             maxlength="200"
           />
+          <div className={classes.limitLetter}>200자 제한</div>
         </p>
 
         <p className={classes.checkBox}>

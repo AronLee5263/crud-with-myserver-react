@@ -96,3 +96,9 @@ input + span {
   margin-left: 8px;
   font: inherit;
 }
+
+.limitLetter {
+  margin: -1.6rem 0.3rem;
+  font-size: 0.6rem;
+  opacity: 0.4;
+}
