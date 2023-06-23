@@ -33,57 +33,55 @@ export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
           </div>
 
           <div className={classes.rightSection}>
-            <div className={classes.contents}>
-              <div className={classes.headerContents}>
-                <p className={classes.author}>{author}</p>
+            <div className={classes.headerContents}>
+              <p className={classes.author}>{author}</p>
 
-                <div className={classes.buttons}>
-                  <button className={classes.editButton} type="button">
-                    <AiOutlineEdit size={18} />
-                  </button>
-                  <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
-                    <BsTrash3 size={18} />
-                  </button>
-                  <button className={classes.postButton} type="button" onClick={onOpenPopup}>
-                    <MdMoreHoriz size={22} />
-                  </button>
-                </div>
+              <div className={classes.buttons}>
+                <button className={classes.editButton} type="button">
+                  <AiOutlineEdit size={18} />
+                </button>
+                <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
+                  <BsTrash3 size={16} />
+                </button>
+                <button className={classes.postButton} type="button" onClick={onOpenPopup}>
+                  <MdMoreHoriz size={18} />
+                </button>
               </div>
+            </div>
 
-              <div className={classes.bodyContents}>
-                <div className={classes.bodyText}>{body}</div>
-              </div>
+            <div className={classes.bodyContents}>
+              <div className={classes.bodyText}>{body}</div>
+            </div>
 
-              <div className={classes.bottomContents}>
-                <li className={classes.comment}>
-                  <GoComment size={18} className={classes.icon} />
-                  <div className={classes.commentCount}>0개</div>
-                </li>
+            <div className={classes.bottomContents}>
+              <li className={classes.comment}>
+                <GoComment size={18} className={classes.icon} />
+                <div className={classes.commentCount}>0개</div>
+              </li>
 
-                <li className={classes.like}>
-                  {/* <button type="button" className={classes.heartBtn} onClick={isClickHeartHandler}>
+              <li className={classes.like}>
+                {/* <button type="button" className={classes.heartBtn} onClick={isClickHeartHandler}>
                     {isClickHeart ? (
                       <CiHeart size={18} color="red" className={classes.icon} />
                     ) : (
                       <CiHeart size={18} className={classes.icon} />
                     )}
                   </button> */}
-                  <AiOutlineHeart size={18} className={classes.icon} />
-                  <div className={classes.likeCount}>0개</div>
-                </li>
-                <li className={classes.three}>
-                  <GoComment size={1} className={classes.icon} />
-                  <div className={classes.commentCount}></div>
-                </li>
-                <li className={classes.fore}>
-                  <GoComment size={1} className={classes.icon} />
-                  <div className={classes.commentCount}></div>
-                </li>
-                <li className={classes.five}>
-                  <GoComment size={1} className={classes.icon} />
-                  <div className={classes.commentCount}></div>
-                </li>
-              </div>
+                <AiOutlineHeart size={18} className={classes.icon} />
+                <div className={classes.likeCount}>0개</div>
+              </li>
+              <li className={classes.three}>
+                <GoComment size={1} className={classes.icon} />
+                <div className={classes.commentCount}></div>
+              </li>
+              <li className={classes.fore}>
+                <GoComment size={1} className={classes.icon} />
+                <div className={classes.commentCount}></div>
+              </li>
+              <li className={classes.five}>
+                <GoComment size={1} className={classes.icon} />
+                <div className={classes.commentCount}></div>
+              </li>
             </div>
           </div>
         </div>
