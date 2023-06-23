@@ -18,14 +18,6 @@ export default function PostsList({ posts }) {
   // const posts = useLoaderData();
   const [popupIsVisible, setPopupIsVisible] = useState(false);
 
-  // function closePopupHandler() {
-  //   setPopupIsVisible(false);
-  // }
-
-  // function openPopupHandler() {
-  //   setPopupIsVisible(true);
-  // }
-
   const deleteHandler = async (id) => {
     console.log(id);
     const ref = doc(db, "POST", id);
