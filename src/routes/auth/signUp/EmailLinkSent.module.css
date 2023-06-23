@@ -2,7 +2,7 @@
 .failPopup {
   padding: 3rem 0;
   background-color: transparent;
-  color: var(--main-color);
+  color: var(--disc-doctor-color);
 
   font-size: 20px;
   font-weight: 600;

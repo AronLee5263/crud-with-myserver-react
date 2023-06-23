@@ -40,7 +40,7 @@
 }
 
 .actions button:nth-child(2) {
-  background-color: var(--main-color);
+  background-color: var(--disc-doctor-color);
   color: #ffffff;
 }
 

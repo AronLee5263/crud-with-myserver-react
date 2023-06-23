@@ -59,7 +59,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--main-color);
+  background-color: var(--disc-doctor-color);
   color: #2a2630;
   border: none;
   box-shadow: 0 2px 8px #00000033;
@@ -73,5 +73,5 @@
 }
 
 .button:hover {
-  background-color: var(--main-color);
+  background-color: var(--disc-doctor-color);
 }

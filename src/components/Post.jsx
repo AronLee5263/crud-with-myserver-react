@@ -26,7 +26,7 @@ export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
         <div className={classes.sections}>
           <div className={classes.leftSection}>
             <span className={classes.postProfileIcon}>
-              <CgProfile size={25} className={classes.icon} />
+              <CgProfile size={25} className={classes.icon} color=" rgba(0, 0, 0, 0.426)" />
             </span>
 
             {/* <span className={classes.tempText}>여백mmmmmm</span> */}
@@ -38,13 +38,13 @@ export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
 
               <div className={classes.buttons}>
                 <button className={classes.editButton} type="button">
-                  <AiOutlineEdit size={18} />
+                  <AiOutlineEdit size={18} color="black" />
                 </button>
                 <button className={classes.deleteButton} type="button" onClick={deleteHandler}>
-                  <BsTrash3 size={16} />
+                  <BsTrash3 size={16} color="black" />
                 </button>
-                <button className={classes.postButton} type="button" onClick={onOpenPopup}>
-                  <MdMoreHoriz size={18} />
+                <button className={classes.settingButton} type="button" onClick={onOpenPopup}>
+                  <MdMoreHoriz size={18} color="black" />
                 </button>
               </div>
             </div>

@@ -78,7 +78,7 @@
 .sign_up {
   display: flex;
   justify-content: center;
-  background-color: var(--main-color);
+  background-color: var(--disc-doctor-color);
   padding: 10px 40px;
 
   border: white 1px solid;

@@ -125,6 +125,6 @@
 
 .policyAgreeText,
 .loginLink {
-  color: var(--main-color);
+  color: var(--disc-doctor-color);
   text-decoration: none;
 }
