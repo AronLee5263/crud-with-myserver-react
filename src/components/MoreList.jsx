@@ -12,12 +12,12 @@ export default function MoreList({ onCancelButton }) {
         </button>
 
         <button type="button" className={classes.update}>
-          <p>수정</p>
+          <p className={classes.text}>수정</p>
           <AiOutlineEdit size={20} className={classes.icon} />
         </button>
 
         <button type="button" className={classes.delete}>
-          <p>삭제</p>
+          <p className={classes.text}>삭제</p>
           <MdDeleteOutline size={20} className={classes.icon} />
         </button>
       </div>
