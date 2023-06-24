@@ -107,6 +107,8 @@ export default function SignUpPassword() {
             placeholder="비밀번호"
             onChange={passwordTypingHandler}
             value={userPassword}
+            minLength={6}
+            maxLength={12}
           />
           <div className={classes.line}></div>
         </form>

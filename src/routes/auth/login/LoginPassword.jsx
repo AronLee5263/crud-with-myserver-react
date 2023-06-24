@@ -71,6 +71,8 @@ export default function LoginPassword() {
             placeholder="비밀번호"
             type="password"
             onChange={emailTypingHandler}
+            minLength={6}
+            maxLength={12}
           />
           <div className={classes.line}></div>
         </form>
