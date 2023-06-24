@@ -7,28 +7,18 @@ export default function MoreList({ onCancelButton }) {
   return (
     <>
       <div className={classes.container}>
+        <button type="button" className={classes.cancel} onClick={onCancelButton}>
+          <MdOutlineArrowBackIosNew size={25} className={classes.cancelIcon} />
+        </button>
+
         <button type="button" className={classes.update}>
-          수정
-          <span className={classes.icon}>
-            <AiOutlineEdit size={24} />
-          </span>
+          <p>수정</p>
+          <AiOutlineEdit size={20} className={classes.icon} />
         </button>
 
         <button type="button" className={classes.delete}>
-          삭제
-          <span className={classes.icon}>
-            <MdDeleteOutline size={24} />
-          </span>
-        </button>
-
-        <button
-          type="button"
-          className={classes.cancel}
-          onClick={onCancelButton}
-        >
-          <span className={classes.cancelIcon}>
-            <MdOutlineArrowBackIosNew size={40} />
-          </span>
+          <p>삭제</p>
+          <MdDeleteOutline size={20} className={classes.icon} />
         </button>
       </div>
     </>

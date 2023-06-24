@@ -29,6 +29,7 @@ body {
   --header-border-color: rgba(0, 0, 0, 0.4);
 
   --gray-icon-opacity07: rgba(0, 0, 0, 0.7);
+  --gray-icon-opacity05: rgba(0, 0, 0, 0.5);
 
   --post-border-color: rgba(0, 0, 0, 0.2);
   --hover-color: rgba(200, 200, 200, 0.314);
