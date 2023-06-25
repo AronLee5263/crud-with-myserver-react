@@ -57,11 +57,9 @@ function MainHeader() {
         </nav>
 
         <Form method="post" className={classes.form}>
-          <p>
-            <Link to="/create_post" className={classes.button}>
-              <AiOutlinePlus size={24} className={classes.icon} />
-            </Link>
-          </p>
+          <Link to="/create_post" className={classes.button}>
+            <AiOutlinePlus size={24} className={classes.icon} />
+          </Link>
         </Form>
       </div>
     </>

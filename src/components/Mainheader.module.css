@@ -38,6 +38,7 @@ nav * {
 }
 nav {
   margin-top: 0.4rem;
+  margin-right: 1rem;
 }
 
 .category {
@@ -65,22 +66,29 @@ nav {
   color: var(--disc-doctor-color);
 }
 
-.button {
+.form {
+  margin-top: 0.2rem;
+  margin-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  background-color: var(--disc-doctor-color);
-  color: #2a2630;
-  border: none;
-  box-shadow: 0 2px 8px #00000033;
+}
+.button {
+  /* margin-right: 1rem; */
+  /* width: 2rem;
+  height: 2rem; */
+  padding: 0.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
-  width: 2rem;
-  height: 2rem;
   border-radius: 50%;
-  margin-right: 1rem;
+
   color: white;
+
+  background-color: var(--disc-doctor-color);
 }
 
 .button:hover {
