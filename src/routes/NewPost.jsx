@@ -9,8 +9,6 @@ import { Link, Form, redirect } from "react-router-dom";
 
 import Modal from "../components/Modal";
 
-const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
-
 export default function NewPost() {
   // const [bodyText, setBodyText] = useState("");
   // const [authorText, setAuthorText] = useState("");
@@ -47,7 +45,7 @@ export default function NewPost() {
           <label htmlFor="postAuthor">이름</label>
           <input required className={classes.postAuthor} id="postAuthor" name="postAuthor" type="text" />
         </p>
-        <p>
+        <div>
           <label htmlFor="postContent">내용</label>
           <textarea
             className={classes.postContent}
@@ -56,10 +54,10 @@ export default function NewPost() {
             required
             rows={12}
             placeholder="무슨 일이 일어나고 있나요? "
-            maxlength="200"
+            maxLength={200}
           />
           <div className={classes.limitLetter}>200자 제한</div>
-        </p>
+        </div>
 
         <p className={classes.checkBox}>
           <label>
