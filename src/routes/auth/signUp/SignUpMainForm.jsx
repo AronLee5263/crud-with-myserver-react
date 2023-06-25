@@ -15,13 +15,13 @@ export default function SignUpMainForm() {
     e.preventDefault();
     setIsClickEP(true);
     setIsClickLink(false);
-    navigate("/sign_up/with_password");
+    navigate("with_password");
   };
 
   const clickSignLinkHandler = (e) => {
     setIsClickLink(true);
     setIsClickEP(false);
-    navigate("/sign_up/with_email_link");
+    navigate("with_email_link");
   };
 
   //   const content = () => {

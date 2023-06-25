@@ -5,7 +5,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 
 import "./index.css";
 
-// import App, { loader as postsLoader } from "./routes/App";
+import App, { fetchPosts as fetchPosts } from "./routes/App";
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -19,7 +19,7 @@ import RootLayOutSignUp from "./routes/auth/signUp/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
-const App = lazy(() => import("./routes/App"));
+// const App = lazy(() => import("./routes/App"));
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));
 
@@ -36,9 +36,11 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         // loader: () => import("./routes/App").then((module) => module.loader()),
+        loader: fetchPosts,
+
         children: [
           {
-            path: "/create_post",
+            path: "create_post",
             element: (
               // <Suspense fallback={<p>로딩중입니다...</p>}>
               <NewPost />
@@ -65,11 +67,11 @@ const router = createBrowserRouter([
     element: <RootLayOutLogin />,
     children: [
       {
-        path: "/login/with_password",
+        path: "with_password",
         element: <LoginPassword />,
       },
       {
-        path: "/login/with_email_link",
+        path: "with_email_link",
         element: <LoginEmailLink />,
       },
     ],
@@ -79,12 +81,12 @@ const router = createBrowserRouter([
     element: <RootLayOutSignUp />,
     children: [
       {
-        path: "/sign_up/with_password",
+        path: "with_password",
         element: <SignUpPassword />,
         // loader: () => import("./routes/App").then((module) => module.loader()),
       },
       {
-        path: "/sign_up/with_email_link",
+        path: "with_email_link",
         element: <SignUpEmailLink />,
       },
     ],

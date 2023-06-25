@@ -7,7 +7,7 @@ export default function BackButton() {
 
   return (
     <>
-      <Link to="../" type="button" className={classes.back_button_container}>
+      <Link to=".." type="button" className={classes.back_button_container}>
         <span className={classes.text}> 취소</span>
       </Link>
 

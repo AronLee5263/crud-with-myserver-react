@@ -16,13 +16,13 @@ export default function LoginMainForm() {
     e.preventDefault();
     setIsClickEP(true);
     setIsClickLink(false);
-    navigate("/login/with_password");
+    navigate("with_password");
   };
 
   const clickLoginLinkHandler = (e) => {
     setIsClickLink(true);
     setIsClickEP(false);
-    navigate("/login/with_email_link");
+    navigate("with_email_link");
   };
 
   //   const content = () => {
