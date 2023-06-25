@@ -1,7 +1,7 @@
 import classes from "./MainHeader.module.css";
 
 import { useState } from "react";
-import { Link, Form } from "react-router-dom";
+import { Link, NavLink, Form } from "react-router-dom";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
@@ -31,20 +31,30 @@ function MainHeader() {
           </button>
         </div>
 
-        <div className={classes.category}>
-          <Link to="/" className={classes.community}>
-            커뮤니티
-          </Link>
-          <Link to="/Goal" className={classes.goal}>
-            달성기록
-          </Link>
-          <Link to="/MyInfo" className={classes.myInfo}>
-            내 정보
-          </Link>
-          <Link to="/analysis" className={classes.analysis}>
-            분석
-          </Link>
-        </div>
+        <nav>
+          <ul className={classes.category}>
+            <li>
+              <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
+                커뮤니티
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/Goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                달성기록
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/MyInfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                내 정보
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/analysis" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                분석
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
         <Form method="post" className={classes.form}>
           <p>

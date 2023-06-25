@@ -33,28 +33,36 @@
   font-weight: 600;
 }
 
-.category {
+nav * {
+  text-decoration: none;
+}
+nav {
   margin-top: 0.4rem;
-  margin-right: 1rem;
+}
+
+.category {
+  padding-left: 0;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
 
-  color: #000000;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.community,
-.goal,
-.myInfo,
-.analysis {
-  margin: 0px 0.45rem;
+.category li {
+  margin: 0 0.3rem;
+  list-style: none;
 }
 
-.goal,
-.info {
+.category a {
   color: #0000004f;
+}
+
+.category a.hover,
+.category a.active {
+  color: var(--disc-doctor-color);
 }
 
 .button {
