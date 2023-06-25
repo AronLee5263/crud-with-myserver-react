@@ -5,7 +5,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 
 import "./index.css";
 
-// import App, { fetchPosts as fetchPosts } from "./routes/App";
+// import Community, { fetchPosts as fetchPosts } from "./routes/Community";
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -19,7 +19,7 @@ import RootLayOutSignUp from "./routes/auth/signUp/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
-const App = lazy(() => import("./routes/App"));
+const Community = lazy(() => import("./routes/Community"));
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));
 
@@ -32,10 +32,10 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
-            <App />
+            <Community />
           </Suspense>
         ),
-        // loader: () => import("./routes/App").then((module) => module.loader()),
+        // loader: () => import("./routes/Community").then((module) => module.loader()),
         // loader: fetchPosts,
 
         children: [
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
       {
         path: "with_password",
         element: <SignUpPassword />,
-        // loader: () => import("./routes/App").then((module) => module.loader()),
+        // loader: () => import("./routes/Community").then((module) => module.loader()),
       },
       {
         path: "with_email_link",

@@ -1,4 +1,4 @@
-import classes from "./App.module.css";
+import classes from "./Community.module.css";
 
 import { Outlet } from "react-router-dom";
 
@@ -7,15 +7,13 @@ import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebas
 
 import { UseCollection } from "../hooks/UseCollection";
 
-import axios from "axios";
-
 import PostsList from "../components/PostsList";
 
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 // const { documents: POSTS } = useCollection("POSTS");
 
-export default function App() {
+export default function Community() {
   const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
 
