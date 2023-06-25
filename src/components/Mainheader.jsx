@@ -32,9 +32,18 @@ function MainHeader() {
         </div>
 
         <div className={classes.category}>
-          <p className={classes.community}>커뮤니티</p>
-          <p className={classes.goal}>달성기록</p>
-          <p className={classes.info}>내 정보</p>
+          <Link to="/" className={classes.community}>
+            커뮤니티
+          </Link>
+          <Link to="/Goal" className={classes.goal}>
+            달성기록
+          </Link>
+          <Link to="/MyInfo" className={classes.myInfo}>
+            내 정보
+          </Link>
+          <Link to="/analysis" className={classes.analysis}>
+            분석
+          </Link>
         </div>
 
         <Form method="post" className={classes.form}>

@@ -6,6 +6,8 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 import "./index.css";
 
 // import Community, { fetchPosts as fetchPosts } from "./routes/Community";
+import Goal from "./routes/Goal";
+
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -20,6 +22,10 @@ import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
 const Community = lazy(() => import("./routes/Community"));
+// const Goal = lazy(() => import("./routes/Goal"));
+const MyInfo = lazy(() => import("./routes/MyInfo"));
+const Analysis = lazy(() => import("./routes/Analysis"));
+
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));
 
@@ -59,6 +65,30 @@ const router = createBrowserRouter([
           //   loader: () => import("./routes/PostDetails").then((module) => module.loader()),
           // },
         ],
+      },
+      {
+        path: "/Goal",
+        element: (
+          <Suspense fallback={<p>로딩중입니다...</p>}>
+            <Goal />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/MyInfo",
+        element: (
+          <Suspense fallback={<p>로딩중입니다...</p>}>
+            <MyInfo />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Analysis",
+        element: (
+          <Suspense fallback={<p>로딩중입니다...</p>}>
+            <Analysis />
+          </Suspense>
+        ),
       },
     ],
   },

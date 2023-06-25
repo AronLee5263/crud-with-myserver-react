@@ -45,7 +45,10 @@
   font-weight: 600;
 }
 
-.category > p {
+.community,
+.goal,
+.myInfo,
+.analysis {
   margin: 0px 0.45rem;
 }
 
