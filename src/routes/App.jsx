@@ -2,20 +2,27 @@ import classes from "./App.module.css";
 
 import { Outlet } from "react-router-dom";
 
-import axios from "axios";
+import { db } from "../firebase/config";
+import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebase/firestore";
 
-import { useCollection } from "../hooks/useCollection";
+import { UseCollection } from "../hooks/UseCollection";
+
+import axios from "axios";
 
 import PostsList from "../components/PostsList";
 
 const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
+// const { documents: POSTS } = useCollection("POSTS");
+
 export default function App() {
-  // const { documents: POSTS } = useCollection("POSTS");
-
-  const { documents: docss } = useCollection("POST");
-
+  const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
+
+  // async function loader() {
+  //   console.log("docss : ", response.data);
+  //   return docss.reverse();
+  // }
 
   // const DOC = [...DOC, docss];
 
@@ -43,6 +50,7 @@ export default function App() {
       <main>
         {/* {firebasePosts ? <PostsList db={firebasePosts} /> : <PostsList />} */}
         <PostsList posts={docss} />
+        {/* <PostsList /> */}
       </main>
     </>
   );
@@ -52,6 +60,13 @@ export default function App() {
 //   const response = await axios.get(SERVER_URL);
 //   console.log("response.data : ", response.data);
 //   return response.data.reverse();
+// }
+
+// export async function fetchPosts() {
+//   const todoListRef = collection(db, "POST");
+//   const querySnapshot = await getDocs(todoListRef);
+//   const todoList = querySnapshot.docs.map((doc) => doc.data());
+//   return todoList;
 // }
 
 // export async function loader() {

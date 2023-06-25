@@ -10,10 +10,6 @@ import Post from "./Post";
 import MorePopup from "./MorePopup";
 import MoreList from "./MoreList";
 
-import axios from "axios";
-
-const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
-
 export default function PostsList({ posts }) {
   // const posts = useLoaderData();
   const [popupIsVisible, setPopupIsVisible] = useState(false);
@@ -32,7 +28,7 @@ export default function PostsList({ posts }) {
         {posts.map((post) => (
           <Post
             key={post.id}
-            id={post.id}
+            postId={post.id}
             author={post.author}
             body={post.body}
             onOpenPopup={(e) => setPopupIsVisible(true)}

@@ -5,7 +5,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 
 import "./index.css";
 
-import App, { fetchPosts as fetchPosts } from "./routes/App";
+// import App, { fetchPosts as fetchPosts } from "./routes/App";
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -19,7 +19,7 @@ import RootLayOutSignUp from "./routes/auth/signUp/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
-// const App = lazy(() => import("./routes/App"));
+const App = lazy(() => import("./routes/App"));
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));
 
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
         // loader: () => import("./routes/App").then((module) => module.loader()),
-        loader: fetchPosts,
+        // loader: fetchPosts,
 
         children: [
           {

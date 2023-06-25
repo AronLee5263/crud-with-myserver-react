@@ -11,15 +11,16 @@ import { GoComment } from "react-icons/go";
 import { AiOutlineHeart, AiOutlineEdit } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
 
-export default function Post({ id, author, body, onOpenPopup, onDeletePost }) {
+export default function Post({ postId, author, body, onOpenPopup, onClickDeletePost, onDeletePost }) {
   // const [isClickHeart, setIsClickHeart] = useState(false);
   // const isClickHeartHandler = () => {
   //   setIsClickHeart(true);
   // };
 
   const deleteHandler = () => {
-    onDeletePost(id);
+    onDeletePost(postId);
   };
+
   return (
     <>
       <div className={classes.post}>
