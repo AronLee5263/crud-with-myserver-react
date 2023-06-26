@@ -20,7 +20,7 @@ function MainHeader() {
   function openProfilePopupHandler() {
     setProfilePopupIsVisible(true);
   }
-  console.log("currentPath : ", currentPath);
+  // console.log("currentPath : ", currentPath);
 
   return (
     <>
@@ -42,12 +42,12 @@ function MainHeader() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/Goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+              <NavLink to="/goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
                 달성기록
               </NavLink>
             </li>
             <li>
-              <NavLink to="/MyInfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+              <NavLink to="/myinfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
                 내 정보
               </NavLink>
             </li>

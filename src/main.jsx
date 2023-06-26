@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/Goal",
+        path: "/goal",
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
             <Goal />
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/MyInfo",
+        path: "/myinfo",
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
             <MyInfo />
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/Analysis",
+        path: "/analysis",
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
             <Analysis />

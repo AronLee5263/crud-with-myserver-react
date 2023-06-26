@@ -1,5 +1,6 @@
 import classes from "./Community.module.css";
 
+// import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { db } from "../firebase/config";
@@ -7,13 +8,31 @@ import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebas
 
 import { UseCollection } from "../hooks/UseCollection";
 
+// import Splash from "../components/Splash";
 import PostsList from "../components/PostsList";
-
-const SERVER_URL = "https://64637a9f7a9eead6fae801e2.mockapi.io/fakeData";
 
 // const { documents: POSTS } = useCollection("POSTS");
 
 export default function Community() {
+  // const [doneSplash, setDoneSplash] = useState(false);
+
+  // const [showSplash, setShowSplash] = useState(false);
+  // const flagName = "hasShowSplash";
+
+  // useEffect(() => {
+  //   const hasShowSplash = localStorage.getItem(flagName);
+  //   if (!hasShowSplash) {
+  //     // Image has not been shown before
+  //     setShowSplash(true);
+  //     localStorage.setItem(flagName, true);
+  //   }
+
+  //   return () => {
+  //     // Clear the flag when leaving the main page
+  //     localStorage.removeItem(flagName);
+  //   };
+  // }, []);
+
   const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
 
@@ -44,6 +63,8 @@ export default function Community() {
 
   return (
     <>
+      {/* {showSplash && <Splash />} */}
+
       <Outlet />
       <main>
         {/* {firebasePosts ? <PostsList db={firebasePosts} /> : <PostsList />} */}
