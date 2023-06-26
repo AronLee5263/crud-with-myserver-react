@@ -53,8 +53,11 @@ nav {
 }
 
 .category li {
-  margin-right: 0.7rem;
   list-style: none;
+}
+.category li:nth-child(-n + 3) {
+  margin-right: 1.3rem;
+  /* background-color: red; */
 }
 
 .category a {
