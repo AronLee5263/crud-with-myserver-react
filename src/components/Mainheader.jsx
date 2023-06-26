@@ -1,7 +1,7 @@
 import classes from "./MainHeader.module.css";
 
 import { useState } from "react";
-import { Link, NavLink, Form } from "react-router-dom";
+import { Link, NavLink, Form, useLocation } from "react-router-dom";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
@@ -10,6 +10,8 @@ import ProfilePopup from "./ProfilePopup";
 
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   function closeProfilePopupHandler() {
     setProfilePopupIsVisible(false);
@@ -18,6 +20,7 @@ function MainHeader() {
   function openProfilePopupHandler() {
     setProfilePopupIsVisible(true);
   }
+  console.log("currentPath : ", currentPath);
 
   return (
     <>
@@ -57,9 +60,11 @@ function MainHeader() {
         </nav>
 
         <Form method="post" className={classes.form}>
-          <Link to="/create_post" className={classes.button}>
-            <AiOutlinePlus size={24} className={classes.icon} />
-          </Link>
+          {currentPath === "/" && (
+            <Link to="/create_post" className={classes.button}>
+              <AiOutlinePlus size={24} className={classes.icon} />
+            </Link>
+          )}
         </Form>
       </div>
     </>
