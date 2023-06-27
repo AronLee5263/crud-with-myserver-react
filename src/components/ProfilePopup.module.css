@@ -19,6 +19,24 @@
   background-color: white;
 
   z-index: 300;
+
+  /* animation-name: moveProfilePopup;
+  animation-duration: 1.2s;
+  animation-timing-function: linear; */
+  /* animation-timing-function: easeInExpo; */
+
+  animation-fill-mode: forwards;
+
+  animation: moveProfilePopup 0.4s forwards;
+}
+
+@keyframes moveProfilePopup {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .cancelIcon {

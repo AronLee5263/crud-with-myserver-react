@@ -6,7 +6,7 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "reco
 import "./index.css";
 
 // import Community, { fetchPosts as fetchPosts } from "./routes/Community";
-import Goal from "./routes/Goal";
+// import Goal from "./routes/Goal";
 
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
@@ -22,7 +22,7 @@ import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
 const Community = lazy(() => import("./routes/Community"));
-// const Goal = lazy(() => import("./routes/Goal"));
+const Goal = lazy(() => import("./routes/Goal"));
 const MyInfo = lazy(() => import("./routes/MyInfo"));
 const Analysis = lazy(() => import("./routes/Analysis"));
 
