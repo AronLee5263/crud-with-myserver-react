@@ -2,7 +2,7 @@ import classes from "./NewPost.module.css";
 
 import { useState } from "react";
 import { db } from "../firebase/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 import axios from "axios";
 import { Link, Form, redirect } from "react-router-dom";
@@ -79,6 +79,7 @@ export async function action({ request }) {
   await addDoc(ref, {
     author: postData.postAuthor,
     body: postData.postContent,
+    createdAt: serverTimestamp(),
   });
 
   return redirect("/");
