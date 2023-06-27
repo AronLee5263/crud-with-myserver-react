@@ -24,7 +24,7 @@
   border: none;
 
   animation-name: growImage;
-  animation-duration: 0.9s;
+  animation-duration: 1.2s;
   animation-timing-function: easeInExpo;
   animation-fill-mode: forwards;
 }
@@ -39,6 +39,6 @@
   }
 
   100% {
-    transform: scale(60);
+    transform: scale(55);
   }
 }
