@@ -1,7 +1,7 @@
 import classes from "./NewPost.module.css";
 
 import { useState } from "react";
-import { db } from "../firebase/config";
+import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 import { Link, Form, redirect } from "react-router-dom";

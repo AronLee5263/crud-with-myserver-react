@@ -3,13 +3,13 @@ import classes from "./Community.module.css";
 // import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
-import { db } from "../firebase/config";
+import { db } from "../../firebase/config";
 import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebase/firestore";
 
-import { UseCollection } from "../hooks/UseCollection";
+import { UseCollection } from "../../hooks/UseCollection";
 
 // import Splash from "../components/Splash";
-import PostsList from "../components/PostsList";
+import PostsList from "../../components/PostsList";
 
 // const { documents: POSTS } = useCollection("POSTS");
 

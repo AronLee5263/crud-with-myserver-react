@@ -8,11 +8,11 @@ import "./index.css";
 // import Community, { fetchPosts as fetchPosts } from "./routes/Community";
 // import Goal from "./routes/Goal";
 
-import NewPost, { action as newPostAction } from "./routes/NewPost";
+import NewPost, { action as newPostAction } from "./routes/pages/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
 import WrapperRootLayOut from "./routes/pages/WrapperRootLayOut";
-import RootLayOut from "./routes/RootLayout";
+// import RootLayOut from "./routes/pages/RootLayout";
 
 import RootLayOutLogin from "../src/routes/auth/login/RootLayOutLogin";
 import LoginPassword from "./routes/auth/login/LoginPassword";
@@ -22,10 +22,10 @@ import RootLayOutSignUp from "./routes/auth/signUp/RootLayOutSignUp";
 import SignUpPassword from "./routes/auth/signUp/SignUpPassword";
 import SignUpEmailLink from "./routes/auth/signUp/SignUpEmailLink";
 
-const Community = lazy(() => import("./routes/Community"));
-const Goal = lazy(() => import("./routes/Goal"));
-const MyInfo = lazy(() => import("./routes/MyInfo"));
-const Analysis = lazy(() => import("./routes/Analysis"));
+const Community = lazy(() => import("./routes/pages/Community"));
+const Goal = lazy(() => import("./routes/pages/Goal"));
+const MyInfo = lazy(() => import("./routes/pages/MyInfo"));
+const Analysis = lazy(() => import("./routes/pages/Analysis"));
 
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));

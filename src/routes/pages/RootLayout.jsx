@@ -2,11 +2,11 @@ import classes from "./RootLayOut.module.css";
 
 import { Outlet, useLocation } from "react-router-dom";
 
-import MainHeader from "../components/Mainheader";
-import NoMobile from "../components/NoMobile";
+import MainHeader from "../../components/Mainheader";
+import NoMobile from "../../components/NoMobile";
 
 import { useEffect, useState, useCallback } from "react";
-import Splash from "../components/Splash";
+import Splash from "../../components/Splash";
 
 export default function RootLayOut() {
   const [splashName, setSplashName] = useState("");
