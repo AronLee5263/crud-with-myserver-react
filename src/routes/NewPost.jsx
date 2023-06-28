@@ -4,10 +4,7 @@ import { useState } from "react";
 import { db } from "../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-import axios from "axios";
 import { Link, Form, redirect } from "react-router-dom";
-
-import Modal from "../components/Modal";
 
 export default function NewPost() {
   // const [bodyText, setBodyText] = useState("");
@@ -33,40 +30,38 @@ export default function NewPost() {
   // };
 
   return (
-    <Modal>
-      <Form method="post" className={classes.form}>
-        <p className={classes.actions}>
-          <Link to=".." className={classes.cancelButton}>
-            취소
-          </Link>
-          <button type="submit">업로드</button>
-        </p>
-        <p>
-          <label htmlFor="postAuthor">이름</label>
-          <input required className={classes.postAuthor} id="postAuthor" name="postAuthor" type="text" />
-        </p>
-        <div>
-          <label htmlFor="postContent">내용</label>
-          <textarea
-            className={classes.postContent}
-            id="postContent"
-            name="postContent"
-            required
-            rows={12}
-            placeholder="무슨 일이 일어나고 있나요? "
-            maxLength={200}
-          />
-          <div className={classes.limitLetter}>200자 제한</div>
-        </div>
+    <Form method="post" className={classes.form}>
+      <p className={classes.actions}>
+        <Link to=".." className={classes.cancelButton}>
+          취소
+        </Link>
+        <button type="submit">업로드</button>
+      </p>
+      <p>
+        <label htmlFor="postAuthor">이름</label>
+        <input required className={classes.postAuthor} id="postAuthor" name="postAuthor" type="text" />
+      </p>
+      <div>
+        <label htmlFor="postContent">내용</label>
+        <textarea
+          className={classes.postContent}
+          id="postContent"
+          name="postContent"
+          required
+          rows={12}
+          placeholder="무슨 일이 일어나고 있나요? "
+          maxLength={200}
+        />
+        <div className={classes.limitLetter}>200자 제한</div>
+      </div>
 
-        <p className={classes.checkBox}>
-          <label>
-            <input type="checkbox" name="myCheckbox" />
-            <span>(필수) 서비스 이용약관</span>
-          </label>
-        </p>
-      </Form>
-    </Modal>
+      <p className={classes.checkBox}>
+        <label>
+          <input type="checkbox" name="myCheckbox" />
+          <span>(필수) 서비스 이용약관</span>
+        </label>
+      </p>
+    </Form>
   );
 }
 

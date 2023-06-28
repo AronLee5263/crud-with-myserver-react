@@ -1,6 +1,9 @@
-/* .modalNewPost {
-  position: fixed;
-  z-index: 400;
+/* .posts {
+  margin-top: 0;
+  padding-left: 0;
+
+  position: relative;
+  list-style: none;
 } */
 
 .container {
@@ -12,6 +15,12 @@
 }
 
 .form {
+  position: relative;
+
+  border: 2px solid red;
+  margin-top: 0;
+  padding-left: 0;
+
   z-index: 400;
 
   background-color: #ffffff;
