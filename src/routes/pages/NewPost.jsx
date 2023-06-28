@@ -39,7 +39,13 @@ export default function NewPost() {
   return (
     <Form method="post" className={classes.form}>
       <p className={classes.actions}>
-        <Link to=".." className={classes.cancelButton}>
+        <Link
+          to="/"
+          state={{
+            isCanceledForNewPost: "true",
+          }}
+          className={classes.cancelButton}
+        >
           취소
         </Link>
         <button type="submit">업로드</button>

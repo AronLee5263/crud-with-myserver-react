@@ -1,7 +1,7 @@
 import classes from "./Community.module.css";
 
 // import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import { db } from "../../firebase/config";
 import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebase/firestore";
@@ -14,11 +14,15 @@ import PostsList from "../../components/PostsList";
 // const { documents: POSTS } = useCollection("POSTS");
 
 export default function Community() {
+  const { state } = useLocation();
+  console.log("state 에 뭐가 있을까 : ", state);
+
   const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
 
   return (
     <>
+      <button>ddddddd</button>
       <Outlet />
       <main>
         {/* {firebasePosts ? <PostsList db={firebasePosts} /> : <PostsList />} */}
