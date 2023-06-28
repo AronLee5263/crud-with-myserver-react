@@ -1,6 +1,6 @@
 import classes from "./NewPost.module.css";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -29,6 +29,13 @@ export default function NewPost() {
   //   setNewBody("");
   // };
 
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    // Focus on the input element when the component is mounted
+    inputRef.current.focus();
+  }, []);
+
   return (
     <Form method="post" className={classes.form}>
       <p className={classes.actions}>
@@ -44,6 +51,7 @@ export default function NewPost() {
       <div>
         <label htmlFor="postContent">내용</label>
         <textarea
+          ref={inputRef}
           className={classes.postContent}
           id="postContent"
           name="postContent"
