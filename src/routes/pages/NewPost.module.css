@@ -1,32 +1,14 @@
-/* .posts {
-  margin-top: 0;
-  padding-left: 0;
-
-  position: relative;
-  list-style: none;
-} */
-
-.container {
-  display: flex;
-  justify-content: center;
-  /* margin-top: 30px; */
-  /* align-items: center; */
-  /* height: auto; */
-}
-
 .form {
-  position: relative;
+  position: fixed;
+  top: 0;
 
-  border: 2px solid red;
-  margin-top: 0;
-  padding-left: 0;
+  width: 100vw;
+  height: 100vh;
 
   z-index: 400;
 
   background-color: #ffffff;
   padding: 1rem;
-  width: 22rem;
-  height: 35rem;
 }
 
 .actions {
