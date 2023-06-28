@@ -1,6 +1,7 @@
 .form {
   position: fixed;
   top: 0;
+  left: 0;
 
   width: 100vw;
   height: 100vh;
@@ -9,6 +10,18 @@
 
   background-color: #ffffff;
   padding: 1rem;
+
+  animation-fill-mode: forwards;
+  animation: showNewPostPage 0.25s forwards;
+}
+
+@keyframes showNewPostPage {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .actions {
