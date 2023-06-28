@@ -10,19 +10,20 @@ import { UseCollection } from "../../hooks/UseCollection";
 
 // import Splash from "../components/Splash";
 import PostsList from "../../components/PostsList";
+import FakeNewPost from "../../components/FakeNewPost";
 
 // const { documents: POSTS } = useCollection("POSTS");
 
 export default function Community() {
-  const { state } = useLocation();
-  console.log("state 에 뭐가 있을까 : ", state);
+  // const { state } = useLocation();
+  // console.log("state 에 뭐가 있을까 : ", state);
 
   const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
 
   return (
     <>
-      <button>ddddddd</button>
+      <FakeNewPost />
       <Outlet />
       <main>
         {/* {firebasePosts ? <PostsList db={firebasePosts} /> : <PostsList />} */}

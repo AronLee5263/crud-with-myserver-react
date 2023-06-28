@@ -1,3 +1,29 @@
+.deleteNewPostComponent {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+
+  z-index: 300;
+
+  /* animation-name: moveProfilePopup;
+  animation-duration: 1.2s;
+  animation-timing-function: linear; */
+  /* animation-timing-function: easeInExpo; */
+
+  animation-fill-mode: forwards;
+
+  animation: closeNewPostPage 3.4s forwards;
+}
+
+@keyframes closeNewPostPage {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 /* .content_container {
   display: flex;
   justify-content: center;
