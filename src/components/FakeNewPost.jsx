@@ -24,12 +24,12 @@ export default function FakeNewPost() {
         <div className={classes.limitLetter}>200자 제한</div>
       </div>
 
-      <p className={classes.checkBox}>
+      {/* <p className={classes.checkBox}>
         <label htmlFor="fakeAgree">
           <input id="fakeAgree" type="checkbox" name="myCheckbox" />
           <span>(필수) 서비스 이용약관</span>
         </label>
-      </p>
+      </p> */}
     </Form>
   );
 }
