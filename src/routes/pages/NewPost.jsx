@@ -1,6 +1,6 @@
 import classes from "./NewPost.module.css";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -54,11 +54,6 @@ export default function NewPost() {
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
 
-  const inputRef = useRef(null);
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
-
   useEffect(() => {
     // isClicked 가 true일떄만 실행되게 바로 리턴하는 패턴
     if (isClicked === false) return;
@@ -97,13 +92,12 @@ export default function NewPost() {
             <p className={classes.nameInput}>
               <label htmlFor="postAuthor"></label>
               <input
-                ref={inputRef}
-                required
                 className={classes.postAuthor}
                 id="postAuthor"
                 name="postAuthor"
+                required
+                placeholder="이름"
                 type="text"
-                placeholder="이름 "
               />
             </p>
             <div>
@@ -114,7 +108,7 @@ export default function NewPost() {
                 name="postContent"
                 required
                 rows={12}
-                placeholder="무슨 일이 일어나고 있나요? "
+                placeholder="무슨 일이 일어나고 있나요?"
                 maxLength={200}
               />
               <div className={classes.limitLetter}>200자 제한</div>

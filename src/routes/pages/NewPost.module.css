@@ -111,11 +111,12 @@ p > label {
 .postContent {
   display: block;
   width: 100%;
-  font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
   border: none;
   background-color: #f6f1f1;
+
+  font: inherit;
   color: #000000;
   font-size: 1rem;
 }
@@ -140,10 +141,6 @@ input + span {
   opacity: 0.4;
 }
 
-/* textarea::placeholder {
-  color: red;
-} */
-
-/* input::placeholder {
-  color: red;
-} */
+input::placeholder {
+  font-weight: 300 !important;
+}
