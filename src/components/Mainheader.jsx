@@ -10,6 +10,7 @@ import ProfilePopup from "./ProfilePopup";
 
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
+
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -20,6 +21,7 @@ function MainHeader() {
   function openProfilePopupHandler() {
     setProfilePopupIsVisible(true);
   }
+
   // console.log("currentPath : ", currentPath);
 
   return (

@@ -4,7 +4,7 @@ import { Link, Form } from "react-router-dom";
 
 export default function FakeNewPost() {
   return (
-    <Form className={classes.form}>
+    <Form className={classes.fakeForm}>
       <p className={classes.actions}>
         <Link className={classes.cancelButton}>취소</Link>
         <button type="submit">업로드</button>
@@ -15,7 +15,7 @@ export default function FakeNewPost() {
       </p>
       <div>
         <label htmlFor="postContent">내용</label>
-        <textarea className={classes.postContent} placeholder="무슨 일이 일어나고 있나요? " />
+        <textarea className={classes.postContent} placeholder="fake 무슨 일이 일어나고 있나요? " />
         <div className={classes.limitLetter}>200자 제한</div>
       </div>
 

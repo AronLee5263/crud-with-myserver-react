@@ -1,6 +1,6 @@
 import classes from "./Community.module.css";
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import { db } from "../../firebase/config";
@@ -21,9 +21,24 @@ export default function Community() {
   const { documents: docss } = UseCollection("POST");
   console.log("docss : ", docss);
 
+  // console.log("test : ", test);
+
+  // const [test, setTest] = useState(localStorage.getItem("NewPost"));
+
+  // console.log("취소후 localStorage 정보는 : ", localStorage.getItem("NewPost"));
+  // if (test === "start") {
+  //   return (
+  //     <>
+  //       <PostsList posts={docss} />
+  //       <div className={classes.fakeNewPost}>
+  //         <FakeNewPost />
+  //       </div>
+  //     </>
+  //   );
+  // }
+
   return (
     <>
-      <FakeNewPost />
       <Outlet />
       <main>
         {/* {firebasePosts ? <PostsList db={firebasePosts} /> : <PostsList />} */}

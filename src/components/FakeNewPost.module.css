@@ -1,27 +1,13 @@
-.form {
-  position: fixed;
-  top: 0;
-  left: 0;
-
+.fakeForm {
   width: 100vw;
   height: 100vh;
 
-  z-index: 400;
+  z-index: 450;
 
   background-color: #ffffff;
   padding: 1rem;
 
-  animation-fill-mode: forwards;
-  animation: deleteNewPostPage 0.5s forwards;
-}
-
-@keyframes deleteNewPostPage {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(100%);
-  }
+  /* border: 3px solid red; */
 }
 
 .actions {
