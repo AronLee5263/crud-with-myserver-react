@@ -1,6 +1,6 @@
 import classes from "./NewPost.module.css";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -29,17 +29,37 @@ export default function NewPost() {
   //   setNewBody("");
   // };
 
-  const inputRef = useRef(null);
+  const [test, setTest] = useState(localStorage.getItem("NewPost"));
+
+  const clickCancelBtnHandler = () => {
+    localStorage.setItem("NewPost", "start");
+    console.log("localStorage 정보는 : ", localStorage.getItem("NewPost"));
+  };
 
   useEffect(() => {
-    // Focus on the input element when the component is mounted
-    inputRef.current.focus();
+    if (test === "start") {
+      const timeoutId = setTimeout(() => {
+        // localStorage.removeItem("NewPost");
+      }, 1000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("컴포넌트가 화면에 나타남");
+
+    return () => {
+      console.log("컴포넌트가 화면에서 사라짐");
+    };
   }, []);
 
   return (
     <Form method="post" className={classes.form}>
       <p className={classes.actions}>
-        <Link to="/" className={classes.cancelButton}>
+        <Link to="/" className={classes.cancelButton} onClick={clickCancelBtnHandler}>
           취소
         </Link>
         <button type="submit">업로드</button>
@@ -51,7 +71,6 @@ export default function NewPost() {
       <div>
         <label htmlFor="postContent">내용</label>
         <textarea
-          ref={inputRef}
           className={classes.postContent}
           id="postContent"
           name="postContent"
