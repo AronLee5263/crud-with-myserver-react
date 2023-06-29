@@ -7,21 +7,26 @@ export default function FakeNewPost() {
     <Form className={classes.fakeForm}>
       <p className={classes.actions}>
         <Link className={classes.cancelButton}>취소</Link>
-        <button type="submit">업로드</button>
+        <button type="button">업로드</button>
       </p>
       <p>
-        <label htmlFor="postAuthor">이름</label>
-        <input required className={classes.postAuthor} type="text" />
+        <label htmlFor="fakePostAuthor">이름</label>
+        <input id="fakePostAuthor" required className={classes.fakePostAuthor} placeholder="이름 " type="text" />
       </p>
       <div>
-        <label htmlFor="postContent">내용</label>
-        <textarea className={classes.postContent} placeholder="fake 무슨 일이 일어나고 있나요? " />
+        <label htmlFor="fakePostContent">내용</label>
+        <textarea
+          id="fakePostContent"
+          className={classes.fakePostContent}
+          placeholder="fake 무슨 일이 일어나고 있나요? "
+          rows={12}
+        />
         <div className={classes.limitLetter}>200자 제한</div>
       </div>
 
       <p className={classes.checkBox}>
-        <label>
-          <input type="checkbox" name="myCheckbox" />
+        <label htmlFor="fakeAgree">
+          <input id="fakeAgree" type="checkbox" name="myCheckbox" />
           <span>(필수) 서비스 이용약관</span>
         </label>
       </p>

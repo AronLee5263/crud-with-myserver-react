@@ -66,7 +66,7 @@ export default function NewPost() {
       if (isClicked) {
         navigate("/");
       }
-    }, 500);
+    }, 999500);
 
     return () => clearTimeout(timeoutId);
   }, [isClicked]);
