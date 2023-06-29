@@ -1,6 +1,6 @@
 import classes from "./NewPost.module.css";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -52,8 +52,12 @@ export default function NewPost() {
   // }, []);
 
   const [isClicked, setIsClicked] = useState(false);
-
   const navigate = useNavigate();
+
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   useEffect(() => {
     // isClicked 가 true일떄만 실행되게 바로 리턴하는 패턴
@@ -66,7 +70,7 @@ export default function NewPost() {
       if (isClicked) {
         navigate("/");
       }
-    }, 999500);
+    }, 500);
 
     return () => clearTimeout(timeoutId);
   }, [isClicked]);
@@ -77,12 +81,6 @@ export default function NewPost() {
 
   return (
     <>
-      {/* {isClicked && (
-        <div className={classes.fakeNewPost}>
-          <FakeNewPost />
-        </div>
-      )} */}
-
       {isClicked ? (
         <div className={classes.fakeNewPost}>
           <FakeNewPost />
@@ -96,9 +94,10 @@ export default function NewPost() {
               </button>
               <button type="submit">업로드</button>
             </p>
-            <p>
-              <label htmlFor="postAuthor">이름</label>
+            <p className={classes.nameInput}>
+              <label htmlFor="postAuthor"></label>
               <input
+                ref={inputRef}
                 required
                 className={classes.postAuthor}
                 id="postAuthor"
@@ -108,7 +107,7 @@ export default function NewPost() {
               />
             </p>
             <div>
-              <label htmlFor="postContent">내용</label>
+              <label htmlFor="postContent"></label>
               <textarea
                 className={classes.postContent}
                 id="postContent"

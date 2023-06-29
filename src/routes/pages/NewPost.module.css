@@ -1,6 +1,6 @@
 .fakeNewPost {
   animation-fill-mode: forwards;
-  animation: deleteFakeNewPost 99.5s forwards;
+  animation: deleteFakeNewPost 0.5s forwards;
 
   z-index: 450;
   width: 100%;
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .actions button,
@@ -95,6 +95,10 @@
   color: #d1bee6;
 } */
 
+.nameInput {
+  margin-top: 0;
+}
+
 p > label {
   display: block;
   margin-bottom: 0.05rem;
@@ -119,7 +123,7 @@ p > label {
 .postContent {
   margin-bottom: 1.5rem;
 }
-
+/* 
 .checkBox {
   margin-top: 2rem;
 }
@@ -128,7 +132,7 @@ input + span {
   color: rgb(0, 0, 0);
   margin-left: 8px;
   font: inherit;
-}
+} */
 
 .limitLetter {
   margin: -1.6rem 0.3rem;
@@ -136,10 +140,10 @@ input + span {
   opacity: 0.4;
 }
 
-textarea::placeholder {
+/* textarea::placeholder {
   color: red;
-}
+} */
 
-input::placeholder {
+/* input::placeholder {
   color: red;
-}
+} */

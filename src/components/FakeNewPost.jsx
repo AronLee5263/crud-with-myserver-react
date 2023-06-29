@@ -9,12 +9,12 @@ export default function FakeNewPost() {
         <Link className={classes.cancelButton}>취소</Link>
         <button type="button">업로드</button>
       </p>
-      <p>
-        <label htmlFor="fakePostAuthor">이름</label>
+      <p className={classes.fakeNameInput}>
+        <label htmlFor="fakePostAuthor"></label>
         <input id="fakePostAuthor" required className={classes.fakePostAuthor} placeholder="이름 " type="text" />
       </p>
       <div>
-        <label htmlFor="fakePostContent">내용</label>
+        <label htmlFor="fakePostContent"></label>
         <textarea
           id="fakePostContent"
           className={classes.fakePostContent}
