@@ -58,16 +58,6 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/create_post",
-        element: (
-          // <Suspense fallback={<p>로딩중입니다...</p>}>
-          <NewPost />
-          // </Suspense>
-        ),
-        action: newPostAction,
-        // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
-      },
-      {
         path: "/goal",
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
@@ -92,6 +82,16 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/create_post",
+    element: (
+      // <Suspense fallback={<p>로딩중입니다...</p>}>
+      <NewPost />
+      // </Suspense>
+    ),
+    action: newPostAction,
+    // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
   },
   {
     path: "/login",

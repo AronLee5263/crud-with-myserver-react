@@ -79,7 +79,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.button {
+.newPostButton {
   /* margin-right: 1rem; */
   /* width: 2rem;
   height: 2rem; */
@@ -91,12 +91,13 @@ nav {
   cursor: pointer;
 
   border-radius: 50%;
+  border: none;
 
   color: white;
 
   background-color: var(--disc-doctor-color);
 }
 
-.button:hover {
+.newPostButton:hover {
   background-color: var(--disc-doctor-color);
 }

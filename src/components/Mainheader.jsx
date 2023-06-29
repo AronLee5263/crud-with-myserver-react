@@ -1,74 +1,106 @@
 import classes from "./MainHeader.module.css";
 
-import { useState } from "react";
-import { Link, NavLink, Form, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, NavLink, Form, useLocation, useNavigate } from "react-router-dom";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 
 import ProfilePopup from "./ProfilePopup";
+import NewPost from "../routes/pages/NewPost";
 
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
+  const [isClickedNPB, setIsClickedNPB] = useState(false);
+  const navigate = useNavigate();
 
   const location = useLocation();
   const currentPath = location.pathname;
 
-  function closeProfilePopupHandler() {
-    setProfilePopupIsVisible(false);
-  }
+  useEffect(() => {
+    // isClicked 가 true일떄만 실행되게 바로 리턴하는 패턴
+    if (isClickedNPB === false) return;
 
-  function openProfilePopupHandler() {
-    setProfilePopupIsVisible(true);
-  }
+    setIsClickedNPB(false);
+    console.log("must be false after 1 second : ", isClickedNPB);
+
+    if (isClickedNPB) {
+      navigate("/create_post");
+      setIsClickedNPB(false);
+    }
+  }, [isClickedNPB]);
 
   // console.log("currentPath : ", currentPath);
 
   return (
     <>
-      {profilePopupIsVisible && <ProfilePopup onCloseProfilePopup={closeProfilePopupHandler} />}
-
-      <div className={classes.headerContainer}>
-        <div className={classes.profile}>
-          <button type="button" className={classes.profile_icon} onClick={openProfilePopupHandler}>
-            <CgProfile size={30} className={classes.icon} />
-            <p className={classes.nickName}>nick name</p>
-          </button>
-        </div>
-
-        <nav>
-          <ul className={classes.category}>
-            <li>
-              <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
-                커뮤니티
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                달성기록
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/myinfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                내 정보
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/analysis" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                분석
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-
-        <Form method="post" className={classes.form}>
-          {currentPath === "/" && (
-            <Link to="/create_post" className={classes.button}>
-              <AiOutlinePlus size={24} className={classes.icon} />
-            </Link>
+      {isClickedNPB ? (
+        <NewPost />
+      ) : (
+        <>
+          {profilePopupIsVisible && (
+            <ProfilePopup
+              onCloseProfilePopup={() => {
+                setProfilePopupIsVisible(false);
+              }}
+            />
           )}
-        </Form>
-      </div>
+
+          <div className={classes.headerContainer}>
+            <div className={classes.profile}>
+              <button
+                type="button"
+                className={classes.profile_icon}
+                onClick={() => {
+                  setProfilePopupIsVisible(true);
+                }}
+              >
+                <CgProfile size={30} className={classes.icon} />
+                <p className={classes.nickName}>nick name</p>
+              </button>
+            </div>
+
+            <nav>
+              <ul className={classes.category}>
+                <li>
+                  <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
+                    커뮤니티
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                    달성기록
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/myinfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                    내 정보
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/analysis" className={({ isActive }) => (isActive ? classes.active : undefined)}>
+                    분석
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+
+            <Form method="post" className={classes.form}>
+              {currentPath === "/" && (
+                <button
+                  type="button"
+                  className={classes.newPostButton}
+                  onClick={() => {
+                    setIsClickedNPB(true);
+                  }}
+                >
+                  <AiOutlinePlus size={24} className={classes.icon} />
+                </button>
+              )}
+            </Form>
+          </div>
+        </>
+      )}
     </>
   );
 }
