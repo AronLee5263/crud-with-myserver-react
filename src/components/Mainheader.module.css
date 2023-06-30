@@ -24,6 +24,7 @@
   flex-direction: column;
   background-color: transparent;
   border: none;
+  color: black;
 }
 
 .nickName {
@@ -31,6 +32,8 @@
 
   font-size: 8px;
   font-weight: 600;
+
+  color: black;
 }
 
 nav * {

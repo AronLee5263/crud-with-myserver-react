@@ -11,7 +11,7 @@ import NewPost from "../routes/pages/NewPost";
 
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
-  const [isClickedNPB, setIsClickedNPB] = useState(false);
+  const [isClickedNP, setIsClickedNPB] = useState(false);
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -19,22 +19,22 @@ function MainHeader() {
 
   useEffect(() => {
     // isClicked 가 true일떄만 실행되게 바로 리턴하는 패턴
-    if (isClickedNPB === false) return;
+    if (isClickedNP === false) return;
 
     setIsClickedNPB(false);
-    console.log("must be false after 1 second : ", isClickedNPB);
+    console.log("must be false after 1 second : ", isClickedNP);
 
-    if (isClickedNPB) {
+    if (isClickedNP) {
       navigate("/create_post");
       setIsClickedNPB(false);
     }
-  }, [isClickedNPB]);
+  }, [isClickedNP]);
 
   // console.log("currentPath : ", currentPath);
 
   return (
     <>
-      {isClickedNPB ? (
+      {isClickedNP ? (
         <NewPost />
       ) : (
         <>
