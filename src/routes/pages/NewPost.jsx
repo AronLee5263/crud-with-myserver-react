@@ -60,12 +60,12 @@ export default function NewPost() {
 
     const timeoutId = setTimeout(() => {
       setIsClicked(false);
-      console.log("must be false after 1 second : ", isClicked);
+      console.log("must be false after 0.1 second : ", isClicked);
 
       if (isClicked) {
         navigate("/");
       }
-    }, 500);
+    }, 100);
 
     return () => clearTimeout(timeoutId);
   }, [isClicked]);

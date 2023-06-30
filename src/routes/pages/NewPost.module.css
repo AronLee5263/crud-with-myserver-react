@@ -1,6 +1,6 @@
 .fakeNewPost {
   animation-fill-mode: forwards;
-  animation: deleteFakeNewPost 0.5s forwards;
+  animation: deleteFakeNewPost 0.25s forwards;
 
   z-index: 450;
   width: 100%;
