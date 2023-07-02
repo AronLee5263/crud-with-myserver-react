@@ -6,6 +6,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 import { Link, Form, redirect, useLocation, useNavigate } from "react-router-dom";
 
+import NoMobile, { UseIsMobile } from "../../components/NoMobile";
 import FakeNewPost from "../../components/FakeNewPost";
 
 export default function NewPost() {
@@ -50,6 +51,7 @@ export default function NewPost() {
   //     };
   //   }
   // }, []);
+  const mobileSize = UseIsMobile();
 
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
@@ -73,6 +75,12 @@ export default function NewPost() {
   const onClickCloseBtn = () => {
     setIsClicked(true);
   };
+
+  let content;
+
+  if (mobileSize === false) {
+    return <NoMobile />;
+  }
 
   return (
     <>

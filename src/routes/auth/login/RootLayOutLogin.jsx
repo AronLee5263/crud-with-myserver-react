@@ -5,11 +5,11 @@
 // import { signInWithEmailAndPassword } from "firebase/auth";
 
 // import BackButton from "../../../components/BackButton";
+import NoMobile, { UseIsMobile } from "../../../components/NoMobile";
 
 import { Outlet } from "react-router-dom";
 
 import LoginMainHeader from "./LoginMainHeader";
-import NoMobile from "../../../components/NoMobile";
 
 export default function Login() {
   // const [email, setEmail] = useState("");
@@ -49,12 +49,18 @@ export default function Login() {
   //   console.log(app);
   // }
 
+  const mobileSize = UseIsMobile();
+
+  let content;
+
+  if (mobileSize === false) {
+    return <NoMobile />;
+  }
+
   return (
     <>
       <LoginMainHeader />
       <Outlet />
-
-      <NoMobile />
 
       {/* <div className={classes.topSection}>
         <BackButton />
