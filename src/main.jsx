@@ -14,7 +14,7 @@ import NewPost, { action as newPostAction } from "./routes/pages/NewPost";
 import WrapperRootLayOut from "./routes/pages/WrapperRootLayOut";
 // import RootLayOut from "./routes/pages/RootLayout";
 
-import RootLayOutAuth from "./routes/auth/RootLayOutAuth";
+// import RootLayOutAuth from "./routes/auth/RootLayOutAuth";
 
 import RootLayOutLogin from "../src/routes/auth/login/RootLayOutLogin";
 import LoginPassword from "./routes/auth/login/LoginPassword";
@@ -95,39 +95,32 @@ const router = createBrowserRouter([
     action: newPostAction,
     // action: ({ request }) => import("./routes/NewPost").then((module) => module.action({ request })),
   },
-
   {
-    path: "/auth",
-    element: <RootLayOutAuth />,
+    path: "sign_up",
+    element: <RootLayOutSignUp />,
     children: [
       {
-        path: "login",
-        element: <RootLayOutLogin />,
-        children: [
-          {
-            path: "with_password",
-            element: <LoginPassword />,
-          },
-          {
-            path: "with_email_link",
-            element: <LoginEmailLink />,
-          },
-        ],
+        path: "with_email_link",
+        element: <SignUpEmailLink />,
       },
       {
-        path: "sign_up",
-        element: <RootLayOutSignUp />,
-        children: [
-          {
-            path: "with_password",
-            element: <SignUpPassword />,
-            // loader: () => import("./routes/Community").then((module) => module.loader()),
-          },
-          {
-            path: "with_email_link",
-            element: <SignUpEmailLink />,
-          },
-        ],
+        path: "with_password",
+        element: <SignUpPassword />,
+        // loader: () => import("./routes/Community").then((module) => module.loader()),
+      },
+    ],
+  },
+  {
+    path: "login",
+    element: <RootLayOutLogin />,
+    children: [
+      {
+        path: "with_email_link",
+        element: <LoginEmailLink />,
+      },
+      {
+        path: "with_password",
+        element: <LoginPassword />,
       },
     ],
   },

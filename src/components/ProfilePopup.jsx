@@ -27,13 +27,13 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
     if (signUp === false) return;
 
     if (signUp) {
-      navigate("/auth", {
+      navigate("/sign_up", {
         state: {
           what: "signUp",
           text: "회원가입을 전달했음.. 프로필 팝업에서",
         },
       });
-      setSignUp(false);
+      // setSignUp(false);
     }
   }, [signUp]);
 
@@ -42,13 +42,13 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
     if (login === false) return;
 
     if (login) {
-      navigate("/auth", {
+      navigate("/login", {
         state: {
           what: "login",
           text: "로그인을 전달했음 프로필 팝업에서",
         },
       });
-      setLogin(false);
+      // setLogin(false);
     }
   }, [login]);
 

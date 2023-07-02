@@ -1,108 +1,141 @@
 import classes from "./RootLayOutSignUp.module.css";
 
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-
-import BackButton from "../../../components/BackButton";
-import SignUpSubForm from "./SignUpSubForm";
-
-import SignUpPassword from "./SignUpPassword";
-import SignUpEmailLink from "./SignUpEmailLink";
+import { useNavigate, Link, useLocation, Outlet } from "react-router-dom";
 
 import NoMobile, { UseIsMobile } from "../../../components/NoMobile";
+import AuthHeader from "../AuthHeader";
+
+import SignUpForm from "../signUp/SignUpForm";
 
 export default function RootLayOutSignUp() {
   const mobileSize = UseIsMobile();
-
-  let navigate = useNavigate();
-
-  const [isClickEP, setIsClickEP] = useState(false);
-  const [isClickLink, setIsClickLink] = useState(false);
-
-  const clickSignPasswordHandler = (e) => {
-    e.preventDefault();
-    setIsClickEP(true);
-    navigate("with_password");
-  };
-
-  const clickSignLinkHandler = (e) => {
-    setIsClickLink(true);
-    navigate("with_email_link");
-  };
-
-  useEffect(() => {
-    // login 가 true일떄만 실행되게 바로 리턴하는 패턴
-    if (isClickEP === false) return;
-
-    setIsClickEP(false);
-    console.log("isClickEP____ : ", isClickEP);
-
-    if (isClickEP) {
-      navigate("with_password");
-      setIsClickEP(false);
-    }
-  }, [isClickEP]);
-
-  useEffect(() => {
-    // isClickLink 가 true일떄만 실행되게 바로 리턴하는 패턴
-    if (isClickLink === false) return;
-
-    setIsClickLink(false);
-    console.log("isClickLink____ : ", isClickLink);
-
-    if (isClickLink) {
-      navigate("with_email_link");
-      setIsClickLink(false);
-    }
-  }, [isClickLink]);
-
-  let content;
 
   if (mobileSize === false) {
     return <NoMobile />;
   }
 
-  if (isClickEP) {
-    content = (
-      <>
-        <SignUpPassword />
-        {/* <SignUpSubForm clickSignPasswordHandler={clickSignPasswordHandler} /> */}
-      </>
-    );
-  } else if (isClickLink) {
-    content = (
-      <>
-        <SignUpEmailLink />
-        {/* <SignUpSubForm clickSignLinkHandler={clickSignLinkHandler} /> */}
-      </>
-    );
-  } else if (!isClickEP && !isClickLink) {
-    content = (
-      <>
-        <SignUpSubForm
-          clickSignPasswordHandler={clickSignPasswordHandler}
-          clickSignLinkHandler={clickSignLinkHandler}
-        />
-      </>
+  // const location = useLocation();
+
+  // const state = location.state;
+  // console.log("state 뭐 있어?", state);
+
+  // if (state.what === "signUp") {
+  //   content = (
+  //     <>
+  //       <SignUpForm></SignUpForm>
+  //     </>
+  //   );
+  // }
+  // else if (state.what === "signUp") {
+  //   content = (
+  //     <>
+  //       <SignUpForm ></SignUpForm>
+  //     </>
+  //   );
+  // }
+
+  // const linkHandler = (e) => {
+  //   e.preventDefault();
+  //   setIsClickLink(true);
+  // };
+
+  // function passwordHandler(e) {
+  //   setIsClickEmailPassword(true);
+  // }
+
+  const [password, setPassword] = useState(false);
+  const [link, setLink] = useState(false);
+
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    // login 가 true일떄만 실행되게 바로 리턴하는 패턴
+    if (link === false) return;
+
+    if (link) {
+      navigate("with_email_link", {
+        state: {
+          what: "link",
+          text: "link link link link",
+        },
+      });
+      // setLink(false);
+    }
+  }, [link]);
+
+  useEffect(() => {
+    // signUp 가 true일떄만 실행되게 바로 리턴하는 패턴
+    if (password === false) return;
+
+    if (password) {
+      navigate("with_password", {
+        state: {
+          how: "password",
+          text: "password.. password password",
+        },
+      });
+      // setPassword(false);
+    }
+  }, [password]);
+
+  const passwordHanlder = (e) => {
+    e.preventDefault();
+    setPassword(true);
+  };
+
+  const linkHandler = (e) => {
+    e.preventDefault();
+    setLink(true);
+  };
+
+  let content;
+
+  if (password || link) {
+    return (
+      <div className={classes.authPage}>
+        <div className={classes.header}>
+          <AuthHeader />
+        </div>
+
+        <div className={classes.formSection}>
+          <Outlet />
+          {/* <Outlet/> */}
+        </div>
+      </div>
     );
   }
 
-  return (
-    <>
-      <div className={classes.whole}>
-        <div className={classes.wholePage}>
-          <div className={classes.header}>
-            <BackButton />
-            <img className={classes.logo} src="/assets/images/logo/disc_logo_1.png" alt="app_logo" />
-          </div>
+  if (!password || !link) {
+    return (
+      <div className={classes.authPage}>
+        <div className={classes.header}>
+          <AuthHeader />
+        </div>
 
-          {content}
-          {/* {isClickEP ? <SignUpPassword /> : <SignUpSubForm clickSignPasswordHandler={clickSignPasswordHandler} />}
-        {isClickLink ? <SignUpEmailLink /> : <SignUpSubForm clickSignLinkHandler={clickSignLinkHandler} />} */}
-
-          {/* {<SignUpSubForm onClickSignPassword={clickSignPasswordHandler} onClickSignLink={clickSignLinkHandler} />} */}
+        <div className={classes.formSection}>
+          <Outlet />
+          <SignUpForm onPassword={passwordHanlder} onLink={linkHandler} />
+          {/* <Outlet/> */}
         </div>
       </div>
-    </>
-  );
+    );
+  }
+
+  // return (
+  //   <>
+
+  //     <div className={classes.authPage}>
+  //       <div className={classes.header}>
+  //         <AuthHeader />
+  //       </div>
+
+  //       <div className={classes.formSection}>
+  //       <Outlet />
+  //         <SignUpForm onPassword={passwordHanlder} onLink={linkHandler} />
+  //         {/* <Outlet/> */}
+  //       </div>
+  //     </div>
+  //   </>
+  // );
 }

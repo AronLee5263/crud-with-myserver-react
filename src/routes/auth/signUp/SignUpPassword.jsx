@@ -5,10 +5,19 @@ import { useState } from "react";
 import { auth } from "../../../firebase/config";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-import BackButton from "../../../components/BackButton";
-import SignUpEmailLink from "./SignUpEmailLink";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+
+// import BackButton from "../../../components/BackButton";
+// import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
+  const location = useLocation();
+  const state = location.state;
+
+  if (state.how === "password") {
+    console.log("여기까지 옴", state);
+  }
+
   const [nickName, setNickName] = useState("");
 
   const [userEmail, setUserEmail] = useState("");
@@ -76,7 +85,7 @@ export default function SignUpPassword() {
 
   return (
     <>
-      <div className={classes.wholePageLink}>
+      <div className={classes.wholePasswordPage}>
         <p className={classes.title}>계정을 생성하세요</p>
         <p className={classes.subTitle}>이메일과 비밀번호 방식 회원가입</p>
 

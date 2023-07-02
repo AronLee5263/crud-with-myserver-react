@@ -1,3 +1,15 @@
+.sections {
+  height: 100%;
+}
+
+.content1 {
+  height: 100%;
+}
+
+.changeContent {
+  height: 100%;
+}
+
 .titleSection {
   margin-top: 7rem;
 }
