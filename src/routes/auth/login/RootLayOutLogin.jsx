@@ -6,8 +6,6 @@ import { useNavigate, Link, useLocation, Outlet } from "react-router-dom";
 import NoMobile, { UseIsMobile } from "../../../components/NoMobile";
 import AuthHeader from "../AuthHeader";
 
-import SignUpForm from "../signUp/SignUpForm";
-
 import LoginForm from "../login/LoginForm";
 
 export default function RootLayOutLogin() {
