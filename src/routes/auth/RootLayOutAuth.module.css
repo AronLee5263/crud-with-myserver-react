@@ -3,11 +3,24 @@
   height: 100%;
 
   /* border: 3px solid darkcyan; */
-}
 
-.header {
-  /* border: 1px solid red; */
+  animation-fill-mode: forwards;
+  animation: showAuthPage 0.25s forwards;
 }
+/* 
+.header {
+  border: 1px solid red;
+} */
+
 .formSection {
   height: 100%;
+}
+
+@keyframes showAuthPage {
+  from {
+    transform: translateY(200%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
