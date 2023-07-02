@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 
+import NoMobile, { UseIsMobile } from "../../components/NoMobile";
 import RootLayOut from "../pages/RootLayout";
 
 import NewPostAnimationContext from "../../store/newPost-animation-context";
 
 export default function WrapperRootLayOut() {
-  return (
-    <>
+  const mobileSize = UseIsMobile();
+
+  let content;
+
+  if (mobileSize === false) {
+    content = <NoMobile />;
+  } else {
+    content = (
       <NewPostAnimationContext.Provider
         value={{
           isClickedNewPost: false,
@@ -14,6 +21,9 @@ export default function WrapperRootLayOut() {
       >
         <RootLayOut />
       </NewPostAnimationContext.Provider>
-    </>
-  );
+    );
+  }
+  console.log("mobileSize :", mobileSize);
+
+  return <>{content}</>;
 }

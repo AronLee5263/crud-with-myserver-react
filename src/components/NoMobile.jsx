@@ -1,5 +1,7 @@
 import classes from "./NoMobile.module.css";
 
+import { useMediaQuery } from "react-responsive";
+
 export default function NoMobile() {
   return (
     <>
@@ -12,4 +14,9 @@ export default function NoMobile() {
       </div>
     </>
   );
+}
+
+export function UseIsMobile() {
+  const noMobileSize = useMediaQuery({ query: "(max-width: 645px)" });
+  return noMobileSize;
 }
