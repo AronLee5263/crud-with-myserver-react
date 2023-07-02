@@ -114,21 +114,21 @@ const router = createBrowserRouter([
           },
         ],
       },
-      // {
-      //   path: "sign_up",
-      //   element: <RootLayOutSignUp />,
-      //   children: [
-      //     {
-      //       path: "with_password",
-      //       element: <SignUpPassword />,
-      //       // loader: () => import("./routes/Community").then((module) => module.loader()),
-      //     },
-      //     {
-      //       path: "with_email_link",
-      //       element: <SignUpEmailLink />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "sign_up",
+        element: <RootLayOutSignUp />,
+        children: [
+          {
+            path: "with_password",
+            element: <SignUpPassword />,
+            // loader: () => import("./routes/Community").then((module) => module.loader()),
+          },
+          {
+            path: "with_email_link",
+            element: <SignUpEmailLink />,
+          },
+        ],
+      },
     ],
   },
 

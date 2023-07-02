@@ -1,14 +1,10 @@
-import classes from "./SignUpSubForm.module.css";
-
-import BackButton from "../../../components/BackButton";
+import classes from "./SignUpForm.module.css";
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkHandler }) {
+export default function SignUpForm() {
   let navigate = useNavigate();
-
-  //   const [flag1, setFlag1] = useState(false);
 
   return (
     <div className={classes.sections}>
@@ -34,7 +30,7 @@ export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkH
           type="button"
           // to="/sign_up/with_email_link"
           className={classes.SignUpEmailLink}
-          onClick={clickSignLinkHandler}
+          //   onClick={clickSignLinkHandler}
         >
           <span className={classes.authText}>계정 만들기 / Email-Link</span>
         </button>
@@ -43,7 +39,7 @@ export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkH
           type="button"
           // to="/sign_up/with_password"
           className={classes.SignUpPassword}
-          onClick={clickSignPasswordHandler}
+          //   onClick={clickSignPasswordHandler}
         >
           <span className={classes.authText}>계정 만들기 / Email-password</span>
         </button>
@@ -57,7 +53,7 @@ export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkH
 
         <div className={classes.exsitingAccount}>
           <p className={classes.exsitingAccountText}>이미 계정이 있으세요? </p>
-          <span className={classes.loginLink}> 로그인 하기</span>
+          <Link className={classes.loginLink}> 로그인 하기</Link>
         </div>
       </div>
     </div>

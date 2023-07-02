@@ -29,7 +29,7 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
     if (signUp) {
       navigate("/auth", {
         state: {
-          what: signUp,
+          what: "signUp",
           text: "회원가입을 전달했음.. 프로필 팝업에서",
         },
       });
@@ -44,7 +44,7 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
     if (login) {
       navigate("/auth", {
         state: {
-          what: login,
+          what: "login",
           text: "로그인을 전달했음 프로필 팝업에서",
         },
       });

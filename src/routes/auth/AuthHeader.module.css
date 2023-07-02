@@ -1,0 +1,41 @@
+.sections {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  width: 33.3%;
+}
+
+.backBtnSection {
+  display: flex;
+  justify-content: flex-start;
+  /* background-color: tomato; */
+}
+
+.back_button_container {
+  text-decoration: none;
+  color: black;
+}
+
+.text {
+  display: flex;
+  padding: 8px;
+  background-color: transparent;
+}
+
+.logoSection {
+  display: flex;
+  justify-content: center;
+
+  /* background-color: turquoise; */
+}
+.logo {
+  /* position: fixed; */
+  width: 40px;
+  height: 40px;
+  /* background-color: transparent; */
+  border: none;
+}

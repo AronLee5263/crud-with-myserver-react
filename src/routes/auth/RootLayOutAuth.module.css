@@ -1,0 +1,13 @@
+.authPage {
+  margin: 1rem 0.5rem;
+  height: 100%;
+
+  /* border: 3px solid darkcyan; */
+}
+
+.header {
+  /* border: 1px solid red; */
+}
+.formSection {
+  height: 100%;
+}

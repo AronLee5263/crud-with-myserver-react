@@ -1,11 +1,9 @@
-import classes from "./SignUpSubForm.module.css";
-
-import BackButton from "../../../components/BackButton";
+import classes from "./LoginForm.module.css";
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkHandler }) {
+export default function LoginForm({ onClickSignPassword, onClickSignLink }) {
   let navigate = useNavigate();
 
   //   const [flag1, setFlag1] = useState(false);
@@ -13,7 +11,7 @@ export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkH
   return (
     <div className={classes.sections}>
       <div className={classes.titleSection}>
-        <p className={classes.titleText}>사람들이 어떻게 디스크를 관리하는지 알아보세요.</p>
+        <p className={classes.titleText}>만나서 반가워요! disc doctor를 이용하려면 로그인 하세요.</p>
       </div>
 
       <div className={classes.authSection}>
@@ -34,30 +32,25 @@ export default function SignUpSubForm({ clickSignPasswordHandler, clickSignLinkH
           type="button"
           // to="/sign_up/with_email_link"
           className={classes.SignUpEmailLink}
-          onClick={clickSignLinkHandler}
+          onClick={onClickSignLink}
         >
-          <span className={classes.authText}>계정 만들기 / Email-Link</span>
+          <span className={classes.authText}>로그인 / for Email-Link</span>
         </button>
 
         <button
           type="button"
           // to="/sign_up/with_password"
           className={classes.SignUpPassword}
-          onClick={clickSignPasswordHandler}
+          onClick={onClickSignPassword}
         >
-          <span className={classes.authText}>계정 만들기 / Email-password</span>
+          <span className={classes.authText}>로그인 / for Email-password</span>
         </button>
       </div>
 
       <div className={classes.bottomSection}>
-        <p className={classes.policyAgree}>
-          가입하면 disc doctor의 <span className={classes.policyAgreeText}>이용약관, 개인정보, 쿠키사용</span>에
-          동의하게 됩니다.
-        </p>
-
         <div className={classes.exsitingAccount}>
-          <p className={classes.exsitingAccountText}>이미 계정이 있으세요? </p>
-          <span className={classes.loginLink}> 로그인 하기</span>
+          <p className={classes.exsitingAccountText}>계정이 없으신가요? </p>
+          <span className={classes.loginLink}> 가입하기</span>
         </div>
       </div>
     </div>
