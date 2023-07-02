@@ -3,7 +3,7 @@ import classes from "./LoginForm.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function LoginForm({ onClickSignPassword, onClickSignLink }) {
+export default function LoginForm({ onLink, onPassword }) {
   let navigate = useNavigate();
 
   //   const [flag1, setFlag1] = useState(false);
@@ -32,7 +32,7 @@ export default function LoginForm({ onClickSignPassword, onClickSignLink }) {
           type="button"
           // to="/sign_up/with_email_link"
           className={classes.SignUpEmailLink}
-          onClick={onClickSignLink}
+          onClick={onLink}
         >
           <span className={classes.authText}>로그인 / for Email-Link</span>
         </button>
@@ -41,7 +41,7 @@ export default function LoginForm({ onClickSignPassword, onClickSignLink }) {
           type="button"
           // to="/sign_up/with_password"
           className={classes.SignUpPassword}
-          onClick={onClickSignPassword}
+          onClick={onPassword}
         >
           <span className={classes.authText}>로그인 / for Email-password</span>
         </button>

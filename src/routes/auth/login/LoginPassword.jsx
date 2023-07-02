@@ -57,7 +57,7 @@ export default function LoginPassword() {
 
   return (
     <>
-      <div className={classes.wholePageLink}>
+      <div className={classes.wholePasswordPage}>
         <p className={classes.title}>시작하려면 이메일 비밀번호를 입력하세요</p>
         <p className={classes.subTitle}>이메일과 비밀번호 방식 로그인</p>
 

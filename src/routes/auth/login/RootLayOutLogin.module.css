@@ -1,20 +1,26 @@
-.topSection {
-  margin-top: 50%;
+.authPage {
+  margin: 1rem 0.5rem;
+  height: 100%;
+
+  /* border: 3px solid darkcyan; */
+
+  animation-fill-mode: forwards;
+  animation: showAuthPage 0.25s forwards;
 }
-.middleSection {
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+/* 
+.header {
+  border: 1px solid red;
+} */
+
+.formSection {
+  height: 100%;
 }
 
-.title {
-  color: black;
-}
-.text {
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
+@keyframes showAuthPage {
+  from {
+    transform: translateY(200%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
