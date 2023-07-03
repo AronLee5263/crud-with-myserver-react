@@ -6,19 +6,19 @@ import { Outlet, useLocation } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebase/firestore";
 
-import { UseCollection } from "../../hooks/UseCollection";
+import { useCollectionnn } from "../../hookss/useCollectionnn";
 
 // import Splash from "../components/Splash";
 import PostsList from "../../components/PostsList";
 import FakeNewPost from "../../components/FakeNewPost";
 
-// const { documents: POSTS } = useCollection("POSTS");
+// const { documents: POSTS } = useCollectionnn("POSTS");
 
 export default function Community() {
   // const { state } = useLocation();
   // console.log("state 에 뭐가 있을까 : ", state);
 
-  const { documents: docss } = UseCollection("POST");
+  const { documents: docss } = useCollectionnn("POST");
   console.log("docss : ", docss);
 
   // console.log("test : ", test);
@@ -65,7 +65,7 @@ export default function Community() {
 // export async function loader() {
 //   const response = await axios.get(SERVER_URL);
 
-//   const { documents: docss } = useCollection("POST");
+//   const { documents: docss } = useCollectionnn("POST");
 
 //   console.log("docss : ", docss);
 //   return docss.reverse();

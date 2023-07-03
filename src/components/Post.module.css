@@ -17,7 +17,8 @@
 
 .leftSection {
   width: 13%;
-
+  /* width: 100%;
+  margin: 0 1rem; */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -36,7 +37,7 @@
 .rightSection {
   /* margin-left: 1rem; */
   /* width: 97.5rem; */
-  width: 87%;
+  width: 86%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -46,10 +47,11 @@
 }
 
 .headerContents {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 .author {
   margin-top: 0.6rem;
@@ -63,18 +65,21 @@
 }
 
 .buttons {
-  margin-right: 8px;
-  width: 6rem;
+  margin-right: 0.2rem;
+  /* width: 6rem; */
 
   display: flex;
-  justify-content: space-around;
-  font-size: 1px;
+  /* justify-content: flex-start; */
+  /* font-size: 1px; */
 }
 
 .buttons button {
-  background-color: transparent;
+  padding: 0;
+  margin-right: 0.9rem;
   cursor: pointer;
   border: none;
+
+  background-color: transparent;
 }
 
 .bodyContents {
@@ -90,7 +95,7 @@
 .bodyText {
   /* text-overflow: ellipsis; */
 
-  width: 100%;
+  /* width: 100%; */
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
