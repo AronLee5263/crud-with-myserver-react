@@ -1,6 +1,7 @@
 import classes from "./SignUpPassword.module.css";
 
 import { useSignUp } from "../../../hookss/useSignUp";
+// import { useLogout } from "../../../hookss/useLogout";
 
 import { useState } from "react";
 
@@ -18,6 +19,7 @@ export default function SignUpPassword() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { error, signUp } = useSignUp();
+  // const { logout } = useLogout();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -127,6 +129,10 @@ export default function SignUpPassword() {
         </div>
         {error && <p className={classes.errorMessage}> {error}</p>}
 
+        {/* <button className={classes.logout} onClick={logout}>
+          {" "}
+          로그아웃
+        </button> */}
         {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
     </>

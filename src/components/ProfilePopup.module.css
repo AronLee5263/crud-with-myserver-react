@@ -159,3 +159,11 @@
   border: 0;
   background-color: transparent;
 }
+
+.logoutSection {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout {
+}

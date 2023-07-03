@@ -13,12 +13,15 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import RootLayOutSignUp from "../routes/auth/signUp/RootLayOutSignUp";
 import RootLayOutLogin from "../routes/auth/login/RootLayOutLogin";
 
+import { useLogout } from "../hookss/useLogout";
 // import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi";
 // import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 
 export default function ProfilePopup({ onCloseProfilePopup }) {
   const [signUp, setSignUp] = useState(false);
   const [login, setLogin] = useState(false);
+
+  const { logout } = useLogout();
 
   let navigate = useNavigate();
 
@@ -122,6 +125,12 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
             <div className={classes.screenTheme}>
               <button type="button" className={classes.screenTheme_button}>
                 <BsSun size={20} />
+              </button>
+            </div>
+
+            <div className={classes.logoutSection}>
+              <button className={classes.logout} onClick={logout}>
+                로그아웃
               </button>
             </div>
           </div>
