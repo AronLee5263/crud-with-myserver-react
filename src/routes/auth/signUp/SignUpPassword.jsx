@@ -1,5 +1,7 @@
 import classes from "./SignUpPassword.module.css";
 
+import { useSignUp } from "../../../hookss/useSignUp";
+
 import { useState } from "react";
 
 import { auth } from "../../../firebase/config";
@@ -11,17 +13,17 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 // import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
-  const location = useLocation();
-  const state = location.state;
-
-  if (state.how === "password") {
-    console.log("여기까지 옴", state);
-  }
-
   const [nickName, setNickName] = useState("");
 
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const { error, signUp } = useSignUp();
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log(nickName, userEmail, userEmail);
+    signUp(userEmail, userPassword);
+  };
 
   const nickNameHandler = async (e) => {
     e.preventDefault();
@@ -42,11 +44,6 @@ export default function SignUpPassword() {
 
     setUserPassword(e.target.value);
   }
-
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    console.log(nickName, userEmail, userEmail);
-  };
 
   function singUpWithEmailAndPasswordHandler(event) {
     event.preventDefault();
@@ -123,10 +120,12 @@ export default function SignUpPassword() {
         </form>
 
         <div className={classes.buttonSection}>
-          <button className={classes.authButton} type="button">
+          <button className={classes.authButton} type="button" onClick={submitHandler}>
             가입
           </button>
         </div>
+        {error && <p className={classes.errorMessage}> {error}</p>}
+
         {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
     </>
