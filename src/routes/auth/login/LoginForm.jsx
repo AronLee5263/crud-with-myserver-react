@@ -50,7 +50,10 @@ export default function LoginForm({ onLink, onPassword }) {
       <div className={classes.bottomSection}>
         <div className={classes.exsitingAccount}>
           <p className={classes.exsitingAccountText}>계정이 없으신가요? </p>
-          <span className={classes.loginLink}> 가입하기</span>
+          <Link to="/sign_up" className={classes.loginLink}>
+            {" "}
+            가입하기
+          </Link>
         </div>
       </div>
     </div>

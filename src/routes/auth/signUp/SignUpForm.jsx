@@ -88,7 +88,10 @@ export default function SignUpForm({ onLink, onPassword }) {
 
           <div className={classes.exsitingAccount}>
             <p className={classes.exsitingAccountText}>이미 계정이 있으세요? </p>
-            <Link className={classes.loginLink}> 로그인 하기</Link>
+            <Link to="/login" className={classes.loginLink}>
+              {" "}
+              로그인 하기
+            </Link>
           </div>
         </div>
       </div>
