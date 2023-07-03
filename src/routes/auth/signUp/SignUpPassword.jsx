@@ -88,10 +88,11 @@ export default function SignUpPassword() {
 
         <form className={classes.emailLinkAuth}>
           <input
-            required
+            // required
+            // 선택
             type="text"
             className={classes.textName}
-            placeholder="이름"
+            placeholder="이름 (optional)"
             onChange={nickNameHandler}
             value={nickName}
           />
