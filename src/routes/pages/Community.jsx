@@ -1,7 +1,7 @@
 import classes from "./Community.module.css";
 
 import { useEffect, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import { db } from "../../firebase/config";
 import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebase/firestore";
@@ -9,12 +9,19 @@ import { collection, onSnapshot, getDocs, addDoc, query, orderBy } from "firebas
 import { useCollectionnn } from "../../hookss/useCollectionnn";
 
 // import Splash from "../components/Splash";
+
+import { useAuthContext } from "../../store/useAuthContext";
+import NotLogin from "./NotLogin";
+
 import PostsList from "../../components/PostsList";
 import FakeNewPost from "../../components/FakeNewPost";
 
 // const { documents: POSTS } = useCollectionnn("POSTS");
 
 export default function Community() {
+  const { user, authIsReady } = useAuthContext();
+  const navigate = useNavigate();
+
   // const { state } = useLocation();
   // console.log("state 에 뭐가 있을까 : ", state);
 
@@ -36,6 +43,12 @@ export default function Community() {
   //     </>
   //   );
   // }
+
+  useEffect(() => {
+    if (authIsReady && !user) {
+      navigate("/not_login");
+    }
+  }, [authIsReady, user, navigate]);
 
   return (
     <>

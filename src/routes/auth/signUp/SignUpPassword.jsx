@@ -3,29 +3,57 @@ import classes from "./SignUpPassword.module.css";
 import { useSignUp } from "../../../hookss/useSignUp";
 // import { useLogout } from "../../../hookss/useLogout";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { auth } from "../../../firebase/config";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useNavigate, Link, useLocation } from "react-router-dom";
 
+import { useAuthContext } from "../../../store/useAuthContext";
+
 // import BackButton from "../../../components/BackButton";
 // import SignUpEmailLink from "./SignUpEmailLink";
 
 export default function SignUpPassword() {
-  const [nickName, setNickName] = useState("");
+  const { user, authIsReady } = useAuthContext();
 
+  const [nickName, setNickName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { error, signUp } = useSignUp();
   // const { logout } = useLogout();
 
+  const [loading, setLoading] = useState(false);
+  const [timerId, setTimerId] = useState(null);
+  const navigate = useNavigate();
+
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log(nickName, userEmail, userEmail);
     signUp(userEmail, userPassword);
+
+    setLoading(true);
+
+    const id = setTimeout(() => {
+      setLoading(false);
+      navigate("/");
+    }, 2000);
+
+    setTimerId(id);
   };
+
+  useEffect(() => {
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, [timerId]);
+
+  // if (user !== null) {
+  //   setIsPending(true);
+  // }
 
   const nickNameHandler = async (e) => {
     e.preventDefault();
@@ -103,7 +131,7 @@ export default function SignUpPassword() {
           <input
             required
             className={classes.textEmail}
-            placeholder="사용중인 이메일 주소"
+            placeholder="이메일 주소"
             onChange={emailTypingHandler}
             value={userEmail}
           />
@@ -127,8 +155,16 @@ export default function SignUpPassword() {
             가입
           </button>
         </div>
+
         {error && <p className={classes.errorMessage}> {error}</p>}
 
+        {loading && (
+          <div className="spinner">
+            <img className={classes.loadingLogo} src="/assets/images/spinner/Spinner2.gif" alt="spalash" />
+
+            {/* <div className="loader"></div> */}
+          </div>
+        )}
         {/* <button className={classes.logout} onClick={logout}>
           {" "}
           로그아웃

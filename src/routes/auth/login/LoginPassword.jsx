@@ -1,11 +1,14 @@
 import classes from "./LoginPassword.module.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { useLogin } from "../../../hookss/useLogin";
 
 import { auth } from "../../../firebase/config";
 
 export default function LoginPassword() {
+  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { error, login } = useLogin();
@@ -14,6 +17,13 @@ export default function LoginPassword() {
     e.preventDefault();
     // console.log(nickName, userEmail, userPassword);
     login(userEmail, userPassword);
+
+    navigate("/", {
+      // state: {
+      //   userEmail: userEmail,
+      //   text: "로그인 성공했어",
+      // },
+    });
   };
 
   function singUpWithEmailAndPasswordHandler(event) {

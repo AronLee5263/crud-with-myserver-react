@@ -23,7 +23,7 @@ export default function WrapperRootLayOut() {
       </NewPostAnimationContext.Provider>
     );
   }
-  console.log("mobileSize :", mobileSize);
+  // console.log("mobileSize :", mobileSize);
 
   return <>{content}</>;
 }

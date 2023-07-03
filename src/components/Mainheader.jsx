@@ -9,6 +9,8 @@ import { CgProfile } from "react-icons/cg";
 import ProfilePopup from "./ProfilePopup";
 import NewPost from "../routes/pages/NewPost";
 
+import { useAuthContext } from "../store/useAuthContext";
+
 function MainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
   const [isClickedNP, setIsClickedNPB] = useState(false);
@@ -16,6 +18,15 @@ function MainHeader() {
 
   const location = useLocation();
   const currentPath = location.pathname;
+  // const state = location.state;
+  const { user, authIsReady } = useAuthContext();
+
+  let nickName = "";
+  if (user) {
+    nickName = user.email;
+  } else {
+    nickName = "nick name";
+  }
 
   useEffect(() => {
     // isClicked 가 true일떄만 실행되게 바로 리턴하는 패턴
@@ -56,7 +67,8 @@ function MainHeader() {
                 }}
               >
                 <CgProfile size={30} className={classes.icon} />
-                <p className={classes.nickName}>nick name</p>
+
+                <p className={classes.nickName}>{nickName}</p>
               </button>
             </div>
 
