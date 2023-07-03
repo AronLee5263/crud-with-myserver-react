@@ -31,19 +31,16 @@ export default function SignUpPassword() {
   const submitHandler = async (e) => {
     e.preventDefault();
     // console.log(nickName, userEmail, userEmail);
-    try {
-      await signUp(userEmail, userPassword);
-      const id = setTimeout(() => {
-        setLoading(false);
-        navigate("/");
-      }, 2000);
+    signUp(userEmail, userPassword);
 
-      setTimerId(id);
-    } catch (error) {
+    setLoading(true);
+
+    const id = setTimeout(() => {
       setLoading(false);
-    }
+      navigate("/");
+    }, 2000);
 
-    // setTimerId(id);
+    setTimerId(id);
   };
 
   useEffect(() => {
