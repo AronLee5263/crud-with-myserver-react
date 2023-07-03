@@ -9,6 +9,7 @@ import "./index.css";
 // import Community, { fetchPosts as fetchPosts } from "./routes/Community";
 // import Goal from "./routes/Goal";
 
+import NotLogin from "./routes/pages/NotLogin";
 import NewPost, { action as newPostAction } from "./routes/pages/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -85,6 +86,14 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/not_login",
+    element: (
+      <Suspense fallback={<p>로딩중입니다...</p>}>
+        <NotLogin />
+      </Suspense>
+    ),
   },
   {
     path: "/create_post",

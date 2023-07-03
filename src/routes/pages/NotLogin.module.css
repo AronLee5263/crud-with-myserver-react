@@ -1,0 +1,16 @@
+.temp {
+  height: 100vh;
+  /* margin-top: 2rem; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  font-size: 1.5rem;
+  color: white;
+
+  background-color: var(--disc-doctor-color);
+}
+
+.text {
+  margin-top: 8rem;
+}
