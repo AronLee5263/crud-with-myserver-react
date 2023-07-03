@@ -96,7 +96,7 @@ export default function SignUpPassword() {
             className={classes.textName}
             placeholder="이름 (optional)"
             onChange={nickNameHandler}
-            value={nickName}
+            // value={nickName}
           />
           <div className={classes.line}></div>
 

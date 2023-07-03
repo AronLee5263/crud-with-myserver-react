@@ -1,23 +1,19 @@
 import classes from "./LoginPassword.module.css";
 
 import { useState } from "react";
+import { useLogin } from "../../../hookss/useLogin";
 
 import { auth } from "../../../firebase/config";
 
 export default function LoginPassword() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-
-  function emailTypingHandler(e) {
-    setUserEmail(e.target.value);
-  }
-  function passwordTypingHandler(e) {
-    setUserPassword(e.target.value);
-  }
+  const { error, login } = useLogin();
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(nickName, userEmail, userEmail);
+    // console.log(nickName, userEmail, userPassword);
+    login(userEmail, userPassword);
   };
 
   function singUpWithEmailAndPasswordHandler(event) {
@@ -62,7 +58,16 @@ export default function LoginPassword() {
         <p className={classes.subTitle}>이메일과 비밀번호 방식 로그인</p>
 
         <form className={classes.emailLinkAuth}>
-          <input className={classes.textEmail} required placeholder="이메일 주소" onChange={emailTypingHandler} />
+          <input
+            className={classes.textEmail}
+            required
+            type="email"
+            placeholder="이메일 주소"
+            onChange={(e) => {
+              setUserEmail(e.target.value);
+            }}
+            value={userEmail}
+          />
           <div className={classes.line}></div>
 
           <input
@@ -70,18 +75,23 @@ export default function LoginPassword() {
             required
             placeholder="비밀번호"
             type="password"
-            onChange={emailTypingHandler}
+            onChange={(e) => {
+              setUserPassword(e.target.value);
+            }}
             minLength={6}
             maxLength={12}
+            value={userPassword}
           />
           <div className={classes.line}></div>
         </form>
 
         <div className={classes.buttonSection}>
-          <button className={classes.authButton} type="button">
+          <button className={classes.authButton} type="button" onClick={submitHandler}>
             로그인
           </button>
         </div>
+
+        {error && <p className={classes.errorMessage}>{error}</p>}
         {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
     </>
