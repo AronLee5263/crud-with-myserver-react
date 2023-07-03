@@ -30,7 +30,7 @@ export default function SignUpPassword() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(nickName, userEmail, userEmail);
+    // console.log(nickName, userEmail, userEmail);
     signUp(userEmail, userPassword);
 
     setLoading(true);

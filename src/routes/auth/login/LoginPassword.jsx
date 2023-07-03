@@ -1,6 +1,6 @@
 import classes from "./LoginPassword.module.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useLogin } from "../../../hookss/useLogin";
@@ -8,23 +8,36 @@ import { useLogin } from "../../../hookss/useLogin";
 import { auth } from "../../../firebase/config";
 
 export default function LoginPassword() {
-  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { error, login } = useLogin();
+
+  const [loading, setLoading] = useState(false);
+  const [timerId, setTimerId] = useState(null);
+  const navigate = useNavigate();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     // console.log(nickName, userEmail, userPassword);
     login(userEmail, userPassword);
 
-    navigate("/", {
-      // state: {
-      //   userEmail: userEmail,
-      //   text: "로그인 성공했어",
-      // },
-    });
+    setLoading(true);
+
+    const id = setTimeout(() => {
+      setLoading(false);
+      navigate("/");
+    }, 2000);
+
+    setTimerId(id);
   };
+
+  useEffect(() => {
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
+  }, [timerId]);
 
   function singUpWithEmailAndPasswordHandler(event) {
     event.preventDefault();
@@ -102,6 +115,11 @@ export default function LoginPassword() {
         </div>
 
         {error && <p className={classes.errorMessage}>{error}</p>}
+        {loading && (
+          <div className="spinner">
+            <img className={classes.loadingLogo} src="/assets/images/spinner/Spinner2.gif" alt="spalash" />
+          </div>
+        )}
         {/* {isSendEmailLink && <EmailLinkSent isSendLink={isSendEmailLink} />} */}
       </div>
     </>
