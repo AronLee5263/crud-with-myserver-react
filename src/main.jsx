@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from "recoil";
+import { AuthContextProvider } from "./store/auth-context";
 
 import "./index.css";
 
@@ -158,8 +159,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RecoilRoot>
+    <AuthContextProvider>
       <RouterProvider router={router} />
-    </RecoilRoot>
+    </AuthContextProvider>
   </React.StrictMode>
 );
