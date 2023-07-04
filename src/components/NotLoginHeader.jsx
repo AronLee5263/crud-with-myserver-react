@@ -1,24 +1,23 @@
-import classes from "./MainHeader.module.css";
+import classes from "./NotLoginMainHeader.module.css";
 
 import { useState, useEffect } from "react";
 import { Link, NavLink, Form, useLocation, useNavigate } from "react-router-dom";
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
-// import { SettingsAccountMore } from "basicons";
+
+// import { CheckGoodYes as Check } from "react-basicons";
 
 import ProfilePopup from "./ProfilePopup";
-import NewPost from "../routes/pages/NewPost";
 
 import { useAuthContext } from "../store/useAuthContext";
 
-function NotLoginMainHeader() {
+export default function NotLoginMainHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
   const navigate = useNavigate();
 
   const location = useLocation();
   const currentPath = location.pathname;
-  // const state = location.state;
   const { user, authIsReady } = useAuthContext();
 
   return (
@@ -47,18 +46,20 @@ function NotLoginMainHeader() {
         </div>
 
         <div className={classes.serch}>
-          <ul className={classes.category}></ul>
+          {/* <Check /> */}
+          <div className={classes.serchSub}>
+            <i class="bx bx-search"></i>
+            <span className={classes.serchText}> 디닥 검색</span>
+          </div>
         </div>
 
         <div className={classes.setting}>
           {/* <SettingsAccountMore /> */}
-          {/* <i class="bx bx-cog bx-rotate-180"></i> */}
+          <i class="bx bx-cog bx "></i>
           {/* <i class="bx bx-cog bx-spin bx-md"></i> */}
-          <i class="bx bx-cog bx-spin "></i>
+          {/* <i class="bx bx-cog bx-spin "></i> */}
         </div>
       </div>
     </>
   );
 }
-
-export default MainHeader;

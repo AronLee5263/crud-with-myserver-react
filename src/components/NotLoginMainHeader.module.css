@@ -15,7 +15,8 @@
 }
 
 .profile {
-  margin-top: 1.3rem;
+  margin-top: 1rem;
+  /* background-color: red; */
 }
 
 .profile_icon {
@@ -36,7 +37,30 @@
   color: black;
 }
 
+.serch {
+  margin-right: 0.3rem;
+
+  padding: 0.5rem 5.5rem;
+
+  border-radius: 50px;
+
+  color: rgb(87, 87, 87);
+
+  background-color: rgba(222, 222, 222, 0.496);
+}
+.serchSub {
+  display: flex;
+  align-items: center;
+}
+.serchText {
+  margin-left: 0.2rem;
+
+  letter-spacing: -0.9px;
+}
+
 .setting {
   margin-right: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
+
+  /* background-color: red; */
 }
