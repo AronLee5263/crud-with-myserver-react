@@ -1,4 +1,4 @@
-import classes from "./NotLoginMainHeader.module.css";
+import classes from "./NotLoginHeader.module.css";
 
 import { useState, useEffect } from "react";
 import { Link, NavLink, Form, useLocation, useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import ProfilePopup from "./ProfilePopup";
 
 import { useAuthContext } from "../store/useAuthContext";
 
-export default function NotLoginMainHeader() {
+export default function NotLoginHeader() {
   const [profilePopupIsVisible, setProfilePopupIsVisible] = useState(false);
   const navigate = useNavigate();
 

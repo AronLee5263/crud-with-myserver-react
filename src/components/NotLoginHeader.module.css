@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid var(--header-border-color);
+  /* border-bottom: 1px solid var(--header-border-color); */
   text-align: center;
 }
 
@@ -38,15 +38,15 @@
 }
 
 .serch {
-  margin-right: 0.3rem;
+  margin-right: 0.5rem;
 
-  padding: 0.5rem 5.5rem;
+  padding: 0.3rem 5.5rem;
 
   border-radius: 50px;
 
   color: rgb(87, 87, 87);
 
-  background-color: rgba(222, 222, 222, 0.496);
+  background-color: rgba(222, 222, 222, 0.656);
 }
 .serchSub {
   display: flex;
@@ -60,7 +60,7 @@
 
 .setting {
   margin-right: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   /* background-color: red; */
 }
