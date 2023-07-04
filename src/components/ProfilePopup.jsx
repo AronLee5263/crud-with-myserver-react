@@ -65,42 +65,27 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
         <div className={classes.profilePopup}>
           <div className={classes.sections}>
             <div className={classes.headerSection}>
+              <div className={classes.userPart}>
+                <div className={classes.userIcon}>
+                  <CgProfile size={24} />
+                </div>
+                <span> 표시될 닉네임</span>
+                <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
+              </div>
               <span className={classes.cancelIcon} onClick={onCloseProfilePopup}>
                 <MdOutlineArrowBackIosNew size={20} />
               </span>
-              <p className={classes.mainTitle}>
-                지금 <span className={classes.diskDoctor}>disc doctor</span>에 가입하세요
-              </p>
-
-              <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
-            </div>
-
-            <div className={classes.authSection}>
-              <button
-                className={classes.sign_up}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSignUp(true);
-                }}
-              >
-                <span className={classes.sign_up_text}>계정 만들기</span>
-              </button>
-
-              <button
-                className={classes.login}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setLogin(true);
-                }}
-              >
-                <span className={classes.login_text}>로그인</span>
-              </button>
             </div>
 
             <ul className={classes.categorySection}>
               <li>
                 <CgProfile size={24} className={classes.icon} />
                 <span>프로필</span>
+              </li>
+              <li className={classes.ddocLogoContainer}>
+                <img className={classes.ddocLogo} src="/assets/images/logo/disc_logo_1.png" alt="app_logo" />
+
+                <span className={classes.ddocLogoText}>D-doc Blue</span>
               </li>
               <li>
                 <HiOutlineChatAlt2 size={24} className={classes.icon} />
@@ -109,6 +94,10 @@ export default function ProfilePopup({ onCloseProfilePopup }) {
               <li>
                 <BsBookmark size={24} className={classes.icon} />
                 <span>북마크</span>
+              </li>
+              <li>
+                <RiFileListLine size={24} className={classes.icon} />
+                <span>토픽</span>
               </li>
               <li>
                 <RiFileListLine size={24} className={classes.icon} />

@@ -54,29 +54,20 @@
 .headerSection {
   position: relative;
   margin-top: 12%;
+  margin-bottom: 2rem;
 }
 
-/* .mainTitle, */
-.subTitle {
+.userPart {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 
-.mainTitle {
-  font-weight: 600;
-  font-size: 28px;
-  letter-spacing: -0.06rem;
+.userIcon {
+  margin-bottom: 0.5rem;
+  /* margin-right: 1rem; */
 }
-.diskDoctor {
-  font-weight: 700;
-  line-height: 45px;
-}
-
 .subTitle {
   color: rgba(0, 0, 0, 0.634);
-  margin-top: -1.5rem;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.01rem;
@@ -138,12 +129,21 @@
   align-items: center;
 }
 
+.ddocLogo {
+  /* margin-right: 20px; */
+  margin-right: 1rem;
+
+  width: 29px;
+  height: 29px;
+  /* background-color: transparent; */
+}
+
 .icon {
   margin-right: 20px;
 }
 
 .settingSection {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,4 +163,9 @@
 .logoutSection {
   display: flex;
   justify-content: flex-end;
+}
+
+.logout {
+  font-size: 1rem;
+  padding: 0.5rem;
 }
