@@ -1,0 +1,166 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-color: var(--backdrop-color);
+
+  z-index: 200;
+}
+
+.profilePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100vh;
+  background-color: white;
+
+  z-index: 300;
+
+  /* animation-name: moveProfilePopup;
+    animation-duration: 1.2s;
+    animation-timing-function: linear; */
+  /* animation-timing-function: easeInExpo; */
+
+  animation-fill-mode: forwards;
+
+  animation: moveProfilePopup 0.4s forwards;
+}
+
+@keyframes moveProfilePopup {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cancelIcon {
+  position: fixed;
+  top: 10px;
+  left: 5px;
+  opacity: 0.3;
+}
+
+.sections {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.headerSection {
+  position: relative;
+  margin-top: 12%;
+}
+
+/* .mainTitle, */
+.subTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.06rem;
+}
+.diskDoctor {
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.subTitle {
+  color: rgba(0, 0, 0, 0.634);
+  margin-top: -1.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01rem;
+}
+
+.authSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: transparent;
+  margin: -0.5rem 0;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.sign_up {
+  display: flex;
+  justify-content: center;
+  background-color: var(--disc-doctor-color);
+  padding: 10px 40px;
+
+  border: white 1px solid;
+  border-radius: 30px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px 40px;
+
+  border: 0.1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 30px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+.categorySection {
+  background-color: white;
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01rem;
+}
+.categorySection > li:nth-child(n + 1) {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 20px;
+}
+
+.settingSection {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.screenTheme {
+  margin-top: 1rem;
+  margin-left: -0.4rem;
+}
+.screenTheme_button {
+  border: 0;
+  background-color: transparent;
+}
+
+.logoutSection {
+  display: flex;
+  justify-content: flex-end;
+}

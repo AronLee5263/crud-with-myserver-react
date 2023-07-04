@@ -8,7 +8,7 @@ import { CgProfile } from "react-icons/cg";
 
 // import { CheckGoodYes as Check } from "react-basicons";
 
-import ProfilePopup from "./ProfilePopup";
+import NotLoginProfile from "../components/NotLoginProfile";
 
 import { useAuthContext } from "../store/useAuthContext";
 
@@ -23,7 +23,7 @@ export default function NotLoginHeader() {
   return (
     <>
       {profilePopupIsVisible && (
-        <ProfilePopup
+        <NotLoginProfile
           onCloseProfilePopup={() => {
             setProfilePopupIsVisible(false);
           }}
