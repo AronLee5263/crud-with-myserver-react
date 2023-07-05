@@ -14,61 +14,58 @@ export default function NotLogin() {
 
   if (mobileSize === false) {
     content = <NoMobile />;
-  }
+  } else {
+    content = (
+      <>
+        <div className={classes.wholePage_not_Login}>
+          <NotLoginHeader />
 
-  // return <>{content}</>;
+          <div className={classes.middle}>
+            <div className={classes.title}>나를 위한 트렌드</div>
 
-  return (
-    <>
-      <div className={classes.wholePage_not_Login}>
-        <NotLoginHeader />
+            <ul className={classes.ull}>
+              <li className={classes.li_sub}>
+                <span> 대한민국에서 트렌드 중</span>
+                <span> api 초과</span>
+                <span> 28,020 조회</span>
+              </li>
+              <li className={classes.li_sub}>
+                <span> 대한민국에서 트렌드 중</span>
+                <span> 여러분 api 난리</span>
+                <span> 3,981 조회</span>
+              </li>
+              <li className={classes.li_sub}>
+                <span> 대한민국에서 트렌드 중</span>
+                <span> api 제한</span>
+                <span> 2,220 조회</span>
+              </li>
+              <li className={classes.li_sub}>
+                <span> 테크놀로지, 실시간 트렌드</span>
+                <span> 최수빈 인스타 </span>
+                <span> 28,000 조회</span>
+              </li>
+              <li className={classes.li_sub}>
+                <span> 대한민국에서 트렌드 중</span>
+                <span> 멜론새끼</span>
+                <span> 16,020 조회</span>
+              </li>
+              <li className={classes.li_sub}>
+                <span> 대한민국에서 트렌드 중</span>
+                <span> api 초과</span>
+                <span> 28,000 조회</span>
+              </li>
+            </ul>
+            <div className={classes.more}> 더 보기 </div>
+          </div>
+          <div className={classes.line}></div>
 
-        <div className={classes.middle}>
-          <div className={classes.title}>나를 위한 트렌드</div>
+          <div className={classes.bottom}>
+            <div className={classes.bottomTitle}> 추천 동영상</div>
+            <div className={classes.subTitle}> 나를 위한 인기 트렌드 동영상 확인하기</div>
+          </div>
 
-          <ul className={classes.ull}>
-            <li className={classes.liii}>
-              <span> 대한민국에서 트렌드 중</span>
-              <sapn> api 초과</sapn>
-              <sapn> 28,020 조회</sapn>
-            </li>
-            <li className={classes.liii}>
-              <span> 대한민국에서 트렌드 중</span>
-              <sapn> 여러분 api 난리</sapn>
-              <sapn> 3,981 조회</sapn>
-            </li>
-            <li className={classes.liii}>
-              <span> 대한민국에서 트렌드 중</span>
-              <sapn> api 제한</sapn>
-              <sapn> 2,220 조회</sapn>
-            </li>
-            <li className={classes.liii}>
-              <span> 테크놀로지, 실시간 트렌드</span>
-              <sapn> 최수빈 인스타 </sapn>
-              <sapn> 28,000 조회</sapn>
-            </li>
-            <li className={classes.liii}>
-              <span> 대한민국에서 트렌드 중</span>
-              <sapn> 멜론새끼</sapn>
-              <sapn> 16,020 조회</sapn>
-            </li>
-            <li className={classes.liii}>
-              <span> 대한민국에서 트렌드 중</span>
-              <sapn> api 초과</sapn>
-              <sapn> 28,000 조회</sapn>
-            </li>
-          </ul>
-          <div className={classes.more}> 더 보기 </div>
-        </div>
-        <div className={classes.line}></div>
-
-        <div className={classes.bottom}>
-          <div className={classes.bottomTitle}> 추천 동영상</div>
-          <div className={classes.subTitle}> 나를 위한 인기 트렌드 동영상 확인하기</div>
-        </div>
-
-        <div className={classes.auth}>
-          {/* <Link to="/sign_up" className={classes.signup}>
+          <div className={classes.auth}>
+            {/* <Link to="/sign_up" className={classes.signup}>
             {" "}
             회원가입 하러 가기{" "}
           </Link>
@@ -76,8 +73,13 @@ export default function NotLogin() {
             {" "}
             로그인 하러 가기{" "}
           </Link> */}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
+
+  // return <>{content}</>;
+
+  return <>{content}</>;
 }

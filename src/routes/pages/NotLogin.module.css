@@ -23,7 +23,7 @@
   margin-top: 0.4rem;
   padding-left: 0;
 }
-.liii {
+.li_sub {
   margin-bottom: 1rem;
 
   display: flex;
@@ -34,19 +34,19 @@
   /* border: 2px solid black; */
 }
 
-.liii {
+.li_sub {
   line-height: 1rem;
 }
 
-.liii :nth-child(1) {
+.li_sub :nth-child(1) {
   font-weight: 600;
   color: gray;
 }
-.liii :nth-child(2) {
+.li_sub :nth-child(2) {
   font-weight: 600;
 }
 
-.liii :nth-child(3) {
+.li_sub :nth-child(3) {
   font-weight: 500;
   color: gray;
 }

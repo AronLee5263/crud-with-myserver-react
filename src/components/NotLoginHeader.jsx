@@ -48,14 +48,14 @@ export default function NotLoginHeader() {
         <div className={classes.serch}>
           {/* <Check /> */}
           <div className={classes.serchSub}>
-            <i class="bx bx-search"></i>
+            <i className="bx bx-search"></i>
             <span className={classes.serchText}> 디닥 검색</span>
           </div>
         </div>
 
         <div className={classes.setting}>
           {/* <SettingsAccountMore /> */}
-          <i class="bx bx-cog bx "></i>
+          <i className="bx bx-cog bx "></i>
           {/* <i class="bx bx-cog bx-spin bx-md"></i> */}
           {/* <i class="bx bx-cog bx-spin "></i> */}
         </div>
