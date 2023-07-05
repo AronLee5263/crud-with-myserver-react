@@ -72,11 +72,14 @@ nav {
   color: var(--disc-doctor-color);
 }
 
-.form {
-  margin-top: 0.2rem;
-  margin-right: 1rem;
+.NewPostform {
+  position: fixed;
+  top: 61%;
+  right: 5%;
 
-  width: 1.5rem;
+  /* margin-top: 0.2rem;
+  margin-right: 1rem;
+  width: 1.5rem; */
 
   display: flex;
   justify-content: center;
@@ -86,7 +89,7 @@ nav {
   /* margin-right: 1rem; */
   /* width: 2rem;
   height: 2rem; */
-  padding: 0.2rem;
+  padding: 0.8rem;
 
   display: flex;
   justify-content: center;

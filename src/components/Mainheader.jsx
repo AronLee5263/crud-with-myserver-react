@@ -98,7 +98,7 @@ function MainHeader() {
               </ul>
             </nav>
 
-            <Form method="post" className={classes.form}>
+            <Form method="post" className={classes.NewPostform}>
               {currentPath === "/" && (
                 <button
                   type="button"
@@ -107,7 +107,7 @@ function MainHeader() {
                     setIsClickedNPB(true);
                   }}
                 >
-                  <AiOutlinePlus size={24} className={classes.icon} />
+                  <AiOutlinePlus size={26} className={classes.newPostIcon} />
                 </button>
               )}
             </Form>
