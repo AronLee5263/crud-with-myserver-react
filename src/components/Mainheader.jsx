@@ -54,6 +54,7 @@ function MainHeader() {
               onCloseProfilePopup={() => {
                 setProfilePopupIsVisible(false);
               }}
+              nickName={nickName}
             />
           )}
 
