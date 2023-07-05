@@ -27,6 +27,14 @@
   color: black;
 }
 
+.ddocLogo {
+  /* position: fixed;
+  left: 48%; */
+  margin-right: 4rem;
+  width: 40px;
+  height: 40px;
+}
+
 .nickName {
   margin-top: -0.01rem;
 
@@ -74,7 +82,7 @@ nav {
 
 .NewPostform {
   position: fixed;
-  top: 61%;
+  top: 80%;
   right: 5%;
 
   /* margin-top: 0.2rem;
@@ -106,4 +114,60 @@ nav {
 
 .newPostButton:hover {
   background-color: var(--disc-doctor-color);
+}
+
+.bottomContainer {
+  /* height: 4rem; */
+
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+}
+
+.category_bottom {
+  background-color: white;
+  width: 100vw;
+}
+
+.bottomNav * {
+  text-decoration: none;
+}
+.bottomNav {
+  margin-top: 0.4rem;
+  margin-right: 1rem;
+}
+
+.category_bottom {
+  padding-left: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+
+.category_bottom li {
+  list-style: none;
+}
+.category_bottom li:nth-child(-n + 3) {
+  margin-right: 1.3rem;
+  /* background-color: red; */
+}
+
+.category_bottom a {
+  color: #0000004f;
+}
+
+.category_bottom a.hover,
+.category_bottom a.active {
+  color: var(--disc-doctor-color);
 }
