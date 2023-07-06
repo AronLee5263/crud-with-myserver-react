@@ -3,7 +3,7 @@ import classes from "./MainHeader.module.css";
 import { useState, useEffect } from "react";
 import { Link, NavLink, Form, useLocation, useNavigate } from "react-router-dom";
 
-import { AiOutlinePlus, AiOutlineStar, AiOutlineLineChart } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineStar, AiOutlineLineChart, AiOutlineBell, AiOutlineUser } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { GoCommentDiscussion } from "react-icons/go";
 import { CiUser } from "react-icons/ci";
@@ -75,7 +75,7 @@ function MainHeader() {
               </button>
             </div>
 
-            {/* <nav>
+            {/* <nav className={classes.header_nav}>
               <ul className={classes.category}>
                 <li>
                   <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
@@ -104,6 +104,7 @@ function MainHeader() {
                 </li>
               </ul>
             </nav> */}
+
             <img className={classes.ddocLogo} src="/assets/images/logo/disc_logo_1.png" alt="app_logo" />
 
             <div className={classes.tempp}></div>
@@ -122,36 +123,41 @@ function MainHeader() {
             </Form>
           </div>
 
-          <div className={classes.bottomContainer}>
-            <nav className={classes.bottomNav}>
-              <ul className={classes.category_bottom}>
-                <li>
-                  <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : undefined)} end>
-                    <GoCommentDiscussion size={30} className={classes.icon} />
-                    {/* 커뮤니티 */}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/goal" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                    {/* 달성기록 */}
-                    <AiOutlineStar size={30} className={classes.icon} />
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink to="/analysis" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                    {/* 분석 */}
-                    <AiOutlineLineChart size={30} className={classes.icon} />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/myinfo" className={({ isActive }) => (isActive ? classes.active : undefined)}>
-                    {/* 내 정보 */}
-                    <CiUser size={30} className={classes.icon} />
-                  </NavLink>
-                </li>
-              </ul>
-            </nav>
+          <div className={classes.bottom_container}>
+            <ul className={classes.category_bottom}>
+              <li>
+                <NavLink to="/" className={({ isActive }) => (isActive ? classes.active : classes.disabled)} end>
+                  <GoCommentDiscussion size={25} />
+                  {/* 커뮤니티 */}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/goal" className={({ isActive }) => (isActive ? classes.active : classes.disabled)}>
+                  {/* 달성기록 */}
+                  <AiOutlineStar size={25} className={classes.bottom_icon} />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/analysis" className={({ isActive }) => (isActive ? classes.active : classes.disabled)}>
+                  {/* 분석 */}
+                  <AiOutlineLineChart size={25} className={classes.bottom_icon} />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/notification"
+                  className={({ isActive }) => (isActive ? classes.active : classes.disabled)}
+                >
+                  <AiOutlineBell size={25} className={classes.bottom_icon} />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/myinfo" className={({ isActive }) => (isActive ? classes.active : classes.disabled)}>
+                  {/* 내 정보 */}
+                  <AiOutlineUser size={25} className={classes.bottom_icon} />
+                </NavLink>
+              </li>
+            </ul>
           </div>
         </>
       )}
