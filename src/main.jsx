@@ -10,6 +10,8 @@ import "./index.css";
 // import Goal from "./routes/Goal";
 
 import NotLogin from "./routes/pages/NotLogin";
+import RequestLogin from "./routes/pages/RequestLogin";
+
 import NewPost, { action as newPostAction } from "./routes/pages/NewPost";
 // import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 
@@ -101,6 +103,14 @@ const router = createBrowserRouter([
     element: (
       <Suspense fallback={<p>로딩중입니다...</p>}>
         <NotLogin />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/request_login",
+    element: (
+      <Suspense fallback={<p>로딩중입니다...</p>}>
+        <RequestLogin />
       </Suspense>
     ),
   },

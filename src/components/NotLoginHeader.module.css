@@ -59,8 +59,9 @@
 }
 
 .setting {
-  margin-right: 0.5rem;
+  margin-right: 0.1rem;
   font-size: 1.6rem;
 
-  /* background-color: red; */
+  border: none;
+  background-color: transparent;
 }

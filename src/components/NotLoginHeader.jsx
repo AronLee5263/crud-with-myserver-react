@@ -20,6 +20,10 @@ export default function NotLoginHeader() {
   const currentPath = location.pathname;
   const { user, authIsReady } = useAuthContext();
 
+  const requestLogin = () => {
+    navigate("/request_login");
+  };
+
   return (
     <>
       {profilePopupIsVisible && (
@@ -53,12 +57,12 @@ export default function NotLoginHeader() {
           </div>
         </div>
 
-        <div className={classes.setting}>
+        <button className={classes.setting} onClick={requestLogin}>
           {/* <SettingsAccountMore /> */}
           <i className="bx bx-cog bx "></i>
           {/* <i class="bx bx-cog bx-spin bx-md"></i> */}
           {/* <i class="bx bx-cog bx-spin "></i> */}
-        </div>
+        </button>
       </div>
     </>
   );

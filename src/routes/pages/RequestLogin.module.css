@@ -1,0 +1,14 @@
+.temp {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  line-height: 2rem;
+
+  background-color: var(--disc-doctor-color);
+}
+
+.text {
+  margin-top: 6rem;
+  color: white;
+}
