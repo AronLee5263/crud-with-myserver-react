@@ -44,6 +44,8 @@
   top: 10px;
   left: 5px;
   opacity: 0.3;
+  padding: 0.2rem;
+  /* background-color: red; */
 }
 
 .sections {
