@@ -13,6 +13,11 @@
   margin-left: 0.8rem;
 }
 
+.middle_button {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+}
 .title {
   font-size: 1rem;
   font-weight: 600;

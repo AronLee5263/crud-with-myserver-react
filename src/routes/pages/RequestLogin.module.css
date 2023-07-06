@@ -1,14 +1,48 @@
 .temp {
   height: 100vh;
+
+  position: relative;
   display: flex;
   justify-content: center;
 
   line-height: 2rem;
 
   background-color: var(--disc-doctor-color);
+
+  animation-fill-mode: forwards;
+  animation: moveProfilePopup 0.4s forwards;
 }
 
 .text {
   margin-top: 6rem;
   color: white;
+}
+
+.cancel_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3rem;
+  width: 3rem;
+
+  margin-top: 1rem;
+  margin-left: -1rem;
+  text-decoration: none;
+
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.cancel_text {
+  color: white;
+}
+
+@keyframes moveProfilePopup {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
