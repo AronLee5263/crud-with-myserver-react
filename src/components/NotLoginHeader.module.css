@@ -1,5 +1,6 @@
 .headerContainer {
   height: 4rem;
+  width: 100%;
 
   position: sticky;
   top: 0;
@@ -16,6 +17,8 @@
 
 .profile {
   margin-top: 1rem;
+  width: 18%;
+
   /* background-color: red; */
 }
 
@@ -38,19 +41,21 @@
 }
 
 .serch {
-  margin-right: 0.5rem;
+  width: 64%;
 
-  padding: 0.3rem 5.5rem;
+  /* margin-right: 0.5rem; */
+  padding: 0.3rem 4rem;
 
   border-radius: 50px;
 
   color: rgb(87, 87, 87);
-
   background-color: rgba(222, 222, 222, 0.656);
 }
 .serchSub {
+  margin-left: 0.7rem;
   display: flex;
   align-items: center;
+  /* background-color: red; */
 }
 .serchText {
   margin-left: 0.2rem;
@@ -59,9 +64,15 @@
 }
 
 .setting {
+  width: 18%;
+
   margin-right: 0.1rem;
   font-size: 1.6rem;
 
   border: none;
   background-color: transparent;
+}
+
+.setting i {
+  color: black;
 }
