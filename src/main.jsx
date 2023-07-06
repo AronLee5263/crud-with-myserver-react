@@ -30,6 +30,7 @@ const Community = lazy(() => import("./routes/pages/Community"));
 const Goal = lazy(() => import("./routes/pages/Goal"));
 const MyInfo = lazy(() => import("./routes/pages/MyInfo"));
 const Analysis = lazy(() => import("./routes/pages/Analysis"));
+const Notification = lazy(() => import("./routes/pages/Notification"));
 
 // const NewPost = lazy(() => import("./routes/NewPost"));
 // const PostDetails = lazy(() => import("./routes/PostDetails"));
@@ -74,6 +75,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<p>로딩중입니다...</p>}>
             <MyInfo />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/notification",
+        element: (
+          <Suspense fallback={<p>로딩중입니다...</p>}>
+            <Notification />
           </Suspense>
         ),
       },
