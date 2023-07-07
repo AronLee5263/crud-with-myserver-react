@@ -10,10 +10,7 @@ import SignUpForm from "../signUp/SignUpForm";
 
 export default function RootLayOutSignUp() {
   const mobileSize = UseIsMobile();
-
-  if (mobileSize === false) {
-    return <NoMobile />;
-  }
+  let content;
 
   // const location = useLocation();
 
@@ -89,38 +86,40 @@ export default function RootLayOutSignUp() {
     setLink(true);
   };
 
-  let content;
+  if (mobileSize === false) {
+    content = <NoMobile />;
+  } else {
+    if (password || link) {
+      content = (
+        <div className={classes.authPage}>
+          <div className={classes.header}>
+            <AuthHeader />
+          </div>
 
-  if (password || link) {
-    return (
-      <div className={classes.authPage}>
-        <div className={classes.header}>
-          <AuthHeader />
+          <div className={classes.formSection}>
+            <Outlet />
+            {/* <Outlet/> */}
+          </div>
         </div>
+      );
+    } else if (!password || !link) {
+      content = (
+        <div className={classes.authPage}>
+          <div className={classes.header}>
+            <AuthHeader />
+          </div>
 
-        <div className={classes.formSection}>
-          <Outlet />
-          {/* <Outlet/> */}
+          <div className={classes.formSection}>
+            <Outlet />
+            <SignUpForm onPassword={passwordHanlder} onLink={linkHandler} />
+            {/* <Outlet/> */}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 
-  if (!password || !link) {
-    return (
-      <div className={classes.authPage}>
-        <div className={classes.header}>
-          <AuthHeader />
-        </div>
-
-        <div className={classes.formSection}>
-          <Outlet />
-          <SignUpForm onPassword={passwordHanlder} onLink={linkHandler} />
-          {/* <Outlet/> */}
-        </div>
-      </div>
-    );
-  }
+  return <>{content}</>;
 
   // return (
   //   <>

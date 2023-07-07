@@ -13,7 +13,6 @@ export default function RootLayOutLogin() {
   const location = useLocation();
 
   const state = location.state;
-
   let content;
 
   const [password, setPassword] = useState(false);
@@ -97,35 +96,6 @@ export default function RootLayOutLogin() {
   }
 
   return <>{content}</>;
-
-  // if (password || link) {
-  //   return (
-  //     <div className={classes.authPage}>
-  //       <div className={classes.header}>
-  //         <AuthHeader />
-  //       </div>
-
-  //       <div className={classes.formSection}>
-  //         <Outlet />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // if (!password || !link) {
-  //   return (
-  //     <div className={classes.authPage}>
-  //       <div className={classes.header}>
-  //         <AuthHeader />
-  //       </div>
-
-  //       <div className={classes.formSection}>
-  //         {/* <Outlet /> */}
-  //         <LoginForm onPassword={passwordHanlder} onLink={linkHandler} />
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   // return (
   //   <>
