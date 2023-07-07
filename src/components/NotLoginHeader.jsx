@@ -45,7 +45,7 @@ export default function NotLoginHeader() {
           >
             <CgProfile size={30} className={classes.icon} />
 
-            <p className={classes.nickName}>nick name</p>
+            {/* <p className={classes.nickName}>nick name</p> */}
           </button>
         </div>
 

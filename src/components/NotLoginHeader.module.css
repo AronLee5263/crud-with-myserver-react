@@ -16,8 +16,13 @@
 }
 
 .profile {
-  margin-top: 1rem;
-  width: 18%;
+  /* margin-top: 1rem; */
+  margin-left: 0.5rem;
+  width: 14%;
+
+  /* position: absolute;
+  top: 1rem;
+  left: 0.5rem; */
 
   /* background-color: red; */
 }
@@ -41,7 +46,7 @@
 }
 
 .serch {
-  width: 64%;
+  width: 66%;
 
   /* margin-right: 0.5rem; */
   padding: 0.3rem 4rem;
@@ -50,9 +55,10 @@
 
   color: rgb(87, 87, 87);
   background-color: rgba(222, 222, 222, 0.656);
+  /* background-color: red; */
 }
 .serchSub {
-  margin-left: 0.7rem;
+  margin-left: 1.4rem;
   display: flex;
   align-items: center;
   /* background-color: red; */
@@ -64,15 +70,16 @@
 }
 
 .setting {
-  width: 18%;
+  width: 14%;
 
-  margin-right: 0.1rem;
-  font-size: 1.6rem;
+  margin-right: 0.7rem;
 
   border: none;
   background-color: transparent;
+  /* background-color: red; */
 }
 
 .setting i {
   color: black;
+  font-size: 2rem;
 }
