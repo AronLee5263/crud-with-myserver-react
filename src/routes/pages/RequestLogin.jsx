@@ -12,14 +12,14 @@ export default function RequestLogin() {
 
       {/* <BackButton /> */}
       <div className={classes.temp}>
-        <Link to=".." type="button" className={classes.cancel_button}>
-          <span className={classes.cancel_text}> 취소</span>
-        </Link>
-
         <span className={classes.text}>
           프로필 아이콘을 눌러서 <br />
           회원가입을 진행한 다음 이용해주세요
         </span>
+
+        <Link to=".." type="button" className={classes.cancel_button}>
+          <span className={classes.cancel_text}> 취소</span>
+        </Link>
       </div>
     </>
   );
