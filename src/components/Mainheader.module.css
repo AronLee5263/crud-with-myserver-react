@@ -17,7 +17,11 @@
 }
 
 .profile {
-  margin-top: 1.3rem;
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+
+  /* margin-top: 1.3rem; */
 }
 
 .profile_icon {
@@ -30,9 +34,9 @@
 }
 
 .ddocLogo {
-  /* position: fixed;
-  left: 48%; */
-  margin-right: 4rem;
+  position: absolute;
+  left: 46%;
+  /* margin-right: 4rem; */
   width: 40px;
   height: 40px;
 }

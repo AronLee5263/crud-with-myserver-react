@@ -69,9 +69,9 @@ function MainHeader() {
                   setProfilePopupIsVisible(true);
                 }}
               >
-                <CgProfile size={30} className={classes.icon} />
+                <CgProfile size={32} className={classes.icon} />
 
-                <p className={classes.nickName}>{nickName}</p>
+                {/* <p className={classes.nickName}>{nickName}</p> */}
               </button>
             </div>
 
