@@ -97,7 +97,11 @@ export default function SignUpEmailLink() {
     <>
       <div className={classes.wholePageLink}>
         <p className={classes.title}>계정을 생성하세요</p>
-        <p className={classes.subTitle}>사용중인 이메일 링크 인증 방식 회원가입</p>
+        <p className={classes.subTitle}>
+          실제 사용중인 이메일로 인증 링크를 보내 회원가입 하세요
+          <br />
+          ex) gmail.com, naver.com
+        </p>
 
         <form className={classes.emailLinkAuth}>
           <input className={classes.textName} required placeholder="이름" type="email" onChange={emailTypingHandler} />
