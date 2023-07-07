@@ -14,9 +14,7 @@ export default function RootLayOutLogin() {
 
   const state = location.state;
 
-  if (mobileSize === false) {
-    return <NoMobile />;
-  }
+  let content;
 
   const [password, setPassword] = useState(false);
   const [link, setLink] = useState(false);
@@ -63,34 +61,71 @@ export default function RootLayOutLogin() {
     setLink(true);
   };
 
-  if (password || link) {
-    return (
-      <div className={classes.authPage}>
-        <div className={classes.header}>
-          <AuthHeader />
-        </div>
+  // if (mobileSize === false) {
+  //   return <NoMobile />;
+  // }
 
-        <div className={classes.formSection}>
-          <Outlet />
+  if (mobileSize === false) {
+    content = <NoMobile />;
+  } else {
+    if (password || link) {
+      content = (
+        <div className={classes.authPage}>
+          <div className={classes.header}>
+            <AuthHeader />
+          </div>
+
+          <div className={classes.formSection}>
+            <Outlet />
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else if (!password || !link) {
+      content = (
+        <div className={classes.authPage}>
+          <div className={classes.header}>
+            <AuthHeader />
+          </div>
+
+          <div className={classes.formSection}>
+            {/* <Outlet /> */}
+            <LoginForm onPassword={passwordHanlder} onLink={linkHandler} />
+          </div>
+        </div>
+      );
+    }
   }
 
-  if (!password || !link) {
-    return (
-      <div className={classes.authPage}>
-        <div className={classes.header}>
-          <AuthHeader />
-        </div>
+  return <>{content}</>;
 
-        <div className={classes.formSection}>
-          {/* <Outlet /> */}
-          <LoginForm onPassword={passwordHanlder} onLink={linkHandler} />
-        </div>
-      </div>
-    );
-  }
+  // if (password || link) {
+  //   return (
+  //     <div className={classes.authPage}>
+  //       <div className={classes.header}>
+  //         <AuthHeader />
+  //       </div>
+
+  //       <div className={classes.formSection}>
+  //         <Outlet />
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // if (!password || !link) {
+  //   return (
+  //     <div className={classes.authPage}>
+  //       <div className={classes.header}>
+  //         <AuthHeader />
+  //       </div>
+
+  //       <div className={classes.formSection}>
+  //         {/* <Outlet /> */}
+  //         <LoginForm onPassword={passwordHanlder} onLink={linkHandler} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   // return (
   //   <>
