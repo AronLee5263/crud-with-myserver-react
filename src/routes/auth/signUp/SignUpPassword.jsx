@@ -31,7 +31,7 @@ export default function SignUpPassword() {
   const submitHandler = async (e) => {
     e.preventDefault();
     // console.log(nickName, userEmail, userEmail);
-    signUp(userEmail, userPassword);
+    signUp(userEmail, userPassword, nickName);
 
     setLoading(true);
 
@@ -118,11 +118,12 @@ export default function SignUpPassword() {
 
         <form className={classes.emailLinkAuth}>
           <input
-            // required
+            required
             // 선택
             type="text"
             className={classes.textName}
-            placeholder="이름 (optional)"
+            // placeholder="닉네임 (optional)"
+            placeholder="닉네임"
             onChange={nickNameHandler}
             // value={nickName}
           />
@@ -130,6 +131,7 @@ export default function SignUpPassword() {
 
           <input
             required
+            type="email"
             className={classes.textEmail}
             placeholder="이메일 주소"
             onChange={emailTypingHandler}

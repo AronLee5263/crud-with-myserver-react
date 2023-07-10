@@ -24,11 +24,15 @@ function MainHeader() {
   const { user, authIsReady } = useAuthContext();
 
   let nickName = "";
+  let userEmail = "";
+
   if (user && user.nickName) {
     console.log("user 출력 : ", user);
     nickName = user.nickName;
+    userEmail = user.email;
   } else {
     nickName = "임시 nick name";
+    userEmail = user.email;
   }
 
   useEffect(() => {
@@ -58,6 +62,7 @@ function MainHeader() {
                 setProfilePopupIsVisible(false);
               }}
               nickName={nickName}
+              userEmail={userEmail}
             />
           )}
 

@@ -17,7 +17,7 @@ import { useLogout } from "../hookss/useLogout";
 // import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi";
 // import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 
-export default function ProfilePopup({ onCloseProfilePopup, nickName }) {
+export default function ProfilePopup({ onCloseProfilePopup, nickName, userEmail }) {
   const [signUp, setSignUp] = useState(false);
   const [login, setLogin] = useState(false);
 
@@ -69,7 +69,8 @@ export default function ProfilePopup({ onCloseProfilePopup, nickName }) {
                 <div className={classes.userIcon}>
                   <CgProfile size={24} />
                 </div>
-                <span> {nickName}</span>
+                <span className={classes.nickName}> {nickName}</span>
+                <span className={classes.userEmail}> {userEmail}</span>
                 <p className={classes.subTitle}>disk doctor를 설치하고 모든 기능을 이용해보세요</p>
               </div>
               <span className={classes.cancelIcon} onClick={onCloseProfilePopup}>
