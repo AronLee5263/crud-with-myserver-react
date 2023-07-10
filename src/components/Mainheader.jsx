@@ -32,7 +32,7 @@ function MainHeader() {
     userEmail = user.email;
   } else {
     nickName = "임시 nick name";
-    userEmail = user.email;
+    userEmail = "임시 user email";
   }
 
   useEffect(() => {
