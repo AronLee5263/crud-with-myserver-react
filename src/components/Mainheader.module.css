@@ -88,7 +88,7 @@
 
 .NewPostform {
   position: fixed;
-  top: 85%;
+  top: 78%;
   right: 5%;
 
   /* margin-top: 0.2rem;
@@ -123,7 +123,7 @@
 }
 
 .bottom_container {
-  height: 3.2rem;
+  height: 5rem;
   width: 100%;
 
   position: fixed;
@@ -144,6 +144,7 @@
 .category_bottom {
   width: 100%;
 
+  margin-bottom: 1.5rem;
   padding-left: 0;
 
   display: flex;
