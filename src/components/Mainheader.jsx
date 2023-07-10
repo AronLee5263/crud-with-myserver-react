@@ -24,10 +24,11 @@ function MainHeader() {
   const { user, authIsReady } = useAuthContext();
 
   let nickName = "";
-  if (user) {
-    nickName = user.email;
+  if (user && user.nickName) {
+    console.log("user 출력 : ", user);
+    nickName = user.nickName;
   } else {
-    nickName = "nick name";
+    nickName = "임시 nick name";
   }
 
   useEffect(() => {
