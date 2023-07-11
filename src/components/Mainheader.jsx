@@ -26,7 +26,7 @@ function MainHeader() {
   let nickName = "";
   let userEmail = "";
 
-  if (user && user.nickName) {
+  if (user) {
     console.log("user 출력 : ", user);
     nickName = user.nickName;
     userEmail = user.email;
