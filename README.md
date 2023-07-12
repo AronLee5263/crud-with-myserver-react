@@ -1,4 +1,4 @@
-# disk-doctor
+# disc-doctor
 
 아래 URL로 접속하면 배포 완료된 결과물을 볼 수 있습니다.
 
