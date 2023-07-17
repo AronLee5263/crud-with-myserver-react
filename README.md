@@ -10,7 +10,6 @@
 <h2> 1. 설계 & 디자인  </h2>
 <h4> - HTML, CSS, Javascript, React </h4>
 
-<li> vew 를 쓰지 않은 이유 </li> 
 <br/>
 
 
@@ -19,25 +18,51 @@
 <br/>
 
 
+
+
 <h2> 3. 배포  </h2>
-<h4> - Firebase Hosting , Github Page </h4> 
+   
+   <li> 
+       Firebase hosting, Github Page 사용 <br/>     
+  </li> 
+     <li> [배포링크] (https://disk-doctor-8c3fc.web.app/) </li>
+
 <br/>
 
 
 <h2> 4. 기능  </h2> 
 <h4> 4-1. 가입, 로그인, 로그아웃  </h4> 
-   - Firebase Authentication사용
+<ul> 
+   <ul> 
+      <li> Firebase Authentication - 회원가입, 로그인, 로그아웃</li>
+   </ul>   
+</ul>
+   
 <br/>
 
 <h4> 4-2. CRUD에 사용되는 데이터베이스  </h4>    
-    - Firestore Database 사용<br/>
-      (Firestore를 사용하기 전에는 mock API, axios를 사용했습니다.) <br/><br/>
-      
+   <ul> 
+   <ul> 
+      <li> Firestore Database 사용 <br/>
+      (Firestore를 사용하기 전에는 mock API, axios를 사용했습니다.) 
+      </li>
+   </ul>   
+</ul>
+
+<br/>
+
+
+
+
+<br/>
       
 
       
 <h2> 5. 스플래시 이미지  </h2> 
-<h4> -  첫 진입시에만 볼 수 있게 기능 구현.  웹 페이지가 꺼졌을 때는 데이터를 삭제하고, 웹이 다시 켜졌을 때 볼 수 있도록 sessionstorage 를 사용했습니다. </h4> 
+<h4> -  첫 진입시에만 볼 수 있게 기능 구현.  웹 페이지가 꺼졌을 때는 데이터를 삭제하고, 웹이 다시 켜졌을 때 볼 수 있도록 sessionstorage 사용 </h4> 
+
+<li> useEffect Hook으로 처음 앱에 진입했을때에만 켜지게 구현</li>
+<li>  setTimeOut으로 2초 뒤 스플래시 이미지 렌더링 끄기</li>
 <br/>
 
 
