@@ -1,11 +1,12 @@
-# disc-doctor
+
+<h1> disc-doctor </h1>
 
 - 좋은 자세를 취하도록 도와주어 디스크로 인한 통증을 호전시켜주는 알람 앱
 
-## 1. 설계 & 디자인 - HTML, CSS, Javascript, React
-## 2. 프로젝트 세팅 - Vite
-
-3. 
+<h2> 1. 설계 & 디자인 - HTML, CSS, Javascript, React </h2>
+<h2> 2. 프로젝트 세팅 - Vite </h2> 
+<h3> 배포 - Firebase Hosting , Github Page </h3> 
+3. dd
 4. 배포 - Firebase Hosting , Github Page
 5. 기능 - 가입, 로그인, 로그아웃, CRUD 
    4-1. 가입, 로그인, 로그아웃 - Firebase Authentication사용
