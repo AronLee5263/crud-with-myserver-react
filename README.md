@@ -20,16 +20,19 @@
 <br/>
 
 
-<h2> 5. 기능  </h2> 
-<h4> - 가입, 로그인, 로그아웃, CRUD </h4> 
-   4-1. 가입, 로그인, 로그아웃 - Firebase Authentication사용<br/>
-   4-2. CRUD에 사용되는 데이터베이스 - Firestore Database 사용<br/>
-         (Firestore를 사용하기 전에는 mock API, axios를 사용했습니다.) 
+<h2> 4. 기능  </h2> 
+<h4> 4-1. 가입, 로그인, 로그아웃  </h4> 
+   - Firebase Authentication사용
 <br/>
 
+<h4> 4-2. CRUD에 사용되는 데이터베이스  </h4>    
+    - Firestore Database 사용<br/>
+      (Firestore를 사용하기 전에는 mock API, axios를 사용했습니다.) <br/><br/>
+      
+      
 
-
-<h2> 6. 스플래시 이미지  </h2> 
+      
+<h2> 5. 스플래시 이미지  </h2> 
 <h4> -  첫 진입시에만 볼 수 있게 기능 구현.  웹 페이지가 꺼졌을 때는 데이터를 삭제하고, 웹이 다시 켜졌을 때 볼 수 있도록 sessionstorage 를 사용했습니다. </h4> 
 <br/>
 
