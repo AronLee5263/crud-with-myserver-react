@@ -1,4 +1,6 @@
 
+  <!-- <img src="https://user-images.githubusercontent.com/117638456/253851018-d8aa8a49-3824-46c9-a2fa-05d1a460e52c.png" width="200" height="400"/> -->
+
 <h1> disc-doctor </h1>
 
 - 좋은 자세를 취하도록 도와주어 디스크로 인한 통증을 호전시켜주는 알람 앱
@@ -7,6 +9,8 @@
 
 <h2> 1. 설계 & 디자인  </h2>
 <h4> - HTML, CSS, Javascript, React </h4>
+
+<li> vew 를 쓰지 않은 이유 </li> 
 <br/>
 
 
@@ -60,8 +64,49 @@
  <h4>   - https://disk-doctor-8c3fc.web.app </h4> 
    
 
- 
- 
+
+<br/><br/>
+
+  <h2> 11. 기술적 의사결정  </h2> 
+
+  <h3> 기본적으로 의사결정의 기준은 속도와 빠른 업데이트였습니다. 제가 원하는것은 빠르게 개발하고 테스트하는 것이었기에 속도에 중요성을 두고 의사결정을 내렸습니다.  </h3> 
+  
+ <h4>  JavaScript </h4> 
+<ul>
+   <li> 장점
+   <ul>  
+     <li> 간단하고 빠르게 개발 가능</li>
+   </ul>  
+</li>
+</ul>  
+
+<ul>
+   <li> 단점
+   <ul>  
+     <li> 타입관리가 어려워 오류가 발생이 쉽다</li>
+     <li> 디버깅에 많은 시간을 투자해야 한다</li>
+   </ul>  
+</li>
+</ul>  
+
+ <h4>  TypeScript </h4> 
+<ul>
+   <li> 장점
+   <ul>  
+     <li> 강타입의 언어로 컴파일 단계에서 타입에러를 발견할 수 있다</li>
+   </ul>  
+</li>
+</ul>  
+
+<ul>
+   <li> 단점
+   <ul>  
+     <li> JavaScript에 비해 개발 속도가 느리다</li>     
+   </ul>  
+</li>
+</ul>  
+
+
 
 
 
