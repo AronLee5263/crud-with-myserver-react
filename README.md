@@ -1,7 +1,13 @@
+![disc doctor back](https://github.com/AronLee5263/disc-doctor/assets/117638456/144b235a-3328-422d-b0b2-2d2653d7b711)
 
   <!-- <img src="https://user-images.githubusercontent.com/117638456/253851018-d8aa8a49-3824-46c9-a2fa-05d1a460e52c.png" width="200" height="400"/> -->
 
-<h1> disc-doctor </h1>
+<center>   <h1> disc-doctor </h1></center> 
+
+<div style="text-align:center">This text will be centered.
+<p>So will this paragraph.</p></div>
+
+
 
 - 좋은 자세를 취하도록 도와주어 디스크로 인한 통증을 호전시켜주는 알람 앱
 
