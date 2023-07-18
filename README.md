@@ -2,14 +2,14 @@
 
   <!-- <img src="https://user-images.githubusercontent.com/117638456/253851018-d8aa8a49-3824-46c9-a2fa-05d1a460e52c.png" width="200" height="400"/> -->
 
-<center>   <h1> disc-doctor </h1></center> 
+   
 
-<div style="text-align:center">This text will be centered.
-<p>So will this paragraph.</p></div>
-
+   <div align="center">    <h1> disc-doctor </h1>   </div>
 
 
-- 좋은 자세를 취하도록 도와주어 디스크로 인한 통증을 호전시켜주는 알람 앱
+
+ <div align="center">    <p>  좋은 자세를 취하도록 도와주어 디스크로 인한 통증을 호전시켜주는 알람 앱 </p>   </div>
+
 
 <br/>
 
