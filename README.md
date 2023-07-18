@@ -21,7 +21,12 @@
 
 <h2> 2. 프로젝트 세팅  </h2> 
 <h4> - Vite </h4> 
-<br/>
+
+ <li>        Vite 설치 - npm create vite <br/>     </li> 
+ <li>        패키지 설치 - npm install <br/>     </li> 
+ <li>        프로젝트 실행 - npm run dev <br/>     </li> 
+
+<br/><br/>
 
 
 
@@ -164,6 +169,8 @@
 결론적으로 , React.js를 선택했습니다. 왜냐하면 비록 Vue.js 가 진입장벽이 낮고 프로젝트를 빠르게 만들 수 있다는 장점이 있었지만, react 의 커뮤니티가 훨씬 활성화 되어있고 자료도 많았고, 한국 시장에서 react의 점유율이 훨씬 높았기 때문입니다.
 
 
+
+<!-- CRA(create react app) 대신 Vite를 쓴 이유 : 빠른 속도와 효율성 측면 -->
 
 
 
